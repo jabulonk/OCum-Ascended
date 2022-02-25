@@ -315,5 +315,149 @@
         <Slider name="CHSBHC High" invert="false" small="0" big="0">
             <Data name="jyCHSBHC High" target="jy" local="true">semen_breasts01.osd\jyCHSBHC High</Data>
         </Slider>
+        <Slider name="Aruru6Duck Low" invert="false" small="0" big="0">
+            <Data name="jyAruru6Duck Low" target="jy" local="true">semen_breasts01.osd\jyAruru6Duck Low</Data>
+        </Slider>
+        <Slider name="Aruru6Duck High" invert="false" small="0" big="0">
+            <Data name="jyAruru6Duck High" target="jy" local="true">semen_breasts01.osd\jyAruru6Duck High</Data>
+        </Slider>
+        <Slider name="Arms" invert="true" small="100" big="100">
+            <Data name="jyArms" target="jy" local="true">semen_breasts01.osd\jyArms</Data>
+        </Slider>
+        <Slider name="BellyFatLower" invert="false" small="0" big="0">
+            <Data name="jyBellyFatLower" target="jy" local="true">semen_breasts01.osd\jyBellyFatLower</Data>
+        </Slider>
+        <Slider name="BellyFatUpper" invert="false" small="0" big="0">
+            <Data name="jyBellyFatUpper" target="jy" local="true">semen_breasts01.osd\jyBellyFatUpper</Data>
+        </Slider>
+        <Slider name="BellyObesity" invert="false" small="0" big="0">
+            <Data name="jyBellyObesity" target="jy" local="true">semen_breasts01.osd\jyBellyObesity</Data>
+        </Slider>
+        <Slider name="BreastCenter" invert="false" small="0" big="0">
+            <Data name="jyBreastCenter" target="jy" local="true">semen_breasts01.osd\jyBreastCenter</Data>
+        </Slider>
+        <Slider name="BreastCenterBig" invert="false" small="0" big="0">
+            <Data name="jyBreastCenterBig" target="jy" local="true">semen_breasts01.osd\jyBreastCenterBig</Data>
+        </Slider>
+        <Slider name="BreastsGone" invert="false" small="0" big="0">
+            <Data name="jyBreastsGone" target="jy" local="true">semen_breasts01.osd\jyBreastsGone</Data>
+        </Slider>
+        <Slider name="BreastsPressed" invert="false" small="0" big="0">
+            <Data name="jyBreastsPressed" target="jy" local="true">semen_breasts01.osd\jyBreastsPressed</Data>
+        </Slider>
+        <Slider name="BreastConverge" invert="false" small="0" big="0">
+            <Data name="jyBreastConverge" target="jy" local="true">semen_breasts01.osd\jyBreastConverge</Data>
+        </Slider>
+        <Slider name="BotePregnancy" invert="false" small="0" big="0">
+            <Data name="jyBotePregnancy" target="jy" local="true">semen_breasts01.osd\jyBotePregnancy</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="jyChestDepth" target="jy" local="true">semen_breasts01.osd\jyChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="jyChestWidth" target="jy" local="true">semen_breasts01.osd\jyChestWidth</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="jyHipForward" target="jy" local="true">semen_breasts01.osd\jyHipForward</Data>
+        </Slider>
+        <Slider name="LeftBreastFuck" invert="false" small="0" big="0">
+            <Data name="jyLeftBreastFuck" target="jy" local="true">semen_breasts01.osd\jyLeftBreastFuck</Data>
+        </Slider>
+        <Slider name="MusclePecs" invert="false" small="0" big="0">
+            <Data name="jyMusclePecs" target="jy" local="true">semen_breasts01.osd\jyMusclePecs</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="jyMuscleAbs" target="jy" local="true">semen_breasts01.osd\jyMuscleAbs</Data>
+        </Slider>
+        <Slider name="NippleErection" invert="false" small="0" big="0">
+            <Data name="jyNippleErection" target="jy" local="true">semen_breasts01.osd\jyNippleErection</Data>
+        </Slider>
+        <Slider name="NipBGone" invert="false" small="0" big="0">
+            <Data name="jyNipBGone" target="jy" local="true">semen_breasts01.osd\jyNipBGone</Data>
+        </Slider>
+        <Slider name="NippleInverted" invert="false" small="0" big="0">
+            <Data name="jyNippleInverted" target="jy" local="true">semen_breasts01.osd\jyNippleInverted</Data>
+        </Slider>
+        <Slider name="NippleLeftPinch" invert="false" small="0" big="0">
+            <Data name="jyNippleLeftPinch" target="jy" local="true">semen_breasts01.osd\jyNippleLeftPinch</Data>
+        </Slider>
+        <Slider name="NippleLeftPressed" invert="false" small="0" big="0">
+            <Data name="jyNippleLeftPressed" target="jy" local="true">semen_breasts01.osd\jyNippleLeftPressed</Data>
+        </Slider>
+        <Slider name="NipplePuffyAreola" invert="false" small="0" big="0">
+            <Data name="jyNipplePuffyAreola" target="jy" local="true">semen_breasts01.osd\jyNipplePuffyAreola</Data>
+        </Slider>
+        <Slider name="NippleRightPinch" invert="false" small="0" big="0">
+            <Data name="jyNippleRightPinch" target="jy" local="true">semen_breasts01.osd\jyNippleRightPinch</Data>
+        </Slider>
+        <Slider name="NippleRightPressed" invert="false" small="0" big="0">
+            <Data name="jyNippleRightPressed" target="jy" local="true">semen_breasts01.osd\jyNippleRightPressed</Data>
+        </Slider>
+        <Slider name="RightBreastFuck" invert="false" small="0" big="0">
+            <Data name="jyRightBreastFuck" target="jy" local="true">semen_breasts01.osd\jyRightBreastFuck</Data>
+        </Slider>
+        <Slider name="RibsProminance" invert="false" small="0" big="0">
+            <Data name="jyRibsProminance" target="jy" local="true">semen_breasts01.osd\jyRibsProminance</Data>
+        </Slider>
+        <Slider name="SternumDepth" invert="false" small="0" big="0">
+            <Data name="jySternumDepth" target="jy" local="true">semen_breasts01.osd\jySternumDepth</Data>
+        </Slider>
+        <Slider name="SternumHeight" invert="false" small="0" big="0">
+            <Data name="jySternumHeight" target="jy" local="true">semen_breasts01.osd\jySternumHeight</Data>
+        </Slider>
+        <Slider name="Top Slope" invert="false" small="0" big="0">
+            <Data name="jyTop Slope" target="jy" local="true">semen_breasts01.osd\jyTop Slope</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="jyWaistHeight" target="jy" local="true">semen_breasts01.osd\jyWaistHeight</Data>
+        </Slider>
+        <Slider name="Clavicle" invert="false" small="0" big="0">
+            <Data name="jyClavicle" target="jy" local="true">semen_breasts01.osd\jyClavicle</Data>
+        </Slider>
+        <Slider name="ClaviclesSize" invert="false" small="0" big="0">
+            <Data name="jyClaviclesSize" target="jy" local="true">semen_breasts01.osd\jyClaviclesSize</Data>
+        </Slider>
+        <Slider name="ClaviclesFront" invert="false" small="0" big="0">
+            <Data name="jyClaviclesFront" target="jy" local="true">semen_breasts01.osd\jyClaviclesFront</Data>
+        </Slider>
+        <Slider name="ClaviclesAngle" invert="false" small="0" big="0">
+            <Data name="jyClaviclesAngle" target="jy" local="true">semen_breasts01.osd\jyClaviclesAngle</Data>
+        </Slider>
+        <Slider name="BellyDefine" invert="false" small="0" big="0">
+            <Data name="jyBellyDefine" target="jy" local="true">semen_breasts01.osd\jyBellyDefine</Data>
+        </Slider>
+        <Slider name="RectusOuterDetail" invert="false" small="0" big="0">
+            <Data name="jyRectusOuterDetail" target="jy" local="true">semen_breasts01.osd\jyRectusOuterDetail</Data>
+        </Slider>
+        <Slider name="RectusAbdominis" invert="false" small="0" big="0">
+            <Data name="jyRectusAbdominis" target="jy" local="true">semen_breasts01.osd\jyRectusAbdominis</Data>
+        </Slider>
+        <Slider name="RibsMore" invert="false" small="0" big="0">
+            <Data name="jyRibsMore" target="jy" local="true">semen_breasts01.osd\jyRibsMore</Data>
+        </Slider>
+        <Slider name="BreastUnderDepth" invert="false" small="0" big="0">
+            <Data name="jyBreastUnderDepth" target="jy" local="true">semen_breasts01.osd\jyBreastUnderDepth</Data>
+        </Slider>
+        <Slider name="BreastSaggy" invert="false" small="0" big="0">
+            <Data name="jyBreastSaggy" target="jy" local="true">semen_breasts01.osd\jyBreastSaggy</Data>
+        </Slider>
+        <Slider name="BreastsSpread" invert="false" small="0" big="0">
+            <Data name="jyBreastsSpread" target="jy" local="true">semen_breasts01.osd\jyBreastsSpread</Data>
+        </Slider>
+        <Slider name="BreastDiameter" invert="false" small="0" big="0">
+            <Data name="jyBreastDiameter" target="jy" local="true">semen_breasts01.osd\jyBreastDiameter</Data>
+        </Slider>
+        <Slider name="AreolaPull" invert="false" small="0" big="0">
+            <Data name="jyAreolaPull" target="jy" local="true">semen_breasts01.osd\jyAreolaPull</Data>
+        </Slider>
+        <Slider name="NipplePerkManga" invert="false" small="0" big="0">
+            <Data name="jyNipplePerkManga" target="jy" local="true">semen_breasts01.osd\jyNipplePerkManga</Data>
+        </Slider>
+        <Slider name="NippleThicc" invert="false" small="0" big="0">
+            <Data name="jyNippleThicc" target="jy" local="true">semen_breasts01.osd\jyNippleThicc</Data>
+        </Slider>
+        <Slider name="LegSpread" invert="false" small="0" big="0">
+            <Data name="jyLegSpread" target="jy" local="true">semen_breasts01.osd\jyLegSpread</Data>
+        </Slider>
     </SliderSet>
 </SliderSetInfo>
