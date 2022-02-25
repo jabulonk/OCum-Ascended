@@ -58,7 +58,7 @@ GlobalVariable property DisableCumMesh auto
 GlobalVariable property DisableCumDecal auto
 
 Event OnInit()
-
+	writelog("OnInit")
 	LoadGameEvents = false 
 	RequiredVersion = 25
 	InstallAddon("OCum")
@@ -74,7 +74,6 @@ Event OnInit()
 	squirtchance = 25
 
 	OnLoad()
-
 EndEvent
 
 bool function DisableInflationbool()
@@ -113,7 +112,14 @@ Event OstimRedressEnd(string eventName, string strArg, float numArg, Form sender
 	endif
 EndEvent
 
+function writelog(string a)
+	a = "OCUM: "+a
+	consoleutil.printmessage(a)
+	debug.trace(a)
+endfunction
+
 Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
+	writelog("OstimOrgasm")
 	ostim.SetOrgasmStall(true)
 	actor orgasmer = ostim.GetMostRecentOrgasmedActor()
 	bool male = !ostim.IsFemale(orgasmer)
@@ -297,6 +303,7 @@ Float function GetNPCDataFloat(actor npc, string keys)
 EndFunction
 
 function FireCumBlast(objectreference base, ObjectReference angle, int amount, actor act)
+	writelog("FireCumBlast")
 	spell cum
 	if amount == 1
 		cum = cumSpell1
@@ -349,6 +356,7 @@ Function Squirt(actor act)
 EndFunction
 
 function SquirtShoot(actor act)
+	writelog("SquirtShoot")
 	ostim.PlaySound(act, squirtsound)
 	act.EquipItem(squirt1, abPreventRemoval = True, abSilent = True)  ; don't do AddItem first, it will make NPCs redress 
 	if ostim.IsInFreeCam() && act == playerref
@@ -369,6 +377,7 @@ function SquirtShoot(actor act)
 endfunction
 
 function CumShoot(actor act, float amountML)
+	writelog("CumShoot")
 	SendModEvent("ocum_cum", NumArg = amountML)
 
 	if DisableCumshotbool()
@@ -555,7 +564,7 @@ Function SetBarVisible(Osexbar Bar, Bool Visible)
 EndFunction
 
 function ApplyCumAsNecessary(actor male, actor sub, float amountML)
-	
+	writelog("ApplyCumAsNecessary")
 	int intensity = GetLoadSizeFromML(amountML)
 
 	if intensity == 0
@@ -726,6 +735,7 @@ EndFunction
 
 
 function CumOnto(actor act, string TexFilename, bool body = true)
+	writelog("CumOnto")
 	console("Applying texture: " + TexFilename)
 	string area
 	if body 
@@ -747,6 +757,7 @@ function CumOnto(actor act, string TexFilename, bool body = true)
 endfunction
 
 Function EquipCumMesh(actor act, string area, string TexFileName)
+	writelog("EquipCumMesh")
 	; area is unused here for now, might use it in future so I included it.
 	; no facial mesh yet, but might be possible in future.
 	if     (TexFileName == "Oral1")
@@ -777,6 +788,7 @@ EndFunction
 actor[] actorcache
 form[] formcache
 function Equipper(actor act, armor item)
+	writelog("Equipper")
 	act.equipItem(item, true, true)
 	actorcache = PapyrusUtil.PushActor(actorcache, act)
 	formcache = PapyrusUtil.PushForm(formcache, item)
@@ -790,6 +802,7 @@ Event OstimEnd(string eventName, string strArg, float numArg, Form sender)
 endEvent
 
 function UnEquipper() ; remove all items in formcache from all actors in actorcache
+	writelog("UnEquipper")
 	if actorcache.Length <= 0
 		return ;fast fail
 	endif
@@ -808,6 +821,7 @@ function UnEquipper() ; remove all items in formcache from all actors in actorca
 endfunction
 
 function Facialize(actor male, actor sub, int intensity)
+	writelog("Facialize")
 	Spell facialSpell
 	if intensity == 1
 		facialSpell = facialSpell1
@@ -823,7 +837,7 @@ function Facialize(actor male, actor sub, int intensity)
 endfunction
 
 function RemoveCumTex(actor act)
-
+	writelog("RemoveCumTex")
 	bool Gender = ostim.AppearsFemale(act)
 	int i = 0
 	int max = NiOverride.GetNumBodyOverlays()
@@ -873,6 +887,7 @@ EndFunction
 
 actor[] cummedOnActs
 Event OnUpdateGameTime()
+	writelog("OnUpdateGameTime")
 	int i 
 	int max = cummedOnActs.Length
 
@@ -915,6 +930,7 @@ Function ReadyOverlay(Actor akTarget, Bool Gender, String Area, String TextureTo
 EndFunction
 
 Function ApplyOverlay(Actor akTarget, Bool Gender, String Area, String OverlaySlot, String TextureToApply)
+	writelog("ApplyOverlay")
 	;Float Alpha = GetCumSetAlpha(CumSet)
 	float alpha = OSANative.RandomFloat(0.75, 1.0)
 
