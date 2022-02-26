@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SliderSetInfo version="1">
+    <SliderSet name="semen 3BA">
+        <DataFolder>semen 3BA</DataFolder>
+        <SourceFile>semen 3BA.nif</SourceFile>
+        <OutputPath>Meshes\Kziitd\</OutputPath>
+        <OutputFile GenWeights="true">semen</OutputFile>
+        <Shape target="3BA" DataFolder="semen">3BA</Shape>
+        <Shape target="3BA_Anus">3BA_Anus</Shape>
+        <Shape target="3BA_Vagina">3BA_Vagina</Shape>
+        <Shape target="jy">jy</Shape>
+        <Slider name="ArmpitShape_v2" invert="false" small="0" big="0">
+            <Data name="3BAArmpitShape_v2" target="3BA" local="true">semen 3BA.osd\3BAArmpitShape_v2</Data>
+        </Slider>
+        <Slider name="AnkleSize" invert="false" small="100" big="0">
+            <Data name="3BAAnkleSize" target="3BA" local="true">semen 3BA.osd\3BAAnkleSize</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="3BAAppleCheeks" target="3BA" local="true">semen 3BA.osd\3BAAppleCheeks</Data>
+            <Data name="jyAppleCheeks" target="jy" local="true">semen 3BA.osd\jyAppleCheeks</Data>
+            <Data name="3BA_VaginaAppleCheeks" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaAppleCheeks</Data>
+            <Data name="3BA_AnusAppleCheeks" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusAppleCheeks</Data>
+        </Slider>
+        <Slider name="AreolaSize" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAreolaSize" target="3BA" local="true">semen 3BA.osd\3BAAreolaSize</Data>
+        </Slider>
+        <Slider name="AreolaPull_v2" invert="false" small="0" big="0">
+            <Data name="3BAAreolaPull_v2" target="3BA" local="true">semen 3BA.osd\3BAAreolaPull_v2</Data>
+            <Data name="jyAreolaPull_v2" target="jy" local="true">semen 3BA.osd\jyAreolaPull_v2</Data>
+        </Slider>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="3BAArms" target="3BA" local="true">semen 3BA.osd\3BAArms</Data>
+            <Data name="jyArms" target="jy" local="true">semen 3BA.osd\jyArms</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="3BABack" target="3BA" local="true">semen 3BA.osd\3BABack</Data>
+            <Data name="jyBack" target="jy" local="true">semen 3BA.osd\jyBack</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="3BABackArch" target="3BA" local="true">semen 3BA.osd\3BABackArch</Data>
+            <Data name="jyBackArch" target="jy" local="true">semen 3BA.osd\jyBackArch</Data>
+        </Slider>
+        <Slider name="BackValley_v2" invert="false" small="0" big="0">
+            <Data name="3BABackValley_v2" target="3BA" local="true">semen 3BA.osd\3BABackValley_v2</Data>
+            <Data name="jyBackValley_v2" target="jy" local="true">semen 3BA.osd\jyBackValley_v2</Data>
+        </Slider>
+        <Slider name="BackWing_v2" invert="false" small="0" big="0">
+            <Data name="3BABackWing_v2" target="3BA" local="true">semen 3BA.osd\3BABackWing_v2</Data>
+            <Data name="jyBackWing_v2" target="jy" local="true">semen 3BA.osd\jyBackWing_v2</Data>
+        </Slider>
+        <Slider name="Belly" invert="false" small="0" big="0">
+            <Data name="3BABelly" target="3BA" local="true">semen 3BA.osd\3BABelly</Data>
+            <Data name="jyBelly" target="jy" local="true">semen 3BA.osd\jyBelly</Data>
+        </Slider>
+        <Slider name="BellyFrontUpFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyFrontUpFat_v2" target="3BA" local="true">semen 3BA.osd\3BABellyFrontUpFat_v2</Data>
+            <Data name="jyBellyFrontUpFat_v2" target="jy" local="true">semen 3BA.osd\jyBellyFrontUpFat_v2</Data>
+        </Slider>
+        <Slider name="BellyFrontDownFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyFrontDownFat_v2" target="3BA" local="true">semen 3BA.osd\3BABellyFrontDownFat_v2</Data>
+            <Data name="jyBellyFrontDownFat_v2" target="jy" local="true">semen 3BA.osd\jyBellyFrontDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellySideUpFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellySideUpFat_v2" target="3BA" local="true">semen 3BA.osd\3BABellySideUpFat_v2</Data>
+        </Slider>
+        <Slider name="BellySideDownFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellySideDownFat_v2" target="3BA" local="true">semen 3BA.osd\3BABellySideDownFat_v2</Data>
+            <Data name="jyBellySideDownFat_v2" target="jy" local="true">semen 3BA.osd\jyBellySideDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellyUnder_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyUnder_v2" target="3BA" local="true">semen 3BA.osd\3BABellyUnder_v2</Data>
+            <Data name="jyBellyUnder_v2" target="jy" local="true">semen 3BA.osd\jyBellyUnder_v2</Data>
+            <Data name="3BA_VaginaBellyUnder_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaBellyUnder_v2</Data>
+        </Slider>
+        <Slider name="BigBelly" invert="false" small="0" big="0">
+            <Data name="3BABigBelly" target="3BA" local="true">semen 3BA.osd\3BABigBelly</Data>
+            <Data name="jyBigBelly" target="jy" local="true">semen 3BA.osd\jyBigBelly</Data>
+            <Data name="3BA_VaginaBigBelly" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaBigBelly</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="3BABigButt" target="3BA" local="true">semen 3BA.osd\3BABigButt</Data>
+            <Data name="jyBigButt" target="jy" local="true">semen 3BA.osd\jyBigButt</Data>
+            <Data name="3BA_VaginaBigButt" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaBigButt</Data>
+            <Data name="3BA_AnusBigButt" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusBigButt</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="3BABigTorso" target="3BA" local="true">semen 3BA.osd\3BABigTorso</Data>
+            <Data name="jyBigTorso" target="jy" local="true">semen 3BA.osd\jyBigTorso</Data>
+        </Slider>
+        <Slider name="BreastCenter" invert="false" small="0" big="0">
+            <Data name="3BABreastCenter" target="3BA" local="true">semen 3BA.osd\3BABreastCenter</Data>
+            <Data name="jyBreastCenter" target="jy" local="true">semen 3BA.osd\jyBreastCenter</Data>
+        </Slider>
+        <Slider name="BreastCenterBig" invert="false" small="0" big="0">
+            <Data name="3BABreastCenterBig" target="3BA" local="true">semen 3BA.osd\3BABreastCenterBig</Data>
+            <Data name="jyBreastCenterBig" target="jy" local="true">semen 3BA.osd\jyBreastCenterBig</Data>
+        </Slider>
+        <Slider name="BreastCleavage" invert="false" small="0" big="0">
+            <Data name="3BABreastCleavage" target="3BA" local="true">semen 3BA.osd\3BABreastCleavage</Data>
+            <Data name="jyBreastCleavage" target="jy" local="true">semen 3BA.osd\jyBreastCleavage</Data>
+        </Slider>
+        <Slider name="BreastsConverage_v2" invert="false" small="0" big="0">
+            <Data name="3BABreastsConverage_v2" target="3BA" local="true">semen 3BA.osd\3BABreastsConverage_v2</Data>
+            <Data name="jyBreastsConverage_v2" target="jy" local="true">semen 3BA.osd\jyBreastsConverage_v2</Data>
+        </Slider>
+        <Slider name="BreastFlatness2" invert="false" small="0" big="0">
+            <Data name="3BABreastFlatness2" target="3BA" local="true">semen 3BA.osd\3BABreastFlatness2</Data>
+            <Data name="jyBreastFlatness2" target="jy" local="true">semen 3BA.osd\jyBreastFlatness2</Data>
+        </Slider>
+        <Slider name="BreastFlatness" invert="false" small="0" big="0">
+            <Data name="3BABreastFlatness" target="3BA" local="true">semen 3BA.osd\3BABreastFlatness</Data>
+            <Data name="jyBreastFlatness" target="jy" local="true">semen 3BA.osd\jyBreastFlatness</Data>
+        </Slider>
+        <Slider name="BreastGravity2" invert="false" small="0" big="0">
+            <Data name="3BABreastGravity2" target="3BA" local="true">semen 3BA.osd\3BABreastGravity2</Data>
+            <Data name="jyBreastGravity2" target="jy" local="true">semen 3BA.osd\jyBreastGravity2</Data>
+        </Slider>
+        <Slider name="BreastHeight" invert="false" small="0" big="0">
+            <Data name="3BABreastHeight" target="3BA" local="true">semen 3BA.osd\3BABreastHeight</Data>
+            <Data name="jyBreastHeight" target="jy" local="true">semen 3BA.osd\jyBreastHeight</Data>
+        </Slider>
+        <Slider name="BreastPerkiness" invert="false" small="0" big="0">
+            <Data name="3BABreastPerkiness" target="3BA" local="true">semen 3BA.osd\3BABreastPerkiness</Data>
+            <Data name="jyBreastPerkiness" target="jy" local="true">semen 3BA.osd\jyBreastPerkiness</Data>
+        </Slider>
+        <Slider name="Breasts" invert="false" small="0" big="0">
+            <Data name="3BABreasts" target="3BA" local="true">semen 3BA.osd\3BABreasts</Data>
+            <Data name="jyBreasts" target="jy" local="true">semen 3BA.osd\jyBreasts</Data>
+        </Slider>
+        <Slider name="BreastsFantasy" invert="false" small="0" big="0">
+            <Data name="3BABreastsFantasy" target="3BA" local="true">semen 3BA.osd\3BABreastsFantasy</Data>
+            <Data name="jyBreastsFantasy" target="jy" local="true">semen 3BA.osd\jyBreastsFantasy</Data>
+        </Slider>
+        <Slider name="BreastsGone" invert="false" small="0" big="0">
+            <Data name="3BABreastsGone" target="3BA" local="true">semen 3BA.osd\3BABreastsGone</Data>
+            <Data name="jyBreastsGone" target="jy" local="true">semen 3BA.osd\jyBreastsGone</Data>
+        </Slider>
+        <Slider name="BreastsNewSH" invert="false" small="0" big="0">
+            <Data name="3BABreastsNewSH" target="3BA" local="true">semen 3BA.osd\3BABreastsNewSH</Data>
+            <Data name="jyBreastsNewSH" target="jy" local="true">semen 3BA.osd\jyBreastsNewSH</Data>
+        </Slider>
+        <Slider name="BreastsNewSHSymmetry" invert="false" small="0" big="0">
+            <Data name="3BABreastsNewSHSymmetry" target="3BA" local="true">semen 3BA.osd\3BABreastsNewSHSymmetry</Data>
+            <Data name="jyBreastsNewSHSymmetry" target="jy" local="true">semen 3BA.osd\jyBreastsNewSHSymmetry</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="3BABreastsSmall" target="3BA" local="true">semen 3BA.osd\3BABreastsSmall</Data>
+            <Data name="jyBreastsSmall" target="jy" local="true">semen 3BA.osd\jyBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="3BABreastsSmall2" target="3BA" local="true">semen 3BA.osd\3BABreastsSmall2</Data>
+            <Data name="jyBreastsSmall2" target="jy" local="true">semen 3BA.osd\jyBreastsSmall2</Data>
+        </Slider>
+        <Slider name="BreastsTogether" invert="false" small="0" big="0">
+            <Data name="3BABreastsTogether" target="3BA" local="true">semen 3BA.osd\3BABreastsTogether</Data>
+            <Data name="jyBreastsTogether" target="jy" local="true">semen 3BA.osd\jyBreastsTogether</Data>
+        </Slider>
+        <Slider name="BreastTopSlope" invert="false" small="0" big="0">
+            <Data name="3BABreastTopSlope" target="3BA" local="true">semen 3BA.osd\3BABreastTopSlope</Data>
+            <Data name="jyBreastTopSlope" target="jy" local="true">semen 3BA.osd\jyBreastTopSlope</Data>
+        </Slider>
+        <Slider name="BreastWidth" invert="false" small="0" big="0">
+            <Data name="3BABreastWidth" target="3BA" local="true">semen 3BA.osd\3BABreastWidth</Data>
+            <Data name="jyBreastWidth" target="jy" local="true">semen 3BA.osd\jyBreastWidth</Data>
+        </Slider>
+        <Slider name="BreastSideShape" invert="false" small="0" big="0">
+            <Data name="3BABreastSideShape" target="3BA" local="true">semen 3BA.osd\3BABreastSideShape</Data>
+            <Data name="jyBreastSideShape" target="jy" local="true">semen 3BA.osd\jyBreastSideShape</Data>
+        </Slider>
+        <Slider name="BreastUnderDepth" invert="false" small="0" big="0">
+            <Data name="3BABreastUnderDepth" target="3BA" local="true">semen 3BA.osd\3BABreastUnderDepth</Data>
+            <Data name="jyBreastUnderDepth" target="jy" local="true">semen 3BA.osd\jyBreastUnderDepth</Data>
+        </Slider>
+        <Slider name="BreastsPressed_v2" invert="false" small="0" big="0">
+            <Data name="3BABreastsPressed_v2" target="3BA" local="true">semen 3BA.osd\3BABreastsPressed_v2</Data>
+            <Data name="jyBreastsPressed_v2" target="jy" local="true">semen 3BA.osd\jyBreastsPressed_v2</Data>
+        </Slider>
+        <Slider name="Butt" invert="false" small="0" big="0">
+            <Data name="3BAButt" target="3BA" local="true">semen 3BA.osd\3BAButt</Data>
+            <Data name="jyButt" target="jy" local="true">semen 3BA.osd\jyButt</Data>
+            <Data name="3BA_VaginaButt" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButt</Data>
+            <Data name="3BA_AnusButt" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusButt</Data>
+        </Slider>
+        <Slider name="ButtSaggy_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtSaggy_v2" target="3BA" local="true">semen 3BA.osd\3BAButtSaggy_v2</Data>
+            <Data name="jyButtSaggy_v2" target="jy" local="true">semen 3BA.osd\jyButtSaggy_v2</Data>
+            <Data name="3BA_VaginaButtSaggy_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButtSaggy_v2</Data>
+            <Data name="3BA_AnusButtSaggy_v2" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusButtSaggy_v2</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="3BAButtClassic" target="3BA" local="true">semen 3BA.osd\3BAButtClassic</Data>
+            <Data name="jyButtClassic" target="jy" local="true">semen 3BA.osd\jyButtClassic</Data>
+            <Data name="3BA_VaginaButtClassic" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButtClassic</Data>
+            <Data name="3BA_AnusButtClassic" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusButtClassic</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="false" small="0" big="0">
+            <Data name="3BAButtCrack" target="3BA" local="true">semen 3BA.osd\3BAButtCrack</Data>
+            <Data name="jyButtCrack" target="jy" local="true">semen 3BA.osd\jyButtCrack</Data>
+            <Data name="3BA_VaginaButtCrack" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButtCrack</Data>
+            <Data name="3BA_AnusButtCrack" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusButtCrack</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="3BAButtShape2" target="3BA" local="true">semen 3BA.osd\3BAButtShape2</Data>
+            <Data name="jyButtShape2" target="jy" local="true">semen 3BA.osd\jyButtShape2</Data>
+            <Data name="3BA_VaginaButtShape2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButtShape2</Data>
+            <Data name="3BA_AnusButtShape2" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="3BAButtSmall" target="3BA" local="true">semen 3BA.osd\3BAButtSmall</Data>
+            <Data name="jyButtSmall" target="jy" local="true">semen 3BA.osd\jyButtSmall</Data>
+            <Data name="3BA_VaginaButtSmall" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButtSmall</Data>
+            <Data name="3BA_AnusButtSmall" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusButtSmall</Data>
+        </Slider>
+        <Slider name="ButtDimples" invert="false" small="0" big="0">
+            <Data name="3BAButtDimples" target="3BA" local="true">semen 3BA.osd\3BAButtDimples</Data>
+            <Data name="jyButtDimples" target="jy" local="true">semen 3BA.osd\jyButtDimples</Data>
+        </Slider>
+        <Slider name="ButtUnderFold" invert="false" small="0" big="0">
+            <Data name="3BAButtUnderFold" target="3BA" local="true">semen 3BA.osd\3BAButtUnderFold</Data>
+            <Data name="jyButtUnderFold" target="jy" local="true">semen 3BA.osd\jyButtUnderFold</Data>
+            <Data name="3BA_VaginaButtUnderFold" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButtUnderFold</Data>
+        </Slider>
+        <Slider name="ButtPressed_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtPressed_v2" target="3BA" local="true">semen 3BA.osd\3BAButtPressed_v2</Data>
+            <Data name="jyButtPressed_v2" target="jy" local="true">semen 3BA.osd\jyButtPressed_v2</Data>
+            <Data name="3BA_VaginaButtPressed_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaButtPressed_v2</Data>
+            <Data name="3BA_AnusButtPressed_v2" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusButtPressed_v2</Data>
+        </Slider>
+        <Slider name="ButtNarrow_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtNarrow_v2" target="3BA" local="true">semen 3BA.osd\3BAButtNarrow_v2</Data>
+            <Data name="jyButtNarrow_v2" target="jy" local="true">semen 3BA.osd\jyButtNarrow_v2</Data>
+        </Slider>
+        <Slider name="CalfSize" invert="false" small="0" big="0">
+            <Data name="3BACalfSize" target="3BA" local="true">semen 3BA.osd\3BACalfSize</Data>
+        </Slider>
+        <Slider name="CalfSmooth" invert="false" small="0" big="0">
+            <Data name="3BACalfSmooth" target="3BA" local="true">semen 3BA.osd\3BACalfSmooth</Data>
+        </Slider>
+        <Slider name="CalfFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BACalfFBThicc_v2" target="3BA" local="true">semen 3BA.osd\3BACalfFBThicc_v2</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="3BAChestDepth" target="3BA" local="true">semen 3BA.osd\3BAChestDepth</Data>
+            <Data name="jyChestDepth" target="jy" local="true">semen 3BA.osd\jyChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="3BAChestWidth" target="3BA" local="true">semen 3BA.osd\3BAChestWidth</Data>
+            <Data name="jyChestWidth" target="jy" local="true">semen 3BA.osd\jyChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="3BAChubbyArms" target="3BA" local="true">semen 3BA.osd\3BAChubbyArms</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="3BAChubbyButt" target="3BA" local="true">semen 3BA.osd\3BAChubbyButt</Data>
+            <Data name="jyChubbyButt" target="jy" local="true">semen 3BA.osd\jyChubbyButt</Data>
+            <Data name="3BA_VaginaChubbyButt" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaChubbyButt</Data>
+            <Data name="3BA_AnusChubbyButt" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="3BAChubbyLegs" target="3BA" local="true">semen 3BA.osd\3BAChubbyLegs</Data>
+            <Data name="jyChubbyLegs" target="jy" local="true">semen 3BA.osd\jyChubbyLegs</Data>
+            <Data name="3BA_VaginaChubbyLegs" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaChubbyLegs</Data>
+            <Data name="3BA_AnusChubbyLegs" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusChubbyLegs</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="3BAChubbyWaist" target="3BA" local="true">semen 3BA.osd\3BAChubbyWaist</Data>
+            <Data name="jyChubbyWaist" target="jy" local="true">semen 3BA.osd\jyChubbyWaist</Data>
+            <Data name="3BA_VaginaChubbyWaist" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaChubbyWaist</Data>
+            <Data name="3BA_AnusChubbyWaist" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusChubbyWaist</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="3BACrotchBack" target="3BA" local="true">semen 3BA.osd\3BACrotchBack</Data>
+            <Data name="jyCrotchBack" target="jy" local="true">semen 3BA.osd\jyCrotchBack</Data>
+            <Data name="3BA_VaginaCrotchBack" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaCrotchBack</Data>
+            <Data name="3BA_AnusCrotchBack" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusCrotchBack</Data>
+        </Slider>
+        <Slider name="Clavicle_v2" invert="false" small="0" big="0">
+            <Data name="3BAClavicle_v2" target="3BA" local="true">semen 3BA.osd\3BAClavicle_v2</Data>
+            <Data name="jyClavicle_v2" target="jy" local="true">semen 3BA.osd\jyClavicle_v2</Data>
+        </Slider>
+        <Slider name="DoubleMelon" invert="false" small="0" big="0">
+            <Data name="3BADoubleMelon" target="3BA" local="true">semen 3BA.osd\3BADoubleMelon</Data>
+            <Data name="jyDoubleMelon" target="jy" local="true">semen 3BA.osd\jyDoubleMelon</Data>
+        </Slider>
+        <Slider name="ForearmSize" invert="false" small="0" big="0">
+            <Data name="3BAForearmSize" target="3BA" local="true">semen 3BA.osd\3BAForearmSize</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="3BAGroin" target="3BA" local="true">semen 3BA.osd\3BAGroin</Data>
+            <Data name="jyGroin" target="jy" local="true">semen 3BA.osd\jyGroin</Data>
+            <Data name="3BA_VaginaGroin" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaGroin</Data>
+            <Data name="3BA_AnusGroin" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusGroin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="3BAHipBone" target="3BA" local="true">semen 3BA.osd\3BAHipBone</Data>
+            <Data name="jyHipBone" target="jy" local="true">semen 3BA.osd\jyHipBone</Data>
+            <Data name="3BA_VaginaHipBone" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="3BAHipForward" target="3BA" local="true">semen 3BA.osd\3BAHipForward</Data>
+            <Data name="jyHipForward" target="jy" local="true">semen 3BA.osd\jyHipForward</Data>
+            <Data name="3BA_VaginaHipForward" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaHipForward</Data>
+            <Data name="3BA_AnusHipForward" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusHipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="3BAHips" target="3BA" local="true">semen 3BA.osd\3BAHips</Data>
+            <Data name="jyHips" target="jy" local="true">semen 3BA.osd\jyHips</Data>
+            <Data name="3BA_VaginaHips" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaHips</Data>
+            <Data name="3BA_AnusHips" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusHips</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="3BAHipUpperWidth" target="3BA" local="true">semen 3BA.osd\3BAHipUpperWidth</Data>
+            <Data name="jyHipUpperWidth" target="jy" local="true">semen 3BA.osd\jyHipUpperWidth</Data>
+        </Slider>
+        <Slider name="HipCarved" invert="false" small="0" big="0">
+            <Data name="3BAHipCarved" target="3BA" local="true">semen 3BA.osd\3BAHipCarved</Data>
+            <Data name="jyHipCarved" target="jy" local="true">semen 3BA.osd\jyHipCarved</Data>
+            <Data name="3BA_VaginaHipCarved" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaHipCarved</Data>
+        </Slider>
+        <Slider name="HipNarrow_v2" invert="false" small="0" big="0">
+            <Data name="3BAHipNarrow_v2" target="3BA" local="true">semen 3BA.osd\3BAHipNarrow_v2</Data>
+            <Data name="jyHipNarrow_v2" target="jy" local="true">semen 3BA.osd\jyHipNarrow_v2</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="3BAKneeHeight" target="3BA" local="true">semen 3BA.osd\3BAKneeHeight</Data>
+        </Slider>
+        <Slider name="KneeShape" invert="false" small="0" big="0">
+            <Data name="3BAKneeShape" target="3BA" local="true">semen 3BA.osd\3BAKneeShape</Data>
+        </Slider>
+        <Slider name="KneeTogether_v2" invert="false" small="0" big="0">
+            <Data name="3BAKneeTogether_v2" target="3BA" local="true">semen 3BA.osd\3BAKneeTogether_v2</Data>
+        </Slider>
+        <Slider name="LegShapeClassic" invert="false" small="0" big="0">
+            <Data name="3BALegShapeClassic" target="3BA" local="true">semen 3BA.osd\3BALegShapeClassic</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="3BALegsThin" target="3BA" local="true">semen 3BA.osd\3BALegsThin</Data>
+            <Data name="jyLegsThin" target="jy" local="true">semen 3BA.osd\jyLegsThin</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="3BAMuscleAbs" target="3BA" local="true">semen 3BA.osd\3BAMuscleAbs</Data>
+            <Data name="jyMuscleAbs" target="jy" local="true">semen 3BA.osd\jyMuscleAbs</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="3BAMuscleArms" target="3BA" local="true">semen 3BA.osd\3BAMuscleArms</Data>
+            <Data name="jyMuscleArms" target="jy" local="true">semen 3BA.osd\jyMuscleArms</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="3BAMuscleButt" target="3BA" local="true">semen 3BA.osd\3BAMuscleButt</Data>
+            <Data name="jyMuscleButt" target="jy" local="true">semen 3BA.osd\jyMuscleButt</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="3BAMuscleLegs" target="3BA" local="true">semen 3BA.osd\3BAMuscleLegs</Data>
+            <Data name="jyMuscleLegs" target="jy" local="true">semen 3BA.osd\jyMuscleLegs</Data>
+            <Data name="3BA_VaginaMuscleLegs" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaMuscleLegs</Data>
+            <Data name="3BA_AnusMuscleLegs" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusMuscleLegs</Data>
+        </Slider>
+        <Slider name="MusclePecs" invert="false" small="0" big="0">
+            <Data name="3BAMusclePecs" target="3BA" local="true">semen 3BA.osd\3BAMusclePecs</Data>
+            <Data name="jyMusclePecs" target="jy" local="true">semen 3BA.osd\jyMusclePecs</Data>
+        </Slider>
+        <Slider name="MuscleBack_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleBack_v2" target="3BA" local="true">semen 3BA.osd\3BAMuscleBack_v2</Data>
+            <Data name="jyMuscleBack_v2" target="jy" local="true">semen 3BA.osd\jyMuscleBack_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreAbs_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreAbs_v2" target="3BA" local="true">semen 3BA.osd\3BAMuscleMoreAbs_v2</Data>
+            <Data name="jyMuscleMoreAbs_v2" target="jy" local="true">semen 3BA.osd\jyMuscleMoreAbs_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreArms_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreArms_v2" target="3BA" local="true">semen 3BA.osd\3BAMuscleMoreArms_v2</Data>
+            <Data name="jyMuscleMoreArms_v2" target="jy" local="true">semen 3BA.osd\jyMuscleMoreArms_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreLegs_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreLegs_v2" target="3BA" local="true">semen 3BA.osd\3BAMuscleMoreLegs_v2</Data>
+            <Data name="jyMuscleMoreLegs_v2" target="jy" local="true">semen 3BA.osd\jyMuscleMoreLegs_v2</Data>
+        </Slider>
+        <Slider name="NavelEven" invert="false" small="0" big="0">
+            <Data name="3BANavelEven" target="3BA" local="true">semen 3BA.osd\3BANavelEven</Data>
+            <Data name="jyNavelEven" target="jy" local="true">semen 3BA.osd\jyNavelEven</Data>
+        </Slider>
+        <Slider name="NeckSeam" invert="false" small="100" big="0" hidden="true">
+            <Data name="3BANeckSeam" target="3BA" local="true">semen 3BA.osd\3BANeckSeam</Data>
+            <Data name="jyNeckSeam" target="jy" local="true">semen 3BA.osd\jyNeckSeam</Data>
+        </Slider>
+        <Slider name="NipBGone" invert="false" small="0" big="0">
+            <Data name="3BANipBGone" target="3BA" local="true">semen 3BA.osd\3BANipBGone</Data>
+            <Data name="jyNipBGone" target="jy" local="true">semen 3BA.osd\jyNipBGone</Data>
+        </Slider>
+        <Slider name="NippleDistance" invert="false" small="0" big="0">
+            <Data name="3BANippleDistance" target="3BA" local="true">semen 3BA.osd\3BANippleDistance</Data>
+            <Data name="jyNippleDistance" target="jy" local="true">semen 3BA.osd\jyNippleDistance</Data>
+        </Slider>
+        <Slider name="NippleDown" invert="false" small="0" big="0">
+            <Data name="3BANippleDown" target="3BA" local="true">semen 3BA.osd\3BANippleDown</Data>
+            <Data name="jyNippleDown" target="jy" local="true">semen 3BA.osd\jyNippleDown</Data>
+        </Slider>
+        <Slider name="NippleLength" invert="false" small="0" big="0">
+            <Data name="3BANippleLength" target="3BA" local="true">semen 3BA.osd\3BANippleLength</Data>
+            <Data name="jyNippleLength" target="jy" local="true">semen 3BA.osd\jyNippleLength</Data>
+        </Slider>
+        <Slider name="NippleManga" invert="false" small="0" big="0">
+            <Data name="3BANippleManga" target="3BA" local="true">semen 3BA.osd\3BANippleManga</Data>
+            <Data name="jyNippleManga" target="jy" local="true">semen 3BA.osd\jyNippleManga</Data>
+        </Slider>
+        <Slider name="NipplePerkiness" invert="false" small="0" big="0">
+            <Data name="3BANipplePerkiness" target="3BA" local="true">semen 3BA.osd\3BANipplePerkiness</Data>
+            <Data name="jyNipplePerkiness" target="jy" local="true">semen 3BA.osd\jyNipplePerkiness</Data>
+        </Slider>
+        <Slider name="NipplePerkManga" invert="false" small="0" big="0">
+            <Data name="3BANipplePerkManga" target="3BA" local="true">semen 3BA.osd\3BANipplePerkManga</Data>
+            <Data name="jyNipplePerkManga" target="jy" local="true">semen 3BA.osd\jyNipplePerkManga</Data>
+        </Slider>
+        <Slider name="NippleSize" invert="false" small="0" big="0">
+            <Data name="3BANippleSize" target="3BA" local="true">semen 3BA.osd\3BANippleSize</Data>
+            <Data name="jyNippleSize" target="jy" local="true">semen 3BA.osd\jyNippleSize</Data>
+        </Slider>
+        <Slider name="NippleTip" invert="false" small="0" big="0">
+            <Data name="3BANippleTip" target="3BA" local="true">semen 3BA.osd\3BANippleTip</Data>
+            <Data name="jyNippleTip" target="jy" local="true">semen 3BA.osd\jyNippleTip</Data>
+        </Slider>
+        <Slider name="NippleTipManga" invert="false" small="0" big="0">
+            <Data name="3BANippleTipManga" target="3BA" local="true">semen 3BA.osd\3BANippleTipManga</Data>
+            <Data name="jyNippleTipManga" target="jy" local="true">semen 3BA.osd\jyNippleTipManga</Data>
+        </Slider>
+        <Slider name="NippleUp" invert="false" small="0" big="0">
+            <Data name="3BANippleUp" target="3BA" local="true">semen 3BA.osd\3BANippleUp</Data>
+            <Data name="jyNippleUp" target="jy" local="true">semen 3BA.osd\jyNippleUp</Data>
+        </Slider>
+        <Slider name="NippleDip" invert="false" small="0" big="0">
+            <Data name="3BANippleDip" target="3BA" local="true">semen 3BA.osd\3BANippleDip</Data>
+            <Data name="jyNippleDip" target="jy" local="true">semen 3BA.osd\jyNippleDip</Data>
+        </Slider>
+        <Slider name="NippleCrease_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleCrease_v2" target="3BA" local="true">semen 3BA.osd\3BANippleCrease_v2</Data>
+            <Data name="jyNippleCrease_v2" target="jy" local="true">semen 3BA.osd\jyNippleCrease_v2</Data>
+        </Slider>
+        <Slider name="NipplePuffy_v2" invert="false" small="0" big="0">
+            <Data name="3BANipplePuffy_v2" target="3BA" local="true">semen 3BA.osd\3BANipplePuffy_v2</Data>
+            <Data name="jyNipplePuffy_v2" target="jy" local="true">semen 3BA.osd\jyNipplePuffy_v2</Data>
+        </Slider>
+        <Slider name="NippleShy_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleShy_v2" target="3BA" local="true">semen 3BA.osd\3BANippleShy_v2</Data>
+            <Data name="jyNippleShy_v2" target="jy" local="true">semen 3BA.osd\jyNippleShy_v2</Data>
+        </Slider>
+        <Slider name="NippleThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleThicc_v2" target="3BA" local="true">semen 3BA.osd\3BANippleThicc_v2</Data>
+            <Data name="jyNippleThicc_v2" target="jy" local="true">semen 3BA.osd\jyNippleThicc_v2</Data>
+        </Slider>
+        <Slider name="NippleInvert_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleInvert_v2" target="3BA" local="true">semen 3BA.osd\3BANippleInvert_v2</Data>
+            <Data name="jyNippleInvert_v2" target="jy" local="true">semen 3BA.osd\jyNippleInvert_v2</Data>
+        </Slider>
+        <Slider name="NippleSquash1_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleSquash1_v2" target="3BA" local="true">semen 3BA.osd\3BANippleSquash1_v2</Data>
+            <Data name="jyNippleSquash1_v2" target="jy" local="true">semen 3BA.osd\jyNippleSquash1_v2</Data>
+        </Slider>
+        <Slider name="NippleSquash2_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleSquash2_v2" target="3BA" local="true">semen 3BA.osd\3BANippleSquash2_v2</Data>
+            <Data name="jyNippleSquash2_v2" target="jy" local="true">semen 3BA.osd\jyNippleSquash2_v2</Data>
+        </Slider>
+        <Slider name="NippleBump_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleBump_v2" target="3BA" local="true">semen 3BA.osd\3BANippleBump_v2</Data>
+            <Data name="jyNippleBump_v2" target="jy" local="true">semen 3BA.osd\jyNippleBump_v2</Data>
+        </Slider>
+        <Slider name="NippleCrumpled_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleCrumpled_v2" target="3BA" local="true">semen 3BA.osd\3BANippleCrumpled_v2</Data>
+            <Data name="jyNippleCrumpled_v2" target="jy" local="true">semen 3BA.osd\jyNippleCrumpled_v2</Data>
+        </Slider>
+        <Slider name="NippleTube_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleTube_v2" target="3BA" local="true">semen 3BA.osd\3BANippleTube_v2</Data>
+            <Data name="jyNippleTube_v2" target="jy" local="true">semen 3BA.osd\jyNippleTube_v2</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="3BAPregnancyBelly" target="3BA" local="true">semen 3BA.osd\3BAPregnancyBelly</Data>
+            <Data name="jyPregnancyBelly" target="jy" local="true">semen 3BA.osd\jyPregnancyBelly</Data>
+            <Data name="3BA_VaginaPregnancyBelly" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaPregnancyBelly</Data>
+        </Slider>
+        <Slider name="PushUp" invert="false" small="0" big="0">
+            <Data name="3BAPushUp" target="3BA" local="true">semen 3BA.osd\3BAPushUp</Data>
+            <Data name="jyPushUp" target="jy" local="true">semen 3BA.osd\jyPushUp</Data>
+        </Slider>
+        <Slider name="RibsMore_v2" invert="false" small="0" big="0">
+            <Data name="3BARibsMore_v2" target="3BA" local="true">semen 3BA.osd\3BARibsMore_v2</Data>
+            <Data name="jyRibsMore_v2" target="jy" local="true">semen 3BA.osd\jyRibsMore_v2</Data>
+        </Slider>
+        <Slider name="RibsProminance" invert="false" small="0" big="0">
+            <Data name="3BARibsProminance" target="3BA" local="true">semen 3BA.osd\3BARibsProminance</Data>
+            <Data name="jyRibsProminance" target="jy" local="true">semen 3BA.osd\jyRibsProminance</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="3BARoundAss" target="3BA" local="true">semen 3BA.osd\3BARoundAss</Data>
+            <Data name="jyRoundAss" target="jy" local="true">semen 3BA.osd\jyRoundAss</Data>
+            <Data name="3BA_VaginaRoundAss" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaRoundAss</Data>
+            <Data name="3BA_AnusRoundAss" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusRoundAss</Data>
+        </Slider>
+        <Slider name="ShoulderSmooth" invert="false" small="0" big="0">
+            <Data name="3BAShoulderSmooth" target="3BA" local="true">semen 3BA.osd\3BAShoulderSmooth</Data>
+        </Slider>
+        <Slider name="ShoulderTweak" invert="false" small="0" big="0">
+            <Data name="3BAShoulderTweak" target="3BA" local="true">semen 3BA.osd\3BAShoulderTweak</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="3BAShoulderWidth" target="3BA" local="true">semen 3BA.osd\3BAShoulderWidth</Data>
+            <Data name="jyShoulderWidth" target="jy" local="true">semen 3BA.osd\jyShoulderWidth</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="3BASlimThighs" target="3BA" local="true">semen 3BA.osd\3BASlimThighs</Data>
+            <Data name="jySlimThighs" target="jy" local="true">semen 3BA.osd\jySlimThighs</Data>
+            <Data name="3BA_VaginaSlimThighs" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaSlimThighs</Data>
+            <Data name="3BA_AnusSlimThighs" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusSlimThighs</Data>
+        </Slider>
+        <Slider name="SternumDepth" invert="false" small="0" big="0">
+            <Data name="3BASternumDepth" target="3BA" local="true">semen 3BA.osd\3BASternumDepth</Data>
+            <Data name="jySternumDepth" target="jy" local="true">semen 3BA.osd\jySternumDepth</Data>
+        </Slider>
+        <Slider name="SternumHeight" invert="false" small="0" big="0">
+            <Data name="3BASternumHeight" target="3BA" local="true">semen 3BA.osd\3BASternumHeight</Data>
+            <Data name="jySternumHeight" target="jy" local="true">semen 3BA.osd\jySternumHeight</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="3BAThighs" target="3BA" local="true">semen 3BA.osd\3BAThighs</Data>
+            <Data name="jyThighs" target="jy" local="true">semen 3BA.osd\jyThighs</Data>
+            <Data name="3BA_VaginaThighs" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaThighs</Data>
+            <Data name="3BA_AnusThighs" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusThighs</Data>
+        </Slider>
+        <Slider name="ThighOutsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighOutsideThicc_v2" target="3BA" local="true">semen 3BA.osd\3BAThighOutsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighInsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighInsideThicc_v2" target="3BA" local="true">semen 3BA.osd\3BAThighInsideThicc_v2</Data>
+            <Data name="jyThighInsideThicc_v2" target="jy" local="true">semen 3BA.osd\jyThighInsideThicc_v2</Data>
+            <Data name="3BA_VaginaThighInsideThicc_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaThighInsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighFBThicc_v2" target="3BA" local="true">semen 3BA.osd\3BAThighFBThicc_v2</Data>
+            <Data name="jyThighFBThicc_v2" target="jy" local="true">semen 3BA.osd\jyThighFBThicc_v2</Data>
+            <Data name="3BA_VaginaThighFBThicc_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaThighFBThicc_v2</Data>
+        </Slider>
+        <Slider name="LegSpread_v2" invert="false" small="0" big="0">
+            <Data name="3BALegSpread_v2" target="3BA" local="true">semen 3BA.osd\3BALegSpread_v2</Data>
+            <Data name="jyLegSpread_v2" target="jy" local="true">semen 3BA.osd\jyLegSpread_v2</Data>
+            <Data name="3BA_VaginaLegSpread_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLegSpread_v2</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="3BATummyTuck" target="3BA" local="true">semen 3BA.osd\3BATummyTuck</Data>
+            <Data name="jyTummyTuck" target="jy" local="true">semen 3BA.osd\jyTummyTuck</Data>
+            <Data name="3BA_VaginaTummyTuck" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaTummyTuck</Data>
+        </Slider>
+        <Slider name="UNPHip_v2" invert="false" small="0" big="0">
+            <Data name="3BAUNPHip_v2" target="3BA" local="true">semen 3BA.osd\3BAUNPHip_v2</Data>
+            <Data name="jyUNPHip_v2" target="jy" local="true">semen 3BA.osd\jyUNPHip_v2</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="3BAWaist" target="3BA" local="true">semen 3BA.osd\3BAWaist</Data>
+            <Data name="jyWaist" target="jy" local="true">semen 3BA.osd\jyWaist</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="3BAWaistHeight" target="3BA" local="true">semen 3BA.osd\3BAWaistHeight</Data>
+            <Data name="jyWaistHeight" target="jy" local="true">semen 3BA.osd\jyWaistHeight</Data>
+            <Data name="3BA_VaginaWaistHeight" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaWaistHeight</Data>
+            <Data name="3BA_AnusWaistHeight" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusWaistHeight</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="3BAWideWaistLine" target="3BA" local="true">semen 3BA.osd\3BAWideWaistLine</Data>
+            <Data name="jyWideWaistLine" target="jy" local="true">semen 3BA.osd\jyWideWaistLine</Data>
+        </Slider>
+        <Slider name="WristSize" invert="false" small="100" big="0">
+            <Data name="3BAWristSize" target="3BA" local="true">semen 3BA.osd\3BAWristSize</Data>
+        </Slider>
+        <Slider name="7BLeg_v2" invert="false" small="0" big="0">
+            <Data name="3BA7BLeg_v2" target="3BA" local="true">semen 3BA.osd\3BA7BLeg_v2</Data>
+            <Data name="jy7BLeg_v2" target="jy" local="true">semen 3BA.osd\jy7BLeg_v2</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="3BA7B Lower" target="3BA" local="true">semen 3BA.osd\3BA7B Lower</Data>
+            <Data name="jy7B Lower" target="jy" local="true">semen 3BA.osd\jy7B Lower</Data>
+            <Data name="3BA_Vagina7B Lower" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_Vagina7B Lower</Data>
+            <Data name="3BA_Anus7B Lower" target="3BA_Anus" local="true">semen 3BA.osd\3BA_Anus7B Lower</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="3BA7B Upper" target="3BA" local="true">semen 3BA.osd\3BA7B Upper</Data>
+            <Data name="jy7B Upper" target="jy" local="true">semen 3BA.osd\jy7B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="3BAVanillaSSEHi" target="3BA" local="true">semen 3BA.osd\3BAVanillaSSEHi</Data>
+            <Data name="jyVanillaSSEHi" target="jy" local="true">semen 3BA.osd\jyVanillaSSEHi</Data>
+            <Data name="3BA_VaginaVanillaSSEHi" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaVanillaSSEHi</Data>
+            <Data name="3BA_AnusVanillaSSEHi" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="3BAVanillaSSELo" target="3BA" local="true">semen 3BA.osd\3BAVanillaSSELo</Data>
+            <Data name="jyVanillaSSELo" target="jy" local="true">semen 3BA.osd\jyVanillaSSELo</Data>
+            <Data name="3BA_VaginaVanillaSSELo" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaVanillaSSELo</Data>
+            <Data name="3BA_AnusVanillaSSELo" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="3BAOldBaseShape" target="3BA" local="true">semen 3BA.osd\3BAOldBaseShape</Data>
+            <Data name="jyOldBaseShape" target="jy" local="true">semen 3BA.osd\jyOldBaseShape</Data>
+            <Data name="3BA_VaginaOldBaseShape" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaOldBaseShape</Data>
+            <Data name="3BA_AnusOldBaseShape" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusOldBaseShape</Data>
+        </Slider>
+        <Slider name="Innieoutie" invert="false" small="0" big="0">
+            <Data name="3BAInnieoutie" target="3BA" local="true">semen 3BA.osd\3BAInnieoutie</Data>
+            <Data name="jyInnieoutie" target="jy" local="true">semen 3BA.osd\jyInnieoutie</Data>
+            <Data name="3BA_VaginaInnieoutie" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaInnieoutie</Data>
+        </Slider>
+        <Slider name="LabiaTightUp" invert="false" small="0" big="0">
+            <Data name="3BALabiaTightUp" target="3BA" local="true">semen 3BA.osd\3BALabiaTightUp</Data>
+            <Data name="jyLabiaTightUp" target="jy" local="true">semen 3BA.osd\jyLabiaTightUp</Data>
+            <Data name="3BA_VaginaLabiaTightUp" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaTightUp</Data>
+        </Slider>
+        <Slider name="Labiapuffyness" invert="false" small="0" big="0">
+            <Data name="3BALabiapuffyness" target="3BA" local="true">semen 3BA.osd\3BALabiapuffyness</Data>
+            <Data name="jyLabiapuffyness" target="jy" local="true">semen 3BA.osd\jyLabiapuffyness</Data>
+            <Data name="3BA_VaginaLabiapuffyness" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiapuffyness</Data>
+        </Slider>
+        <Slider name="LabiaMorePuffyness_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaMorePuffyness_v2" target="3BA" local="true">semen 3BA.osd\3BALabiaMorePuffyness_v2</Data>
+            <Data name="jyLabiaMorePuffyness_v2" target="jy" local="true">semen 3BA.osd\jyLabiaMorePuffyness_v2</Data>
+            <Data name="3BA_VaginaLabiaMorePuffyness_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaMorePuffyness_v2</Data>
+        </Slider>
+        <Slider name="Labiaprotrude" invert="false" small="0" big="0">
+            <Data name="3BALabiaprotrude" target="3BA" local="true">semen 3BA.osd\3BALabiaprotrude</Data>
+            <Data name="3BA_VaginaLabiaprotrude" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaprotrude</Data>
+        </Slider>
+        <Slider name="Labiaprotrude2" invert="false" small="0" big="0">
+            <Data name="3BALabiaprotrude2" target="3BA" local="true">semen 3BA.osd\3BALabiaprotrude2</Data>
+            <Data name="jyLabiaprotrude2" target="jy" local="true">semen 3BA.osd\jyLabiaprotrude2</Data>
+            <Data name="3BA_VaginaLabiaprotrude2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaprotrude2</Data>
+        </Slider>
+        <Slider name="Labiaprotrudeback" invert="false" small="0" big="0">
+            <Data name="3BA_VaginaLabiaprotrudeback" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaprotrudeback</Data>
+        </Slider>
+        <Slider name="Labiaspread" invert="false" small="0" big="0">
+            <Data name="3BALabiaspread" target="3BA" local="true">semen 3BA.osd\3BALabiaspread</Data>
+            <Data name="jyLabiaspread" target="jy" local="true">semen 3BA.osd\jyLabiaspread</Data>
+            <Data name="3BA_VaginaLabiaspread" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaspread</Data>
+        </Slider>
+        <Slider name="LabiaCrumpled_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaCrumpled_v2" target="3BA" local="true">semen 3BA.osd\3BALabiaCrumpled_v2</Data>
+            <Data name="jyLabiaCrumpled_v2" target="jy" local="true">semen 3BA.osd\jyLabiaCrumpled_v2</Data>
+            <Data name="3BA_VaginaLabiaCrumpled_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaCrumpled_v2</Data>
+        </Slider>
+        <Slider name="LabiaNeat_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaNeat_v2" target="3BA" local="true">semen 3BA.osd\3BALabiaNeat_v2</Data>
+            <Data name="3BA_VaginaLabiaNeat_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaNeat_v2</Data>
+        </Slider>
+        <Slider name="LabiaBulgogi_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaBulgogi_v2" target="3BA" local="true">semen 3BA.osd\3BALabiaBulgogi_v2</Data>
+            <Data name="jyLabiaBulgogi_v2" target="jy" local="true">semen 3BA.osd\jyLabiaBulgogi_v2</Data>
+            <Data name="3BA_VaginaLabiaBulgogi_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaLabiaBulgogi_v2</Data>
+        </Slider>
+        <Slider name="Vaginasize" invert="false" small="0" big="0">
+            <Data name="3BA_VaginaVaginasize" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaVaginasize</Data>
+        </Slider>
+        <Slider name="VaginaHole" invert="false" small="0" big="0">
+            <Data name="3BAVaginaHole" target="3BA" local="true">semen 3BA.osd\3BAVaginaHole</Data>
+            <Data name="jyVaginaHole" target="jy" local="true">semen 3BA.osd\jyVaginaHole</Data>
+            <Data name="3BA_VaginaVaginaHole" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaVaginaHole</Data>
+        </Slider>
+        <Slider name="Clit" invert="false" small="0" big="0">
+            <Data name="3BAClit" target="3BA" local="true">semen 3BA.osd\3BAClit</Data>
+            <Data name="3BA_VaginaClit" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaClit</Data>
+        </Slider>
+        <Slider name="ClitSwell_v2" invert="false" small="0" big="0">
+            <Data name="3BAClitSwell_v2" target="3BA" local="true">semen 3BA.osd\3BAClitSwell_v2</Data>
+            <Data name="jyClitSwell_v2" target="jy" local="true">semen 3BA.osd\jyClitSwell_v2</Data>
+            <Data name="3BA_VaginaClitSwell_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaClitSwell_v2</Data>
+        </Slider>
+        <Slider name="Cutepuffyness" invert="false" small="0" big="0">
+            <Data name="3BACutepuffyness" target="3BA" local="true">semen 3BA.osd\3BACutepuffyness</Data>
+            <Data name="jyCutepuffyness" target="jy" local="true">semen 3BA.osd\jyCutepuffyness</Data>
+            <Data name="3BA_VaginaCutepuffyness" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaCutepuffyness</Data>
+        </Slider>
+        <Slider name="CBPC" invert="false" small="0" big="0">
+            <Data name="3BACBPC" target="3BA" local="true">semen 3BA.osd\3BACBPC</Data>
+            <Data name="jyCBPC" target="jy" local="true">semen 3BA.osd\jyCBPC</Data>
+            <Data name="3BA_VaginaCBPC" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaCBPC</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="3BACrotchGap" target="3BA" local="true">semen 3BA.osd\3BACrotchGap</Data>
+            <Data name="jyCrotchGap" target="jy" local="true">semen 3BA.osd\jyCrotchGap</Data>
+            <Data name="3BA_VaginaCrotchGap" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaCrotchGap</Data>
+        </Slider>
+        <Slider name="AnalLoose_v2" invert="false" small="0" big="0">
+            <Data name="3BAAnalLoose_v2" target="3BA" local="true">semen 3BA.osd\3BAAnalLoose_v2</Data>
+            <Data name="jyAnalLoose_v2" target="jy" local="true">semen 3BA.osd\jyAnalLoose_v2</Data>
+            <Data name="3BA_VaginaAnalLoose_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaAnalLoose_v2</Data>
+            <Data name="3BA_AnusAnalLoose_v2" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusAnalLoose_v2</Data>
+        </Slider>
+        <Slider name="AnalPosition_v2" invert="false" small="0" big="0">
+            <Data name="3BAAnalPosition_v2" target="3BA" local="true">semen 3BA.osd\3BAAnalPosition_v2</Data>
+            <Data name="jyAnalPosition_v2" target="jy" local="true">semen 3BA.osd\jyAnalPosition_v2</Data>
+            <Data name="3BA_VaginaAnalPosition_v2" target="3BA_Vagina" local="true">semen 3BA.osd\3BA_VaginaAnalPosition_v2</Data>
+            <Data name="3BA_AnusAnalPosition_v2" target="3BA_Anus" local="true">semen 3BA.osd\3BA_AnusAnalPosition_v2</Data>
+        </Slider>
+        <Slider name="AnalTexPos_v2" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAnalTexPos_v2" target="3BA" local="true">semen 3BA.osd\3BAAnalTexPos_v2</Data>
+        </Slider>
+        <Slider name="AnalTexPosRe_v2" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAnalTexPosRe_v2" target="3BA" local="true">semen 3BA.osd\3BAAnalTexPosRe_v2</Data>
+        </Slider>
+    </SliderSet>
+</SliderSetInfo>
