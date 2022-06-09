@@ -780,7 +780,7 @@ Function EquipCumMesh(actor act, string area, string TexFileName)
 		Equipper(act, OCumSemen_belly02)
 	elseIf (TexFileName == "Vaginal3")
 		Equipper(act, OCumSemen01)
-	Else
+	ElseIf (TexFileName != "VagBlood") ;don't equip on OVirginity request
 		Equipper(act, OCumSemen02)
 	endIf
 EndFunction
