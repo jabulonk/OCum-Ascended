@@ -33,7 +33,7 @@ Activator property CumLauncher auto
 
 armor property UrethraNode auto
 
-sound property cumSound auto 
+sound property cumSound auto
 sound property squirtSound auto
 sound property femaleGasp auto
 
@@ -59,10 +59,10 @@ GlobalVariable property DisableCumDecal auto
 
 Event OnInit()
 	writelog("OnInit")
-	LoadGameEvents = false 
+	LoadGameEvents = false
 	RequiredVersion = 25
 	InstallAddon("OCum")
-	
+
 	CumStoredKey = "CumStoredAmount"
 	LastCumCheckTimeKey = "CumLastCalcTime"
 	MaxCumVolumeKey = "CumMaxAmount"
@@ -98,15 +98,15 @@ Event OstimRedressEnd(string eventName, string strArg, float numArg, Form sender
 	actor sub = ostim.GetSubActor()
 	actor third = ostim.GetThirdActor()
 
-	if dom 
+	if dom
 		dom.RemoveItem(UrethraNode, 99, true)
 		dom.RemoveItem(squirt1, 99, true)
 	endif
-	if sub 
+	if sub
 		sub.RemoveItem(UrethraNode, 99, true)
 		sub.RemoveItem(squirt1, 99, true)
 	endif
-	if third 
+	if third
 		third.RemoveItem(UrethraNode, 99, true)
 		third.RemoveItem(squirt1, 99, true)
 	endif
@@ -124,7 +124,7 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 	actor orgasmer = ostim.GetMostRecentOrgasmedActor()
 	bool male = !ostim.IsFemale(orgasmer)
 
-	if male 
+	if male
 
 		ostim.PlaySound(orgasmer, cumsound)
 		float CumAmount
@@ -132,44 +132,45 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 		float idealMax = (MaxStorage / 2) + (MaxStorage * OSANative.RandomFloat(-0.15, 0.15))
 		float currentCum = GetCumStoredAmount(orgasmer)
 
-		
+
 
 		if idealMax < currentCum
 			cumamount = idealMax
-		else 
-			cumamount = currentCum 
-		endif 
+		else
+			cumamount = currentCum
+		endif
 
 		console("Blowing load size: " + CumAmount + " ML")
 		AdjustStoredCumAmount(orgasmer, 0 - CumAmount)
 
 		if !ostim.IsSoloScene()
 			actor partner = ostim.GetSexPartner(orgasmer)
+			actor secondPartner = ostim.GetThirdActor()
 			bool malePartner = !ostim.IsFemale(partner)
-			ApplyCumAsNecessary(orgasmer, partner, CumAmount)
-			if ostim.IsVaginal() 
+			ApplyCumAsNecessary(orgasmer, partner, CumAmount, secondPartner)
+			if ostim.IsVaginal()
 				if !malePartner ; give it to female
 					AdjustStoredCumAmount(partner, CumAmount)
 				endif
 			ElseIf (cumAmount > 0 && ostim.IsOral())
 				SendModEvent("ocum_cumoral", numArg=cumAmount)
-				
+
 			endif
 		EndIf
 
 		CumShoot(orgasmer, cumamount)
 
 		if ostim.IsPlayerInvolved()
-			ostim.SetOrgasmStall(false) 
+			ostim.SetOrgasmStall(false)
 			TempDisplayBar()
 		endif
 
 
-	else 
+	else
 		if outils.ChanceRoll(50)
 			if !ostim.MuteOSA
 				ostim.PlaySound(orgasmer, femaleGasp)
-			endif 
+			endif
 		endif
 		if outils.ChanceRoll(squirtchance)
 			Squirt(orgasmer)
@@ -179,18 +180,18 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 EndEvent
 
 float function GetMaxCumStoragePossible(actor npc)
-	
+
 	if ostim.IsFemale(npc)
 		float max = GetNPCDataFloat(npc, MaxCumVolumeKey)
 		if (max != -1)
-			return max 
-		else 
+			return max
+		else
 			max = OSANative.RandomFloat(15, 56)
 			console("Uterine volume for " + npc.GetDisplayName() + ":" + max)
 			StoreNPCDataFloat(npc, MaxCumVolumeKey, max)
 			return max
 		EndIf
-	else 
+	else
 			return 2 * ( (npc.GetLevel() * 0.5) + 1)
 	endif
 EndFunction
@@ -202,7 +203,7 @@ function AdjustStoredCumAmount(actor npc, float amount)
 
 	if (current + amount) > max
 		if ostim.IsFemale(npc)
-			set = current + amount 
+			set = current + amount
 			float ratio = set / max
 			ratio -= 1
 			float inflation = ratio * 0.6
@@ -215,14 +216,14 @@ function AdjustStoredCumAmount(actor npc, float amount)
 			if (set > (max * 2.1))
 				set = max * 2.1
 			endif
-		else 
+		else
 			set = max
 		endif
 	elseif (current + amount) < 0
 		set = 0
-	else 
-		set = current + amount 
-	endif 
+	else
+		set = current + amount
+	endif
 
 	StoreNPCDataFloat(npc, CumStoredKey, set)
 endfunction
@@ -235,26 +236,26 @@ float function GetCumStoredAmount(actor npc)
 		if lastCheckTime == -1 ;never calculated
 			StoreNPCDataFloat(npc, CumStoredKey, 0.0)
 			return 0
-		else 
+		else
 			float cum = GetNPCDataFloat(npc, CumStoredKey)
 
 			;intervaginal sperm will disolve at a rate of 1ml/2hrs (.166 days = 4 hours)
 			float currenttime = Utility.GetCurrentGameTime()
 			float timePassed = currenttime - lastCheckTime
 			console(timePassed)
-			float cumToRemove = (timePassed / 0.083) 
+			float cumToRemove = (timePassed / 0.083)
 
 			float max = GetMaxCumStoragePossible(npc)
 
 			if cum > max ; cum overflow drains at double speed and gets special math
 				if (cum - cumToRemove) < max ; removing current cum takes you under the limit
-					float overflow = cum - max 
+					float overflow = cum - max
 
 					cumToRemove += (overflow/2) ;halve the overflow and add it to the amount, so the overflow part of the equation drains at double speed
 				elseif (cum - (cumToRemove * 2)) > max ; there is a lot of overflow and we're still going through it
 					cumToRemove *= 2 ; just make it drain at double speed
 				elseif (cum - (cumToRemove * 2)) < max ;doing normal double-drain math takes you under the limit, need to correct
-					float overflow = cum - max 
+					float overflow = cum - max
 
 					float a = (cumToRemove * 2) - overflow ; how far under the max we would go with normal double-drain math, the "underflow"
 					a = a/2 ;halve the underflow since it drains at half speed compared to overflow
@@ -268,12 +269,12 @@ float function GetCumStoredAmount(actor npc)
 			if cum < 0
 				cum = 0
 			endif
-			
+
 			StoreNPCDataFloat(npc, CumStoredKey, cum)
 
 			return cum
 		endif
-	else 
+	else
 		float cum = GetNPCDataFloat(npc, CumStoredKey)
 		; sperm will regen at a rate of max storage/day
 		float currenttime = Utility.GetCurrentGameTime()
@@ -283,13 +284,13 @@ float function GetCumStoredAmount(actor npc)
 		float cumToAdd = timePassed * max
 
 		cum = cum + (cumToAdd * GetCumRegenRate())
-		if cum > max 
-			cum = max 
-		endif 
+		if cum > max
+			cum = max
+		endif
 
 		StoreNPCDataFloat(npc, CumStoredKey, cum)
 		return cum
-	endif 
+	endif
 
 EndFunction
 
@@ -337,17 +338,17 @@ int function GetLoadSizeFromML(float ml)
 		return 3
 	else
 		return 4
-	endif 
-endfunction 
+	endif
+endfunction
 
 Function Squirt(actor act)
 	console("Squirting")
 	SendModEvent("ocum_squirt")
 
-	int i = 0 
+	int i = 0
 	int max = OSANative.RandomInt(2, 6)
 
-	While i < max 
+	While i < max
 		SquirtShoot(act)
 
 		i += 1
@@ -358,7 +359,7 @@ EndFunction
 function SquirtShoot(actor act)
 	writelog("SquirtShoot")
 	ostim.PlaySound(act, squirtsound)
-	act.EquipItem(squirt1, abPreventRemoval = True, abSilent = True)  ; don't do AddItem first, it will make NPCs redress 
+	act.EquipItem(squirt1, abPreventRemoval = True, abSilent = True)  ; don't do AddItem first, it will make NPCs redress
 	if ostim.IsInFreeCam() && act == playerref
 		act.QueueNiNodeUpdate()
 	endif
@@ -371,7 +372,7 @@ function SquirtShoot(actor act)
 		cam = true
 	endif
 	act.UnequipItem(squirt1, true, true)
-	if cam 
+	if cam
 		ostim.ToggleFreeCam(true)
 	endif
 endfunction
@@ -383,14 +384,14 @@ function CumShoot(actor act, float amountML)
 	if DisableCumshotbool()
 		return
 	endif
-	
+
 	int size = GetLoadSizeFromML(amountml)
 	if size == 0
-		return 
+		return
 	endif
-	
-	int numSpurts 
-	float Frequency 
+
+	int numSpurts
+	float Frequency
 	int doubleFireChance = 15
 	int tripleFireChance = 10
 	int inaccuracy = 60
@@ -426,31 +427,31 @@ function CumShoot(actor act, float amountML)
 	caster.SetPosition(uPos[0], uPos[1], uPos[2])
 	NetImmerse.GetNodeWorldRotationMatrix(act, "Urethra", uRM, False)  ; (uRM[1] uRM[4] uRM[7]) is the direction vector for the spurts to be launched (local y axis of the node)
 	while (i < numSpurts) && ostim.AnimationRunning()
-		
-		;aiming 
+
+		;aiming
 		targetX = uPos[0] + uRM[1] * 200.0 + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
 		targetY = uPos[1] + uRM[4] * 200.0 + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
 		targetZ = uPos[2] + uRM[7] * 200.0 + OSANative.RandomFloat(-10.0, 10.0) - ((i as Float) / (numSpurts as Float) - 0.5) * 180.0  ; later spurts fly lower, and (usually) less distance
-		target.SetPosition(targetX, targetY, targetZ) 
+		target.SetPosition(targetX, targetY, targetZ)
 
 		bool doublefire = outils.ChanceRoll(doubleFireChance)
 		bool tripleFire = false
 		if doublefire
 			tripleFire = outils.ChanceRoll(tripleFireChance)
 		endif
-	
+
 		FireCumBlast(caster, target, OSANative.RandomInt(1, 4), act)
 		if doublefire
 			targetX = targetX + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
 			targetY = targetY + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
-			target.SetPosition(targetX, targetY, targetZ) 
+			target.SetPosition(targetX, targetY, targetZ)
 
 			Utility.Wait(OSANative.RandomFloat(0.025, 0.075))
 			FireCumBlast(caster, target, OSANative.RandomInt(1, 4), act)
 			if tripleFire
 				targetX = targetX + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
 				targetY = targetY + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
-				target.SetPosition(targetX, targetY, targetZ) 
+				target.SetPosition(targetX, targetY, targetZ)
 
 				Utility.Wait(OSANative.RandomFloat(0.025, 0.075))
 				FireCumBlast(caster, target, OSANative.RandomInt(1, 4), act)
@@ -473,7 +474,7 @@ function SetUrethra(actor a)
 ;		ostim.ToggleFreeCam(false)
 ;		cam = true
 ;	endif
-	a.EquipItem(UrethraNode, abPreventRemoval = True, abSilent = True)  ; don't do AddItem first, it will make NPCs redress 
+	a.EquipItem(UrethraNode, abPreventRemoval = True, abSilent = True)  ; don't do AddItem first, it will make NPCs redress
 	if ostim.IsInFreeCam() && a == playerref
 		a.QueueNiNodeUpdate()
 	endif
@@ -545,7 +546,7 @@ Function InitBar(Osexbar Bar)
 	Bar.SetPercent(0.0)
 	Bar.FillDirection = "Left"
 
-	
+
 	Bar.Y = 120.0
 	Bar.SetColors(0xb0b0b0, 0xfff5fd)
 
@@ -563,92 +564,94 @@ Function SetBarVisible(Osexbar Bar, Bool Visible)
 	EndIf
 EndFunction
 
-function ApplyCumAsNecessary(actor male, actor sub, float amountML)
+function ApplyCumAsNecessary(actor male, actor sub, float amountML, actor secondPartner = None)
 	writelog("ApplyCumAsNecessary")
 	int intensity = GetLoadSizeFromML(amountML)
 
 	if intensity == 0
-		return 
-	endif 
+		return
+	endif
 	console("Applying cum")
 
 		int pattern = GetCumPattern()
 
 		if pattern == 3
 			if intensity == 2
-				CumOnto(sub, "Anal1")
+				CumOnto(sub, "Anal1", true, secondPartner)
 			elseif intensity == 3
 				if outils.ChanceRoll(50)
-					CumOnto(sub, "Anal2")
-				else 
-					CumOnto(sub, "Anal1")
-				endif 
+					CumOnto(sub, "Anal2", true, secondPartner)
+				else
+					CumOnto(sub, "Anal1", true, secondPartner)
+				endif
 			elseif intensity == 4
 				CumOnto(sub, "Anal3")
 				if outils.ChanceRoll(75)
-					CumOnto(sub, "Anal1")
-				endif 
+					CumOnto(sub, "Anal1", true, secondPartner)
+				endif
 				if outils.ChanceRoll(75)
-					CumOnto(sub, "Anal2")
-				endif 
+					CumOnto(sub, "Anal2", true, secondPartner)
+				endif
 			endif
 		elseif pattern == 1
 			if intensity == 2
-				CumOnto(sub, "Vaginal1")
+				CumOnto(sub, "Vaginal1", true, secondPartner)
 			elseif intensity == 3
 				if outils.ChanceRoll(50)
 					if outils.ChanceRoll(50)
-						CumOnto(sub, "Vaginal2")
-					else 
-						CumOnto(sub, "Vaginal2Alt")
+						CumOnto(sub, "Vaginal2", true, secondPartner)
+					else
+						CumOnto(sub, "Vaginal2Alt", true, secondPartner)
 					endif
-				else 
-					CumOnto(sub, "Vaginal1")
-				endif 
+				else
+					CumOnto(sub, "Vaginal1", true, secondPartner)
+				endif
 			elseif intensity == 4
-				CumOnto(sub, "Vaginal3")
+				CumOnto(sub, "Vaginal3", true, secondPartner)
 				if outils.ChanceRoll(75)
-					CumOnto(sub, "Vaginal1")
-				endif 
+					CumOnto(sub, "Vaginal1", true, secondPartner)
+				endif
 				if outils.ChanceRoll(75)
 					if outils.ChanceRoll(50)
-						CumOnto(sub, "Vaginal2")
-					else 
-						CumOnto(sub, "Vaginal2Alt")
+						CumOnto(sub, "Vaginal2", true, secondPartner)
+					else
+						CumOnto(sub, "Vaginal2Alt", true, secondPartner)
 					endif
-				endif 
+				endif
 			endif
 		elseif pattern == 2
 
 			string cclass = ostim.GetCurrentAnimationClass()
 			if cclass == "HhBj" || cclass == "BJ"
 				if outils.ChanceRoll(50)
-					return 
+					return
 				endif
-			endif 
+			endif
 
 			Facialize(male, sub, intensity)
+			if secondPartner != none
+				Facialize(male, secondPartner, intensity)
+			endif
 
 			if (intensity == 2) || (intensity == 1)
 				if outils.ChanceRoll(50)
-					CumOnto(sub, "Oral1")
-				else 
-					CumOnto(sub, "Oral1Alt")
+					CumOnto(sub, "Oral1", true, secondPartner)
+				else
+					CumOnto(sub, "Oral1Alt", true, secondPartner)
 				endif
 			elseif intensity == 3
-				CumOnto(sub, "Oral2")
+				CumOnto(sub, "Oral2", true, secondPartner)
 				if outils.ChanceRoll(50)
 					if outils.ChanceRoll(50)
-						CumOnto(sub, "Oral1")
-					else 
-						CumOnto(sub, "Oral1Alt")
+						CumOnto(sub, "Oral1", true, secondPartner)
+					else
+						CumOnto(sub, "Oral1Alt", true, secondPartner)
 					endif
-				endif 
+				endif
 			elseif intensity == 4
-				CumOnto(sub, "Oral2")
-				CumOnto(sub, "Oral1")
-				CumOnto(sub, "Oral1Alt")
-				
+				CumOnto(sub, "Oral2", true, secondPartner)
+				CumOnto(sub, "Oral1", true, secondPartner)
+				CumOnto(sub, "Oral1Alt", true, secondPartner)
 			endif
 		endif
 
@@ -666,8 +669,8 @@ int function GetCumPattern()
 	elseif oclass == "An"
 		return 3
 	elseif (oclass == "ApPJ") || (oclass == "BJ") || (oclass == "ApPJ") || (oclass == "HhPJ") || (oclass == "HhBJ") || (oclass == "VBJ") || (oclass == "HhPo")
-		return 2 
-	elseif (oclass == "BoJ") || (oclass == "Po") || (oclass == "HJ")  || (oclass == "ApHJ") || (oclass == "VHJ") 
+		return 2
+	elseif (oclass == "BoJ") || (oclass == "Po") || (oclass == "HJ")  || (oclass == "ApHJ") || (oclass == "VHJ")
 		return CalculateCumPatternFromSkeleton(ostim.GetDomActor(), ostim.GetSubActor())
 	endif
 
@@ -695,17 +698,17 @@ int Function GetSmallest(float[] values)
 	int i = 0
 	int max = values.Length
 
-	while i < max 
-		if values[i] < smallest 
-			ret = i 
+	while i < max
+		if values[i] < smallest
+			ret = i
 			smallest = values[i]
-		endif 
+		endif
 		i += 1
-	endwhile 
+	endwhile
 
 	return ret
 
-EndFunction 
+EndFunction
 
 ; 1 vaginal
 ; 2 oral
@@ -734,23 +737,38 @@ EndFunction
 ; https://www.loverslab.com/files/file/243-sexlab-sperm-replacer/ - permission from: https://www.loverslab.com/topic/32080-sexlab-sperm-replacer-3dm-forum-version/
 
 
-function CumOnto(actor act, string TexFilename, bool body = true)
+function CumOnto(actor act, string TexFilename, bool body = true, actor thirdActor = none)
 	writelog("CumOnto")
 	console("Applying texture: " + TexFilename)
 	string area
-	if body 
+	if body
 		area = "Body"
-	else 
+	else
 		area = "Face"
 	endif
 
+	string cumTexture = GetCumTexture(TexFilename)
+
 	if !(DisableCumDecal.GetValueInt()) as bool
-		ReadyOverlay(act, ostim.AppearsFemale(act), area, GetCumTexture(TexFilename))
+		ReadyOverlay(act, ostim.AppearsFemale(act), area, cumTexture)
 		cummedOnActs = PapyrusUtil.PushActor(cummedonacts, act)
+
+		if thirdActor != none
+			ReadyOverlay(thirdActor, ostim.AppearsFemale(thirdActor), area, cumTexture)
+			cummedOnActs = PapyrusUtil.PushActor(cummedonacts, thirdActor)
+		endif
 	endif
 
-	if !(DisableCumMesh.GetValueInt()) as bool
+	; do not apply cum mesh if the texture is VagBlood
+	; this is from OVirginity, and when an NPC loses virginity we only want the blood decal to be applied
+	; blood decal is applied on ReadyOverlay() function call above
+	; so we skip EquipCumMesh function here if the texture is VagBlood
+	if !(DisableCumMesh.GetValueInt()) as bool && !(TexFileName == "VagBlood")
 		EquipCumMesh(act, area, TexFileName)
+
+		if thirdActor != none
+			EquipCumMesh(thirdActor, area, TexFileName)
+		endif
 	endif
 
 	RegisterForSingleUpdateGameTime(1.66)
@@ -780,7 +798,7 @@ Function EquipCumMesh(actor act, string area, string TexFileName)
 		Equipper(act, OCumSemen_belly02)
 	elseIf (TexFileName == "Vaginal3")
 		Equipper(act, OCumSemen01)
-	ElseIf (TexFileName != "VagBlood") ;don't equip on OVirginity request
+	Else
 		Equipper(act, OCumSemen02)
 	endIf
 EndFunction
@@ -842,7 +860,7 @@ function RemoveCumTex(actor act)
 	int i = 0
 	int max = NiOverride.GetNumBodyOverlays()
 
-	while i < max 
+	while i < max
 		String Node = "Body" + " [ovl" + i + "]"
 
 		string tex = NiOverride.GetNodeOverrideString(act, Gender, Node, 9, 0)
@@ -859,10 +877,10 @@ function RemoveCumTex(actor act)
 
 		i += 1
 	endwhile
-	
+
 	max = NiOverride.GetNumFaceOverlays()
 	i = 0
-	while i < max 
+	while i < max
 		String Node = "Face" + " [ovl" + i + "]"
 
 		string tex = NiOverride.GetNodeOverrideString(act, Gender, Node, 9, 0)
@@ -888,11 +906,11 @@ EndFunction
 actor[] cummedOnActs
 Event OnUpdateGameTime()
 	writelog("OnUpdateGameTime")
-	int i 
+	int i
 	int max = cummedOnActs.Length
 
-	while i < max 
-		if cummedOnActs[i] != none 
+	while i < max
+		if cummedOnActs[i] != none
 			RemoveFacialCum(cummedOnActs[i])
 			RemoveCumTex(cummedOnActs[i])
 			RemoveBellyScale(cummedOnActs[i])
@@ -938,11 +956,11 @@ Function ApplyOverlay(Actor akTarget, Bool Gender, String Area, String OverlaySl
 	String Node = Area + " [ovl" + OverlaySlot + "]"
 	NiOverride.AddNodeOverrideString(akTarget, Gender, Node, 9, 0, TextureToApply, true)
 	NiOverride.AddNodeOverrideInt(akTarget, Gender, Node, 7, -1, 0, true)
-    NiOverride.AddNodeOverrideInt(akTarget, Gender, Node, 0, -1, 0, true)
-    NiOverride.AddNodeOverrideFloat(akTarget, Gender, Node, 8, -1, Alpha, true)
+	NiOverride.AddNodeOverrideInt(akTarget, Gender, Node, 0, -1, 0, true)
+	NiOverride.AddNodeOverrideFloat(akTarget, Gender, Node, 8, -1, Alpha, true)
 	NiOverride.AddNodeOverrideFloat(akTarget, Gender, Node, 2, -1, 0.0, true)
 	NiOverride.AddNodeOverrideFloat(akTarget, Gender, Node, 3, -1, 0.0, true)
-	
+
 	NiOverride.ApplyNodeOverrides(akTarget)
 EndFunction
 
