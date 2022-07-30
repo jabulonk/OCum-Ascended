@@ -577,45 +577,45 @@ function ApplyCumAsNecessary(actor male, actor sub, float amountML, actor second
 
 		if pattern == 3
 			if intensity == 2
-				CumOnto(sub, "Anal1", true, secondPartner)
+				CumOnto(sub, "Anal1", true)
 			elseif intensity == 3
 				if outils.ChanceRoll(50)
-					CumOnto(sub, "Anal2", true, secondPartner)
+					CumOnto(sub, "Anal2", true)
 				else
-					CumOnto(sub, "Anal1", true, secondPartner)
+					CumOnto(sub, "Anal1", true)
 				endif
 			elseif intensity == 4
 				CumOnto(sub, "Anal3")
 				if outils.ChanceRoll(75)
-					CumOnto(sub, "Anal1", true, secondPartner)
+					CumOnto(sub, "Anal1", true)
 				endif
 				if outils.ChanceRoll(75)
-					CumOnto(sub, "Anal2", true, secondPartner)
+					CumOnto(sub, "Anal2", true)
 				endif
 			endif
 		elseif pattern == 1
 			if intensity == 2
-				CumOnto(sub, "Vaginal1", true, secondPartner)
+				CumOnto(sub, "Vaginal1", true)
 			elseif intensity == 3
 				if outils.ChanceRoll(50)
 					if outils.ChanceRoll(50)
-						CumOnto(sub, "Vaginal2", true, secondPartner)
+						CumOnto(sub, "Vaginal2", true)
 					else
-						CumOnto(sub, "Vaginal2Alt", true, secondPartner)
+						CumOnto(sub, "Vaginal2Alt", true)
 					endif
 				else
-					CumOnto(sub, "Vaginal1", true, secondPartner)
+					CumOnto(sub, "Vaginal1", true)
 				endif
 			elseif intensity == 4
-				CumOnto(sub, "Vaginal3", true, secondPartner)
+				CumOnto(sub, "Vaginal3", true)
 				if outils.ChanceRoll(75)
-					CumOnto(sub, "Vaginal1", true, secondPartner)
+					CumOnto(sub, "Vaginal1", true)
 				endif
 				if outils.ChanceRoll(75)
 					if outils.ChanceRoll(50)
-						CumOnto(sub, "Vaginal2", true, secondPartner)
+						CumOnto(sub, "Vaginal2", true)
 					else
-						CumOnto(sub, "Vaginal2Alt", true, secondPartner)
+						CumOnto(sub, "Vaginal2Alt", true)
 					endif
 				endif
 			endif
@@ -635,23 +635,23 @@ function ApplyCumAsNecessary(actor male, actor sub, float amountML, actor second
 
 			if (intensity == 2) || (intensity == 1)
 				if outils.ChanceRoll(50)
-					CumOnto(sub, "Oral1", true, secondPartner)
+					CumOnto(sub, "Oral1", true)
 				else
-					CumOnto(sub, "Oral1Alt", true, secondPartner)
+					CumOnto(sub, "Oral1Alt", true)
 				endif
 			elseif intensity == 3
-				CumOnto(sub, "Oral2", true, secondPartner)
+				CumOnto(sub, "Oral2", true)
 				if outils.ChanceRoll(50)
 					if outils.ChanceRoll(50)
-						CumOnto(sub, "Oral1", true, secondPartner)
+						CumOnto(sub, "Oral1", true)
 					else
-						CumOnto(sub, "Oral1Alt", true, secondPartner)
+						CumOnto(sub, "Oral1Alt", true)
 					endif
 				endif
 			elseif intensity == 4
-				CumOnto(sub, "Oral2", true, secondPartner)
-				CumOnto(sub, "Oral1", true, secondPartner)
-				CumOnto(sub, "Oral1Alt", true, secondPartner)
+				CumOnto(sub, "Oral2", true)
+				CumOnto(sub, "Oral1", true)
+				CumOnto(sub, "Oral1Alt", true)
 			endif
 		endif
 
@@ -737,7 +737,7 @@ EndFunction
 ; https://www.loverslab.com/files/file/243-sexlab-sperm-replacer/ - permission from: https://www.loverslab.com/topic/32080-sexlab-sperm-replacer-3dm-forum-version/
 
 
-function CumOnto(actor act, string TexFilename, bool body = true, actor thirdActor = none)
+function CumOnto(actor act, string TexFilename, bool body = true)
 	writelog("CumOnto")
 	console("Applying texture: " + TexFilename)
 	string area
@@ -746,6 +746,8 @@ function CumOnto(actor act, string TexFilename, bool body = true, actor thirdAct
 	else
 		area = "Face"
 	endif
+
+	actor thirdActor = ostim.GetThirdActor()
 
 	string cumTexture = GetCumTexture(TexFilename)
 
@@ -763,7 +765,7 @@ function CumOnto(actor act, string TexFilename, bool body = true, actor thirdAct
 	; this is from OVirginity, and when an NPC loses virginity we only want the blood decal to be applied
 	; blood decal is applied on ReadyOverlay() function call above
 	; so we skip EquipCumMesh function here if the texture is VagBlood
-	if !(DisableCumMesh.GetValueInt()) as bool && !(TexFileName == "VagBlood")
+	if !(DisableCumMesh.GetValueInt()) as bool && StringUtil.Find(TexFileName, "VagBlood") == -1
 		EquipCumMesh(act, area, TexFileName)
 
 		if thirdActor != none
