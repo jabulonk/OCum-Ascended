@@ -360,20 +360,20 @@ function SquirtShoot(actor act)
 	writelog("SquirtShoot")
 	ostim.PlaySound(act, squirtsound)
 	act.EquipItem(squirt1, abPreventRemoval = True, abSilent = True)  ; don't do AddItem first, it will make NPCs redress
+
+	bool cam = false
+
 	if ostim.IsInFreeCam() && act == playerref
 		act.QueueNiNodeUpdate()
+		cam = true
 	endif
 
 	Utility.wait(OSANative.RandomFloat(0.7, 1.0))
 
-	bool cam = false
-	if ostim.IsInFreeCam() && (act == playerref)
-		ostim.ToggleFreeCam(false)
-		cam = true
-	endif
 	act.UnequipItem(squirt1, true, true)
+
 	if cam
-		ostim.ToggleFreeCam(true)
+		act.QueueNiNodeUpdate()
 	endif
 endfunction
 
