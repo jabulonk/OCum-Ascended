@@ -204,7 +204,7 @@ endFunction
 
 
 function ResetDefaults()
-	OCum.cleanCumEnterWater = false
+	OCum.cleanCumEnterWater = true
 	SetToggleOptionValue(setCleanCumEnterWater, OCum.cleanCumEnterWater)
 
 	OCum.DisableCumshot = false

@@ -343,28 +343,28 @@ EndFunction
 
 Function ApplyCumVaginal(actor sub, int intensity)
 	if realisticCumMode
-		CumOntoArea(sub, "VaginalLight" + OSANative.RandomInt(1, 6))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 8))
 	elseif intensity < 3
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 5))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 10))
 	elseif intensity == 3
-		CumOntoArea(sub, "Vaginal6")
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(11, 15))
 	elseif intensity == 4
-		CumOntoArea(sub, "Vaginal7")
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(13, 18))
 	endif
 EndFunction
 
 
 Function ApplyCumOral(actor sub, int intensity)
 	if realisticCumMode
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 6), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 8), "Face")
 	elseif intensity == 1
 		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 4), "Face")
 	elseif intensity == 2
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(5, 6), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(5, 7), "Face")
 	elseif intensity == 3
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(7, 9), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(8, 11), "Face")
 	elseif intensity == 4
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(10, 12), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(11, 16), "Face")
 	endif
 EndFunction
 
@@ -379,11 +379,12 @@ Function ApplyCumAnal(actor sub, int intensity)
 			CumOntoArea(sub, "AnalSprinkle2")
 		endif
 	elseif intensity == 2
-		CumOntoArea(sub, "Anal1")
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
 	elseif intensity == 3
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
 		CumOntoArea(sub, "AnalHeavy1")
 	else
-		CumOntoArea(sub, "Anal1")
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
 		if outils.ChanceRoll(50)
 			CumOntoArea(sub, "AnalHeavy2")
 		else
@@ -405,14 +406,13 @@ Function ApplyCumBoob(actor sub, int intensity)
 		endif
 	elseif intensity == 2
 		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 3), "Face")
-		CumOntoArea(sub, "Breast3")
-		CumOntoArea(sub, "Breast4")
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 8))
 	elseif intensity == 3
 		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 5), "Face")
-		CumOntoArea(sub, "Breast" + OSANative.RandomInt(5, 6))
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 9))
 	else
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 5), "Face")
-		CumOntoArea(sub, "Breast" + OSANative.RandomInt(7, 10))
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 7), "Face")
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 11))
 	endif
 EndFunction
 
@@ -441,35 +441,38 @@ Function ApplyCumVaginalPullout(actor sub, int intensity)
 		if outils.ChanceRoll(50)
 			CumOntoArea(sub, "VaginalBoob" + OSANative.RandomInt(1, 2))
 		else
-			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 5))
-			CumOntoArea(sub, "Belly" + OSANative.RandomInt(1, 3))
+			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 18))
+			CumOntoArea(sub, "Belly" + OSANative.RandomInt(1, 4))
 			if outils.ChanceRoll(50)
-				CumOntoArea(sub, "Breast" + OSANative.RandomInt(1, 4))
-			endif
-			if outils.ChanceRoll(50)
-				CumOntoArea(sub, "Legs" + OSANative.RandomInt(1, 3))
+				CumOntoArea(sub, "Breast" + OSANative.RandomInt(1, 8))
 			endif
 		endif
 	elseif intensity == 1
 		CumOntoArea(sub, "Belly" + OSANative.RandomInt(1, 2))
-		CumOntoArea(sub, "Vaginal1")
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 9))
 	elseif intensity == 2
-		CumOntoArea(sub, "Breast1")
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(1, 5))
 		CumOntoArea(sub, "Belly3")
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(2, 5))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(9, 11))
 	elseif intensity == 3
-		CumOntoArea(sub, "Breast5")
-		CumOntoArea(sub, "Belly4")
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(6, 7))
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(5, 7))
+		CumOntoArea(sub, "Belly" + OSANative.RandomInt(3, 5))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(11, 15))
 	else
-		CumOntoArea(sub, "VaginalBoob" + OSANative.RandomInt(1, 5))
+		if outils.ChanceRoll(50)
+			CumOntoArea(sub, "VaginalBoob" + OSANative.RandomInt(1, 2))
+		else
+			CumOntoArea(sub, "Breast" + OSANative.RandomInt(7, 11))
+			CumOntoArea(sub, "Belly" + OSANative.RandomInt(4, 6))
+			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(15, 18))
+		endif
 	endif
 EndFunction
 
 
 Function ApplyCumAnalPullout(actor sub, int intensity)
 	if realisticCumMode
-		CumOntoArea(sub, "AnalHeavy" + OSANative.RandomInt(1, 2))
+		CumOntoArea(sub, "AnalHeavy" + OSANative.RandomInt(1, 3))
 		if outils.ChanceRoll(50)
 			CumOntoArea(sub, "Back" + OSANative.RandomInt(1, 3))
 		endif
@@ -481,7 +484,7 @@ Function ApplyCumAnalPullout(actor sub, int intensity)
 		endif
 		CumOntoArea(sub, "Back1")
 	elseif intensity == 2
-		CumOntoArea(sub, "Anal1")
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
 		CumOntoArea(sub, "Back2")
 	elseif intensity == 3
 		CumOntoArea(sub, "AnalHeavy1")
