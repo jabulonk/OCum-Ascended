@@ -14,6 +14,7 @@ int setCleanCumDecals
 int setSquirtChance
 int setClearInflation
 int setResetDefaults
+int setDisableFacialsForElins
 
 OCumScript property OCum auto
 
@@ -37,6 +38,7 @@ event OnPageReset(string page)
 	setDisableCumShot = AddToggleOption("$ocum_option_disable_cum_shots", OCum.DisableCumshot)
 	setDisableCumDecals = AddToggleOption("$ocum_option_disable_cum_decals", OCum.DisableCumDecal)
 	setDisableInflation = AddToggleOption("$ocum_option_disable_cum_inflation", OCum.DisableInflation)
+	setDisableFacialsForElins = AddToggleOption("$ocum_option_disable_facials_elins", OCum.DisableFacialsForElins)
 	setCleanCumEnterWater = AddToggleOption("$ocum_option_clean_water_enter", OCum.cleanCumEnterWater)
 	setRealisticCumMode = AddToggleOption("$ocum_option_realistic_cum_mode", OCum.realisticCumMode)
 	setCumBarKey = AddKeyMapOption("$ocum_option_cum_bar_key", OCum.checkCumKey)
@@ -71,6 +73,9 @@ event OnOptionSelect(int option)
 	elseif (option == setDisableInflation)
 		OCum.DisableInflation = !OCum.DisableInflation
 		SetToggleOptionValue(setDisableInflation, OCum.DisableInflation)
+	elseif (option == setDisableFacialsForElins)
+		OCum.DisableFacialsForElins = !OCum.DisableFacialsForElins
+		SetToggleOptionValue(setDisableFacialsForElins, OCum.DisableFacialsForElins)
 	elseif (option == setRealisticCumMode)
 		OCum.realisticCumMode = !OCum.realisticCumMode
 		SetToggleOptionValue(setRealisticCumMode, OCum.realisticCumMode)
@@ -164,6 +169,8 @@ event OnOptionHighlight(int option)
 		SetInfoText("$ocum_highlight_disable_cum_decals")
 	elseif (option == setDisableInflation)
 		SetInfoText("$ocum_highlight_disable_cum_inflation")
+	elseif (option == setDisableFacialsForElins)
+		SetInfoText("$ocum_highlight_disable_facials_elins")
 	elseif (option == setCumRegenSpeed)
 		SetInfoText("$ocum_highlight_cum_regen_speed")
 	elseif (option == setSquirtChance)
@@ -215,6 +222,9 @@ function ResetDefaults()
 
 	OCum.DisableInflation = false
 	SetToggleOptionValue(setDisableInflation, OCum.DisableInflation)
+
+	OCum.DisableFacialsForElins = false
+	SetToggleOptionValue(setDisableFacialsForElins, OCum.DisableFacialsForElins)
 
 	OCum.realisticCumMode = false
 	SetToggleOptionValue(setRealisticCumMode, OCum.realisticCumMode)

@@ -29,6 +29,9 @@ actor thirdActor
 
 Osexbar CumBar
 
+race teraElinRace
+race teraElinRaceVampire
+
 actor[] property currentSceneCummedOnActs auto
 actor[] property currentSceneBellyInflationActs auto
 
@@ -64,6 +67,7 @@ float property cumRegenSpeed auto
 bool property disableInflation auto
 bool property disableCumshot auto
 bool property disableCumDecal auto
+bool property disableFacialsForElins auto
 bool property realisticCumMode auto
 bool property cleanCumEnterWater auto
 
@@ -523,6 +527,17 @@ Function ApplyCumAsNecessary(actor cummedAct, float amountML)
 	if pattern == cumPatternVaginal
 		ApplyCumVaginal(cummedAct, intensity)
 	elseif pattern == cumPatternOral
+		if (disableFacialsForElins)
+			Race cummedActRace = cummedAct.GetRace()
+
+			; don't apply facials to Tera Elin race if it is set like that on MCM
+			; Elins use a different face map, so facial textures may look bad on them
+			if (teraElinRace && teraElinRaceVampire && (cummedActRace == teraElinRace || cummedActRace == teraElinRaceVampire))
+				writelog("Cummed actor is an Elin, not applying facial texture")
+				return
+			endif
+		endif
+
 		ApplyCumOral(cummedAct, intensity)
 	elseif pattern == cumPatternBoobOral
 		ApplyCumBoob(cummedAct, intensity)
@@ -574,6 +589,13 @@ EndFunction
 ; Events that add more features to OCum based on OStim scenes stages and player actions
 
 Function OnLoad()
+	; this is needed for those who upgraded from OCum 1.3, don't remove
+	ostim = OUtils.GetOStim()
+	PlayerRef = Game.GetPlayer()
+
+	teraElinRace = Game.GetFormFromFile(0x00001000, "TeraElinRace.esm") As Race
+	teraElinRaceVampire = Game.GetFormFromFile(0x00001001, "TeraElinRace.esm") As Race
+
 	RegisterForModEvent("ostim_orgasm", "OstimOrgasm")
 	RegisterForModEvent("ostim_start", "OstimStart")
 	RegisterForModEvent("ostim_thirdactor_join", "OstimThirdActorJoin")

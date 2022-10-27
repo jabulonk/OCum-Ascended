@@ -8,7 +8,7 @@
     Zip="true">
     <Variables>
         <Variable Name="ModName" Value="OCum Ascended"/>
-        <Variable Name="Version" Value="2.0"/>
+        <Variable Name="Version" Value="2.1"/>
         <Variable Name="MyProject" Value="."/>
         <Variable Name="Dist" Value="..\dist"/>
     </Variables>
@@ -33,7 +33,7 @@
             <Include>Scripts</Include>
             <Include>Textures</Include>
             <Include>Meshes</Include>
-            <Include>Sounds</Include>
+            <Include>Sound</Include>
             <Include>Interface</Include>
         </ZipFile>
     </ZipFiles>
