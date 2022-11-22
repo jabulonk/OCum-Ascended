@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SliderSetInfo version="1">
+    <SliderSet name="semen_breasts02 3BA">
+        <DataFolder>semen_breasts02 3BA</DataFolder>
+        <SourceFile>semen_breasts02 3BA.nif</SourceFile>
+        <OutputPath>Meshes\Kziitd\</OutputPath>
+        <OutputFile GenWeights="true">semen_breasts02</OutputFile>
+        <Shape target="jy_breasts2">jy_breasts2</Shape>
+        <Slider name="AreolaPull_v2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2AreolaPull_v2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2AreolaPull_v2</Data>
+        </Slider>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="jy_breasts2Arms" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2Arms</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BigTorso" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BigTorso</Data>
+        </Slider>
+        <Slider name="BreastCenter" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastCenter" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastCenter</Data>
+        </Slider>
+        <Slider name="BreastCenterBig" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastCenterBig" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastCenterBig</Data>
+        </Slider>
+        <Slider name="BreastCleavage" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastCleavage" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastCleavage</Data>
+        </Slider>
+        <Slider name="BreastsConverage_v2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsConverage_v2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsConverage_v2</Data>
+        </Slider>
+        <Slider name="BreastFlatness2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastFlatness2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastFlatness2</Data>
+        </Slider>
+        <Slider name="BreastFlatness" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastFlatness" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastFlatness</Data>
+        </Slider>
+        <Slider name="BreastGravity2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastGravity2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastGravity2</Data>
+        </Slider>
+        <Slider name="BreastHeight" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastHeight" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastHeight</Data>
+        </Slider>
+        <Slider name="BreastPerkiness" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastPerkiness" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastPerkiness</Data>
+        </Slider>
+        <Slider name="Breasts" invert="false" small="0" big="0">
+            <Data name="jy_breasts2Breasts" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2Breasts</Data>
+        </Slider>
+        <Slider name="BreastsFantasy" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsFantasy" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsFantasy</Data>
+        </Slider>
+        <Slider name="BreastsGone" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsGone" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsGone</Data>
+        </Slider>
+        <Slider name="BreastsNewSH" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsNewSH" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsNewSH</Data>
+        </Slider>
+        <Slider name="BreastsNewSHSymmetry" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsNewSHSymmetry" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsNewSHSymmetry</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsSmall" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsSmall2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsSmall2</Data>
+        </Slider>
+        <Slider name="BreastsTogether" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsTogether" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsTogether</Data>
+        </Slider>
+        <Slider name="BreastTopSlope" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastTopSlope" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastTopSlope</Data>
+        </Slider>
+        <Slider name="BreastWidth" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastWidth" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastWidth</Data>
+        </Slider>
+        <Slider name="BreastsPressed_v2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2BreastsPressed_v2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2BreastsPressed_v2</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="jy_breasts2ChestDepth" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2ChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="jy_breasts2ChestWidth" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2ChestWidth</Data>
+        </Slider>
+        <Slider name="Clavicle_v2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2Clavicle_v2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2Clavicle_v2</Data>
+        </Slider>
+        <Slider name="DoubleMelon" invert="false" small="0" big="0">
+            <Data name="jy_breasts2DoubleMelon" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2DoubleMelon</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="jy_breasts2HipForward" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2HipForward</Data>
+        </Slider>
+        <Slider name="MusclePecs" invert="false" small="0" big="0">
+            <Data name="jy_breasts2MusclePecs" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2MusclePecs</Data>
+        </Slider>
+        <Slider name="NeckSeam" invert="false" small="100" big="0" hidden="true">
+            <Data name="jy_breasts2NeckSeam" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NeckSeam</Data>
+        </Slider>
+        <Slider name="NipBGone" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NipBGone" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NipBGone</Data>
+        </Slider>
+        <Slider name="NippleDistance" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleDistance" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleDistance</Data>
+        </Slider>
+        <Slider name="NippleDown" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleDown" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleDown</Data>
+        </Slider>
+        <Slider name="NippleLength" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleLength" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleLength</Data>
+        </Slider>
+        <Slider name="NippleManga" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleManga" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleManga</Data>
+        </Slider>
+        <Slider name="NipplePerkiness" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NipplePerkiness" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NipplePerkiness</Data>
+        </Slider>
+        <Slider name="NipplePerkManga" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NipplePerkManga" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NipplePerkManga</Data>
+        </Slider>
+        <Slider name="NippleSize" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleSize" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleSize</Data>
+        </Slider>
+        <Slider name="NippleTip" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleTip" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleTip</Data>
+        </Slider>
+        <Slider name="NippleUp" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleUp" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleUp</Data>
+        </Slider>
+        <Slider name="NipplePuffy_v2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NipplePuffy_v2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NipplePuffy_v2</Data>
+        </Slider>
+        <Slider name="NippleInvert_v2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2NippleInvert_v2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2NippleInvert_v2</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="jy_breasts2PregnancyBelly" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2PregnancyBelly</Data>
+        </Slider>
+        <Slider name="PushUp" invert="false" small="0" big="0">
+            <Data name="jy_breasts2PushUp" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2PushUp</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="jy_breasts2ShoulderWidth" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2ShoulderWidth</Data>
+        </Slider>
+        <Slider name="SternumDepth" invert="false" small="0" big="0">
+            <Data name="jy_breasts2SternumDepth" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2SternumDepth</Data>
+        </Slider>
+        <Slider name="SternumHeight" invert="false" small="0" big="0">
+            <Data name="jy_breasts2SternumHeight" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2SternumHeight</Data>
+        </Slider>
+        <Slider name="LegSpread_v2" invert="false" small="0" big="0">
+            <Data name="jy_breasts2LegSpread_v2" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2LegSpread_v2</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="jy_breasts27B Upper" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts27B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="jy_breasts2VanillaSSEHi" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2VanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="jy_breasts2VanillaSSELo" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2VanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="jy_breasts2OldBaseShape" target="jy_breasts2" local="true">semen_breasts02 3BA.osd\jy_breasts2OldBaseShape</Data>
+        </Slider>
+    </SliderSet>
+</SliderSetInfo>

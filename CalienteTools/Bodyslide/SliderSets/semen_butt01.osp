@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SliderSetInfo version="1">
+    <SliderSet name="semen_butt01">
+        <DataFolder>semen_butt01</DataFolder>
+        <SourceFile>semen_butt01.nif</SourceFile>
+        <OutputPath>Meshes\Kziitd\</OutputPath>
+        <OutputFile GenWeights="true">semen_butt01</OutputFile>
+        <Shape target="jy_butt">jy_butt</Shape>
+        <Slider name="Breasts" invert="true" small="100" big="100">
+            <Data name="jy_buttBreasts" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreasts</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="true" small="100" big="100">
+            <Data name="jy_buttBreastsSmall" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSH" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastsSH" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastsSH</Data>
+        </Slider>
+        <Slider name="BreastsSSH" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastsSSH" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastsSSH</Data>
+        </Slider>
+        <Slider name="BreastsFantasy" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastsFantasy" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastsFantasy</Data>
+        </Slider>
+        <Slider name="BreastFlatness" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastFlatness" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastFlatness</Data>
+        </Slider>
+        <Slider name="BreastHeight" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastHeight" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastHeight</Data>
+        </Slider>
+        <Slider name="BreastPerkiness" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastPerkiness" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastPerkiness</Data>
+        </Slider>
+        <Slider name="BreastWidth" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastWidth" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastWidth</Data>
+        </Slider>
+        <Slider name="Arms" invert="true" small="100" big="100">
+            <Data name="jy_buttArms" target="jy_butt" local="true">semen_butt01.osd\jy_buttArms</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="jy_buttChubbyArms" target="jy_butt" local="true">semen_butt01.osd\jy_buttChubbyArms</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="true" small="100" big="100">
+            <Data name="jy_buttShoulderWidth" target="jy_butt" local="true">semen_butt01.osd\jy_buttShoulderWidth</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="jy_buttBigTorso" target="jy_butt" local="true">semen_butt01.osd\jy_buttBigTorso</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="jy_buttWaist" target="jy_butt" local="true">semen_butt01.osd\jy_buttWaist</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="jy_buttWideWaistLine" target="jy_butt" local="true">semen_butt01.osd\jy_buttWideWaistLine</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="jy_buttChubbyWaist" target="jy_butt" local="true">semen_butt01.osd\jy_buttChubbyWaist</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="jy_buttPregnancyBelly" target="jy_butt" local="true">semen_butt01.osd\jy_buttPregnancyBelly</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="jy_buttBack" target="jy_butt" local="true">semen_butt01.osd\jy_buttBack</Data>
+        </Slider>
+        <Slider name="Hipbone" invert="false" small="0" big="0">
+            <Data name="jy_buttHipbone" target="jy_butt" local="true">semen_butt01.osd\jy_buttHipbone</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="jy_buttHips" target="jy_butt" local="true">semen_butt01.osd\jy_buttHips</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="true" small="100" big="100">
+            <Data name="jy_buttButtCrack" target="jy_butt" local="true">semen_butt01.osd\jy_buttButtCrack</Data>
+        </Slider>
+        <Slider name="Butt" invert="true" small="100" big="100">
+            <Data name="jy_buttButt" target="jy_butt" local="true">semen_butt01.osd\jy_buttButt</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="true" small="100" big="100">
+            <Data name="jy_buttButtSmall" target="jy_butt" local="true">semen_butt01.osd\jy_buttButtSmall</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="jy_buttButtShape2" target="jy_butt" local="true">semen_butt01.osd\jy_buttButtShape2</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="jy_buttBigButt" target="jy_butt" local="true">semen_butt01.osd\jy_buttBigButt</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="jy_buttChubbyButt" target="jy_butt" local="true">semen_butt01.osd\jy_buttChubbyButt</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="jy_buttAppleCheeks" target="jy_butt" local="true">semen_butt01.osd\jy_buttAppleCheeks</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="jy_buttRoundAss" target="jy_butt" local="true">semen_butt01.osd\jy_buttRoundAss</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="jy_buttSlimThighs" target="jy_butt" local="true">semen_butt01.osd\jy_buttSlimThighs</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="jy_buttThighs" target="jy_butt" local="true">semen_butt01.osd\jy_buttThighs</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="jy_buttChubbyLegs" target="jy_butt" local="true">semen_butt01.osd\jy_buttChubbyLegs</Data>
+        </Slider>
+        <Slider name="Legs" invert="true" small="100" big="100">
+            <Data name="jy_buttLegs" target="jy_butt" local="true">semen_butt01.osd\jy_buttLegs</Data>
+        </Slider>
+        <Slider name="7B Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Low</Data>
+        </Slider>
+        <Slider name="7B High" invert="false" small="0" big="0">
+            <Data name="jy_butt7B High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B High</Data>
+        </Slider>
+        <Slider name="7B Bombshell Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Bombshell Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Bombshell Low</Data>
+        </Slider>
+        <Slider name="7B Bombshell High" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Bombshell High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Bombshell High</Data>
+        </Slider>
+        <Slider name="7B Natural Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Natural Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Natural Low</Data>
+        </Slider>
+        <Slider name="7B Natural High" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Natural High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Natural High</Data>
+        </Slider>
+        <Slider name="7B Cleavage Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Cleavage Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Cleavage Low</Data>
+        </Slider>
+        <Slider name="7B Cleavage High" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Cleavage High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Cleavage High</Data>
+        </Slider>
+        <Slider name="7B BCup Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7B BCup Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B BCup Low</Data>
+        </Slider>
+        <Slider name="7B BCup High" invert="false" small="0" big="0">
+            <Data name="jy_butt7B BCup High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B BCup High</Data>
+        </Slider>
+        <Slider name="7BUNP Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7BUNP Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7BUNP Low</Data>
+        </Slider>
+        <Slider name="7BUNP High" invert="false" small="0" big="0">
+            <Data name="jy_butt7BUNP High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7BUNP High</Data>
+        </Slider>
+        <Slider name="7B Oppai Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Oppai Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Oppai Low</Data>
+        </Slider>
+        <Slider name="7B Oppai High" invert="false" small="0" big="0">
+            <Data name="jy_butt7B Oppai High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B Oppai High</Data>
+        </Slider>
+        <Slider name="7B CH Low" invert="false" small="0" big="0">
+            <Data name="jy_butt7B CH Low" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B CH Low</Data>
+        </Slider>
+        <Slider name="7B CH High" invert="false" small="0" big="0">
+            <Data name="jy_butt7B CH High" target="jy_butt" local="true">semen_butt01.osd\jy_butt7B CH High</Data>
+        </Slider>
+        <Slider name="UNP Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP Low</Data>
+        </Slider>
+        <Slider name="UNP High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP High</Data>
+        </Slider>
+        <Slider name="UNP Pushup Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP Pushup Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP Pushup Low</Data>
+        </Slider>
+        <Slider name="UNP Pushup High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP Pushup High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP Pushup High</Data>
+        </Slider>
+        <Slider name="UNP Skinny Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP Skinny Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP Skinny Low</Data>
+        </Slider>
+        <Slider name="UNP Skinny High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP Skinny High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP Skinny High</Data>
+        </Slider>
+        <Slider name="UNP Perky Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP Perky Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP Perky Low</Data>
+        </Slider>
+        <Slider name="UNP Perky High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNP Perky High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNP Perky High</Data>
+        </Slider>
+        <Slider name="UNPB Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPB Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPB Low</Data>
+        </Slider>
+        <Slider name="UNPB High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPB High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPB High</Data>
+        </Slider>
+        <Slider name="UNPB Chapi" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPB Chapi" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPB Chapi</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v1" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPB Oppai v1" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPB Oppai v1</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v3.2 Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPB Oppai v3.2 Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPB Oppai v3.2 Low</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v3.2 High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPB Oppai v3.2 High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPB Oppai v3.2 High</Data>
+        </Slider>
+        <Slider name="UNPetite Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPetite Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPetite Low</Data>
+        </Slider>
+        <Slider name="UNPetite High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPetite High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPetite High</Data>
+        </Slider>
+        <Slider name="UNPC Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPC Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPC Low</Data>
+        </Slider>
+        <Slider name="UNPC High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPC High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPC High</Data>
+        </Slider>
+        <Slider name="UNPCM Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPCM Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPCM Low</Data>
+        </Slider>
+        <Slider name="UNPCM High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPCM High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPCM High</Data>
+        </Slider>
+        <Slider name="UNPSH Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPSH Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPSH Low</Data>
+        </Slider>
+        <Slider name="UNPSH High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPSH High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPSH High</Data>
+        </Slider>
+        <Slider name="UNPK Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPK Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPK Low</Data>
+        </Slider>
+        <Slider name="UNPK High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPK High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPK High</Data>
+        </Slider>
+        <Slider name="UNPK Bonus Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPK Bonus Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPK Bonus Low</Data>
+        </Slider>
+        <Slider name="UNPK Bonus High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPK Bonus High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPK Bonus High</Data>
+        </Slider>
+        <Slider name="UN7B Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUN7B Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUN7B Low</Data>
+        </Slider>
+        <Slider name="UN7B High" invert="false" small="0" big="0">
+            <Data name="jy_buttUN7B High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUN7B High</Data>
+        </Slider>
+        <Slider name="UNPBB Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPBB Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPBB Low</Data>
+        </Slider>
+        <Slider name="UNPBB High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPBB High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPBB High</Data>
+        </Slider>
+        <Slider name="Seraphim Low" invert="false" small="0" big="0">
+            <Data name="jy_buttSeraphim Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttSeraphim Low</Data>
+        </Slider>
+        <Slider name="Seraphim High" invert="false" small="0" big="0">
+            <Data name="jy_buttSeraphim High" target="jy_butt" local="true">semen_butt01.osd\jy_buttSeraphim High</Data>
+        </Slider>
+        <Slider name="Demonfet Low" invert="false" small="0" big="0">
+            <Data name="jy_buttDemonfet Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttDemonfet Low</Data>
+        </Slider>
+        <Slider name="Demonfet High" invert="false" small="0" big="0">
+            <Data name="jy_buttDemonfet High" target="jy_butt" local="true">semen_butt01.osd\jy_buttDemonfet High</Data>
+        </Slider>
+        <Slider name="Dream Girl Low" invert="false" small="0" big="0">
+            <Data name="jy_buttDream Girl Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttDream Girl Low</Data>
+        </Slider>
+        <Slider name="Dream Girl High" invert="false" small="0" big="0">
+            <Data name="jy_buttDream Girl High" target="jy_butt" local="true">semen_butt01.osd\jy_buttDream Girl High</Data>
+        </Slider>
+        <Slider name="Top Model Low" invert="false" small="0" big="0">
+            <Data name="jy_buttTop Model Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttTop Model Low</Data>
+        </Slider>
+        <Slider name="Top Model High" invert="false" small="0" big="0">
+            <Data name="jy_buttTop Model High" target="jy_butt" local="true">semen_butt01.osd\jy_buttTop Model High</Data>
+        </Slider>
+        <Slider name="Leito Low" invert="false" small="0" big="0">
+            <Data name="jy_buttLeito Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttLeito Low</Data>
+        </Slider>
+        <Slider name="Leito High" invert="false" small="0" big="0">
+            <Data name="jy_buttLeito High" target="jy_butt" local="true">semen_butt01.osd\jy_buttLeito High</Data>
+        </Slider>
+        <Slider name="UNPF Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPF Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPF Low</Data>
+        </Slider>
+        <Slider name="UNPF High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPF High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPF High</Data>
+        </Slider>
+        <Slider name="UNPFx Low" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPFx Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPFx Low</Data>
+        </Slider>
+        <Slider name="UNPFx High" invert="false" small="0" big="0">
+            <Data name="jy_buttUNPFx High" target="jy_butt" local="true">semen_butt01.osd\jy_buttUNPFx High</Data>
+        </Slider>
+        <Slider name="CNHF Low" invert="false" small="0" big="0">
+            <Data name="jy_buttCNHF Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttCNHF Low</Data>
+        </Slider>
+        <Slider name="CNHF High" invert="false" small="0" big="0">
+            <Data name="jy_buttCNHF High" target="jy_butt" local="true">semen_butt01.osd\jy_buttCNHF High</Data>
+        </Slider>
+        <Slider name="CNHF Bonus Low" invert="false" small="0" big="0">
+            <Data name="jy_buttCNHF Bonus Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttCNHF Bonus Low</Data>
+        </Slider>
+        <Slider name="CNHF Bonus High" invert="false" small="0" big="0">
+            <Data name="jy_buttCNHF Bonus High" target="jy_butt" local="true">semen_butt01.osd\jy_buttCNHF Bonus High</Data>
+        </Slider>
+        <Slider name="MCBM Low" invert="false" small="0" big="0">
+            <Data name="jy_buttMCBM Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttMCBM Low</Data>
+        </Slider>
+        <Slider name="MCBM High" invert="false" small="0" big="0">
+            <Data name="jy_buttMCBM High" target="jy_butt" local="true">semen_butt01.osd\jy_buttMCBM High</Data>
+        </Slider>
+        <Slider name="Venus Low" invert="false" small="0" big="0">
+            <Data name="jy_buttVenus Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttVenus Low</Data>
+        </Slider>
+        <Slider name="Venus High" invert="false" small="0" big="0">
+            <Data name="jy_buttVenus High" target="jy_butt" local="true">semen_butt01.osd\jy_buttVenus High</Data>
+        </Slider>
+        <Slider name="ZGGB-R2 Low" invert="false" small="0" big="0">
+            <Data name="jy_buttZGGB-R2 Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttZGGB-R2 Low</Data>
+        </Slider>
+        <Slider name="ZGGB-R2 High" invert="false" small="0" big="0">
+            <Data name="jy_buttZGGB-R2 High" target="jy_butt" local="true">semen_butt01.osd\jy_buttZGGB-R2 High</Data>
+        </Slider>
+        <Slider name="Manga Low" invert="false" small="0" big="0">
+            <Data name="jy_buttManga Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttManga Low</Data>
+        </Slider>
+        <Slider name="Manga High" invert="false" small="0" big="0">
+            <Data name="jy_buttManga High" target="jy_butt" local="true">semen_butt01.osd\jy_buttManga High</Data>
+        </Slider>
+        <Slider name="CHSBHC Low" invert="false" small="0" big="0">
+            <Data name="jy_buttCHSBHC Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttCHSBHC Low</Data>
+        </Slider>
+        <Slider name="CHSBHC High" invert="false" small="0" big="0">
+            <Data name="jy_buttCHSBHC High" target="jy_butt" local="true">semen_butt01.osd\jy_buttCHSBHC High</Data>
+        </Slider>
+        <Slider name="Aruru6Duck Low" invert="false" small="0" big="0">
+            <Data name="jy_buttAruru6Duck Low" target="jy_butt" local="true">semen_butt01.osd\jy_buttAruru6Duck Low</Data>
+        </Slider>
+        <Slider name="Aruru6Duck High" invert="false" small="0" big="0">
+            <Data name="jy_buttAruru6Duck High" target="jy_butt" local="true">semen_butt01.osd\jy_buttAruru6Duck High</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="jy_buttBackArch" target="jy_butt" local="true">semen_butt01.osd\jy_buttBackArch</Data>
+        </Slider>
+        <Slider name="BellyFatLower" invert="false" small="0" big="0">
+            <Data name="jy_buttBellyFatLower" target="jy_butt" local="true">semen_butt01.osd\jy_buttBellyFatLower</Data>
+        </Slider>
+        <Slider name="BellyObesity" invert="false" small="0" big="0">
+            <Data name="jy_buttBellyObesity" target="jy_butt" local="true">semen_butt01.osd\jy_buttBellyObesity</Data>
+        </Slider>
+        <Slider name="BreastConverge" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastConverge" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastConverge</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="jy_buttChestDepth" target="jy_butt" local="true">semen_butt01.osd\jy_buttChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="jy_buttChestWidth" target="jy_butt" local="true">semen_butt01.osd\jy_buttChestWidth</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="jy_buttCrotchBack" target="jy_butt" local="true">semen_butt01.osd\jy_buttCrotchBack</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="jy_buttHipBone" target="jy_butt" local="true">semen_butt01.osd\jy_buttHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="jy_buttHipForward" target="jy_butt" local="true">semen_butt01.osd\jy_buttHipForward</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="jy_buttHipUpperWidth" target="jy_butt" local="true">semen_butt01.osd\jy_buttHipUpperWidth</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="jy_buttMuscleArms" target="jy_butt" local="true">semen_butt01.osd\jy_buttMuscleArms</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="jy_buttMuscleButt" target="jy_butt" local="true">semen_butt01.osd\jy_buttMuscleButt</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="jy_buttWaistHeight" target="jy_butt" local="true">semen_butt01.osd\jy_buttWaistHeight</Data>
+        </Slider>
+        <Slider name="BackValley" invert="false" small="0" big="0">
+            <Data name="jy_buttBackValley" target="jy_butt" local="true">semen_butt01.osd\jy_buttBackValley</Data>
+        </Slider>
+        <Slider name="BackWing" invert="false" small="0" big="0">
+            <Data name="jy_buttBackWing" target="jy_butt" local="true">semen_butt01.osd\jy_buttBackWing</Data>
+        </Slider>
+        <Slider name="BreastSideShape" invert="false" small="0" big="0">
+            <Data name="jy_buttBreastSideShape" target="jy_butt" local="true">semen_butt01.osd\jy_buttBreastSideShape</Data>
+        </Slider>
+        <Slider name="ButtSaggy" invert="false" small="0" big="0">
+            <Data name="jy_buttButtSaggy" target="jy_butt" local="true">semen_butt01.osd\jy_buttButtSaggy</Data>
+        </Slider>
+        <Slider name="ButtDimples" invert="false" small="0" big="0">
+            <Data name="jy_buttButtDimples" target="jy_butt" local="true">semen_butt01.osd\jy_buttButtDimples</Data>
+        </Slider>
+        <Slider name="ButtConverge" invert="false" small="0" big="0">
+            <Data name="jy_buttButtConverge" target="jy_butt" local="true">semen_butt01.osd\jy_buttButtConverge</Data>
+        </Slider>
+        <Slider name="ThighApart" invert="false" small="0" big="0">
+            <Data name="jy_buttThighApart" target="jy_butt" local="true">semen_butt01.osd\jy_buttThighApart</Data>
+        </Slider>
+        <Slider name="ThighThicker" invert="false" small="0" big="0">
+            <Data name="jy_buttThighThicker" target="jy_butt" local="true">semen_butt01.osd\jy_buttThighThicker</Data>
+        </Slider>
+        <Slider name="LegSpread" invert="false" small="0" big="0">
+            <Data name="jy_buttLegSpread" target="jy_butt" local="true">semen_butt01.osd\jy_buttLegSpread</Data>
+        </Slider>
+    </SliderSet>
+</SliderSetInfo>

@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SliderSetInfo version="1">
+    <SliderSet name="semen_belly01">
+        <DataFolder>semen_belly01</DataFolder>
+        <SourceFile>semen_belly01.nif</SourceFile>
+        <OutputPath>Meshes\Kziitd\</OutputPath>
+        <OutputFile GenWeights="true">semen_belly01</OutputFile>
+        <Shape target="jy_belly">jy_belly</Shape>
+        <Slider name="Breasts" invert="true" small="100" big="100">
+            <Data name="jy_bellyBreasts" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreasts</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="true" small="100" big="100">
+            <Data name="jy_bellyBreastsSmall" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSH" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastsSH" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastsSH</Data>
+        </Slider>
+        <Slider name="BreastsSSH" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastsSSH" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastsSSH</Data>
+        </Slider>
+        <Slider name="BreastsFantasy" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastsFantasy" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastsFantasy</Data>
+        </Slider>
+        <Slider name="DoubleMelon" invert="false" small="0" big="0">
+            <Data name="jy_bellyDoubleMelon" target="jy_belly" local="true">semen_belly01.osd\jy_bellyDoubleMelon</Data>
+        </Slider>
+        <Slider name="BreastCleavage" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastCleavage" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastCleavage</Data>
+        </Slider>
+        <Slider name="BreastFlatness" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastFlatness" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastFlatness</Data>
+        </Slider>
+        <Slider name="BreastGravity" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastGravity" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastGravity</Data>
+        </Slider>
+        <Slider name="PushUp" invert="false" small="0" big="0">
+            <Data name="jy_bellyPushUp" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPushUp</Data>
+        </Slider>
+        <Slider name="BreastHeight" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastHeight" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastHeight</Data>
+        </Slider>
+        <Slider name="BreastPerkiness" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastPerkiness" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastPerkiness</Data>
+        </Slider>
+        <Slider name="BreastWidth" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastWidth" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastWidth</Data>
+        </Slider>
+        <Slider name="NippleAreola" invert="false" small="0" big="0">
+            <Data name="jy_bellyNippleAreola" target="jy_belly" local="true">semen_belly01.osd\jy_bellyNippleAreola</Data>
+        </Slider>
+        <Slider name="NippleUp" invert="false" small="0" big="0">
+            <Data name="jy_bellyNippleUp" target="jy_belly" local="true">semen_belly01.osd\jy_bellyNippleUp</Data>
+        </Slider>
+        <Slider name="NippleDown" invert="false" small="0" big="0">
+            <Data name="jy_bellyNippleDown" target="jy_belly" local="true">semen_belly01.osd\jy_bellyNippleDown</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="jy_bellyBigTorso" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBigTorso</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="jy_bellyWaist" target="jy_belly" local="true">semen_belly01.osd\jy_bellyWaist</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="jy_bellyWideWaistLine" target="jy_belly" local="true">semen_belly01.osd\jy_bellyWideWaistLine</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="jy_bellyChubbyWaist" target="jy_belly" local="true">semen_belly01.osd\jy_bellyChubbyWaist</Data>
+        </Slider>
+        <Slider name="Belly" invert="false" small="0" big="0">
+            <Data name="jy_bellyBelly" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBelly</Data>
+        </Slider>
+        <Slider name="BigBelly" invert="false" small="0" big="0">
+            <Data name="jy_bellyBigBelly" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBigBelly</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="jy_bellyPregnancyBelly" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPregnancyBelly</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="jy_bellyTummyTuck" target="jy_belly" local="true">semen_belly01.osd\jy_bellyTummyTuck</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="jy_bellyBack" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBack</Data>
+        </Slider>
+        <Slider name="Hipbone" invert="false" small="0" big="0">
+            <Data name="jy_bellyHipbone" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHipbone</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="jy_bellyHips" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHips</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="true" small="100" big="100">
+            <Data name="jy_bellyButtCrack" target="jy_belly" local="true">semen_belly01.osd\jy_bellyButtCrack</Data>
+        </Slider>
+        <Slider name="Butt" invert="true" small="100" big="100">
+            <Data name="jy_bellyButt" target="jy_belly" local="true">semen_belly01.osd\jy_bellyButt</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="true" small="100" big="100">
+            <Data name="jy_bellyButtSmall" target="jy_belly" local="true">semen_belly01.osd\jy_bellyButtSmall</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="jy_bellyButtShape2" target="jy_belly" local="true">semen_belly01.osd\jy_bellyButtShape2</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="jy_bellyBigButt" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBigButt</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="jy_bellyChubbyButt" target="jy_belly" local="true">semen_belly01.osd\jy_bellyChubbyButt</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="jy_bellyAppleCheeks" target="jy_belly" local="true">semen_belly01.osd\jy_bellyAppleCheeks</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="jy_bellySlimThighs" target="jy_belly" local="true">semen_belly01.osd\jy_bellySlimThighs</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="jy_bellyThighs" target="jy_belly" local="true">semen_belly01.osd\jy_bellyThighs</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="jy_bellyChubbyLegs" target="jy_belly" local="true">semen_belly01.osd\jy_bellyChubbyLegs</Data>
+        </Slider>
+        <Slider name="Legs" invert="true" small="100" big="100">
+            <Data name="jy_bellyLegs" target="jy_belly" local="true">semen_belly01.osd\jy_bellyLegs</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="jy_bellyKneeHeight" target="jy_belly" local="true">semen_belly01.osd\jy_bellyKneeHeight</Data>
+        </Slider>
+        <Slider name="7B Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Low</Data>
+        </Slider>
+        <Slider name="7B High" invert="false" small="0" big="0">
+            <Data name="jy_belly7B High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B High</Data>
+        </Slider>
+        <Slider name="7B Bombshell Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Bombshell Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Bombshell Low</Data>
+        </Slider>
+        <Slider name="7B Bombshell High" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Bombshell High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Bombshell High</Data>
+        </Slider>
+        <Slider name="7B Natural Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Natural Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Natural Low</Data>
+        </Slider>
+        <Slider name="7B Natural High" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Natural High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Natural High</Data>
+        </Slider>
+        <Slider name="7B Cleavage Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Cleavage Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Cleavage Low</Data>
+        </Slider>
+        <Slider name="7B Cleavage High" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Cleavage High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Cleavage High</Data>
+        </Slider>
+        <Slider name="7B BCup Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7B BCup Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B BCup Low</Data>
+        </Slider>
+        <Slider name="7B BCup High" invert="false" small="0" big="0">
+            <Data name="jy_belly7B BCup High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B BCup High</Data>
+        </Slider>
+        <Slider name="7BUNP Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7BUNP Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7BUNP Low</Data>
+        </Slider>
+        <Slider name="7BUNP High" invert="false" small="0" big="0">
+            <Data name="jy_belly7BUNP High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7BUNP High</Data>
+        </Slider>
+        <Slider name="7B Oppai Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Oppai Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Oppai Low</Data>
+        </Slider>
+        <Slider name="7B Oppai High" invert="false" small="0" big="0">
+            <Data name="jy_belly7B Oppai High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B Oppai High</Data>
+        </Slider>
+        <Slider name="7B CH Low" invert="false" small="0" big="0">
+            <Data name="jy_belly7B CH Low" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B CH Low</Data>
+        </Slider>
+        <Slider name="7B CH High" invert="false" small="0" big="0">
+            <Data name="jy_belly7B CH High" target="jy_belly" local="true">semen_belly01.osd\jy_belly7B CH High</Data>
+        </Slider>
+        <Slider name="UNP Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP Low</Data>
+        </Slider>
+        <Slider name="UNP High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP High</Data>
+        </Slider>
+        <Slider name="UNP Pushup Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP Pushup Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP Pushup Low</Data>
+        </Slider>
+        <Slider name="UNP Pushup High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP Pushup High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP Pushup High</Data>
+        </Slider>
+        <Slider name="UNP Skinny Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP Skinny Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP Skinny Low</Data>
+        </Slider>
+        <Slider name="UNP Skinny High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP Skinny High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP Skinny High</Data>
+        </Slider>
+        <Slider name="UNP Perky Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP Perky Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP Perky Low</Data>
+        </Slider>
+        <Slider name="UNP Perky High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNP Perky High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNP Perky High</Data>
+        </Slider>
+        <Slider name="UNPB Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPB Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPB Low</Data>
+        </Slider>
+        <Slider name="UNPB High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPB High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPB High</Data>
+        </Slider>
+        <Slider name="UNPB Chapi" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPB Chapi" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPB Chapi</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v1" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPB Oppai v1" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPB Oppai v1</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v3.2 Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPB Oppai v3.2 Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPB Oppai v3.2 Low</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v3.2 High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPB Oppai v3.2 High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPB Oppai v3.2 High</Data>
+        </Slider>
+        <Slider name="UNPetite Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPetite Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPetite Low</Data>
+        </Slider>
+        <Slider name="UNPetite High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPetite High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPetite High</Data>
+        </Slider>
+        <Slider name="UNPC Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPC Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPC Low</Data>
+        </Slider>
+        <Slider name="UNPC High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPC High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPC High</Data>
+        </Slider>
+        <Slider name="UNPCM Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPCM Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPCM Low</Data>
+        </Slider>
+        <Slider name="UNPCM High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPCM High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPCM High</Data>
+        </Slider>
+        <Slider name="UNPSH Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPSH Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPSH Low</Data>
+        </Slider>
+        <Slider name="UNPSH High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPSH High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPSH High</Data>
+        </Slider>
+        <Slider name="UNPK Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPK Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPK Low</Data>
+        </Slider>
+        <Slider name="UNPK High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPK High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPK High</Data>
+        </Slider>
+        <Slider name="UNPK Bonus Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPK Bonus Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPK Bonus Low</Data>
+        </Slider>
+        <Slider name="UNPK Bonus High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPK Bonus High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPK Bonus High</Data>
+        </Slider>
+        <Slider name="UN7B Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUN7B Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUN7B Low</Data>
+        </Slider>
+        <Slider name="UN7B High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUN7B High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUN7B High</Data>
+        </Slider>
+        <Slider name="UNPBB Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPBB Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPBB Low</Data>
+        </Slider>
+        <Slider name="UNPBB High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPBB High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPBB High</Data>
+        </Slider>
+        <Slider name="Seraphim Low" invert="false" small="0" big="0">
+            <Data name="jy_bellySeraphim Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellySeraphim Low</Data>
+        </Slider>
+        <Slider name="Seraphim High" invert="false" small="0" big="0">
+            <Data name="jy_bellySeraphim High" target="jy_belly" local="true">semen_belly01.osd\jy_bellySeraphim High</Data>
+        </Slider>
+        <Slider name="Demonfet Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyDemonfet Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyDemonfet Low</Data>
+        </Slider>
+        <Slider name="Demonfet High" invert="false" small="0" big="0">
+            <Data name="jy_bellyDemonfet High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyDemonfet High</Data>
+        </Slider>
+        <Slider name="Dream Girl Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyDream Girl Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyDream Girl Low</Data>
+        </Slider>
+        <Slider name="Dream Girl High" invert="false" small="0" big="0">
+            <Data name="jy_bellyDream Girl High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyDream Girl High</Data>
+        </Slider>
+        <Slider name="Top Model Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyTop Model Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyTop Model Low</Data>
+        </Slider>
+        <Slider name="Top Model High" invert="false" small="0" big="0">
+            <Data name="jy_bellyTop Model High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyTop Model High</Data>
+        </Slider>
+        <Slider name="Leito Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyLeito Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyLeito Low</Data>
+        </Slider>
+        <Slider name="Leito High" invert="false" small="0" big="0">
+            <Data name="jy_bellyLeito High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyLeito High</Data>
+        </Slider>
+        <Slider name="UNPF Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPF Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPF Low</Data>
+        </Slider>
+        <Slider name="UNPF High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPF High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPF High</Data>
+        </Slider>
+        <Slider name="UNPFx Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPFx Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPFx Low</Data>
+        </Slider>
+        <Slider name="UNPFx High" invert="false" small="0" big="0">
+            <Data name="jy_bellyUNPFx High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyUNPFx High</Data>
+        </Slider>
+        <Slider name="CNHF Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyCNHF Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCNHF Low</Data>
+        </Slider>
+        <Slider name="CNHF High" invert="false" small="0" big="0">
+            <Data name="jy_bellyCNHF High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCNHF High</Data>
+        </Slider>
+        <Slider name="CNHF Bonus Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyCNHF Bonus Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCNHF Bonus Low</Data>
+        </Slider>
+        <Slider name="CNHF Bonus High" invert="false" small="0" big="0">
+            <Data name="jy_bellyCNHF Bonus High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCNHF Bonus High</Data>
+        </Slider>
+        <Slider name="MCBM Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyMCBM Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyMCBM Low</Data>
+        </Slider>
+        <Slider name="MCBM High" invert="false" small="0" big="0">
+            <Data name="jy_bellyMCBM High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyMCBM High</Data>
+        </Slider>
+        <Slider name="Venus Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyVenus Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyVenus Low</Data>
+        </Slider>
+        <Slider name="Venus High" invert="false" small="0" big="0">
+            <Data name="jy_bellyVenus High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyVenus High</Data>
+        </Slider>
+        <Slider name="ZGGB-R2 Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyZGGB-R2 Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyZGGB-R2 Low</Data>
+        </Slider>
+        <Slider name="ZGGB-R2 High" invert="false" small="0" big="0">
+            <Data name="jy_bellyZGGB-R2 High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyZGGB-R2 High</Data>
+        </Slider>
+        <Slider name="Manga Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyManga Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyManga Low</Data>
+        </Slider>
+        <Slider name="Manga High" invert="false" small="0" big="0">
+            <Data name="jy_bellyManga High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyManga High</Data>
+        </Slider>
+        <Slider name="CHSBHC Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyCHSBHC Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCHSBHC Low</Data>
+        </Slider>
+        <Slider name="CHSBHC High" invert="false" small="0" big="0">
+            <Data name="jy_bellyCHSBHC High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCHSBHC High</Data>
+        </Slider>
+        <Slider name="Aruru6Duck Low" invert="false" small="0" big="0">
+            <Data name="jy_bellyAruru6Duck Low" target="jy_belly" local="true">semen_belly01.osd\jy_bellyAruru6Duck Low</Data>
+        </Slider>
+        <Slider name="Aruru6Duck High" invert="false" small="0" big="0">
+            <Data name="jy_bellyAruru6Duck High" target="jy_belly" local="true">semen_belly01.osd\jy_bellyAruru6Duck High</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="jy_bellyBackArch" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBackArch</Data>
+        </Slider>
+        <Slider name="BellyBalls" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyBalls" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyBalls</Data>
+        </Slider>
+        <Slider name="BellyCenterProtrude" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyCenterProtrude" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyCenterProtrude</Data>
+        </Slider>
+        <Slider name="BellyCenterUpperProtrude" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyCenterUpperProtrude" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyCenterUpperProtrude</Data>
+        </Slider>
+        <Slider name="BellyFatLower" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyFatLower" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyFatLower</Data>
+        </Slider>
+        <Slider name="BellyFatUpper" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyFatUpper" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyFatUpper</Data>
+        </Slider>
+        <Slider name="BellyPressed" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyPressed" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyPressed</Data>
+        </Slider>
+        <Slider name="BellyLowerSwell1" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyLowerSwell1" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyLowerSwell1</Data>
+        </Slider>
+        <Slider name="BellyLowerSwell2" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyLowerSwell2" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyLowerSwell2</Data>
+        </Slider>
+        <Slider name="BellyLowerSwell3" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyLowerSwell3" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyLowerSwell3</Data>
+        </Slider>
+        <Slider name="BellyObesity" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyObesity" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyObesity</Data>
+        </Slider>
+        <Slider name="BreastCenter" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastCenter" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastCenter</Data>
+        </Slider>
+        <Slider name="BreastsGone" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastsGone" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastsGone</Data>
+        </Slider>
+        <Slider name="BreastsPressed" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastsPressed" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastsPressed</Data>
+        </Slider>
+        <Slider name="BreastConverge" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastConverge" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastConverge</Data>
+        </Slider>
+        <Slider name="BotePregnancy" invert="false" small="0" big="0">
+            <Data name="jy_bellyBotePregnancy" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBotePregnancy</Data>
+        </Slider>
+        <Slider name="ClitorisErection" invert="false" small="0" big="0">
+            <Data name="jy_bellyClitorisErection" target="jy_belly" local="true">semen_belly01.osd\jy_bellyClitorisErection</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="jy_bellyChestDepth" target="jy_belly" local="true">semen_belly01.osd\jy_bellyChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="jy_bellyChestWidth" target="jy_belly" local="true">semen_belly01.osd\jy_bellyChestWidth</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="jy_bellyCrotchBack" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCrotchBack</Data>
+        </Slider>
+        <Slider name="ClitSpread" invert="false" small="0" big="0">
+            <Data name="jy_bellyClitSpread" target="jy_belly" local="true">semen_belly01.osd\jy_bellyClitSpread</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="jy_bellyGroin" target="jy_belly" local="true">semen_belly01.osd\jy_bellyGroin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="jy_bellyHipBone" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="jy_bellyHipForward" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHipForward</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="jy_bellyHipUpperWidth" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHipUpperWidth</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="jy_bellyMuscleLegs" target="jy_belly" local="true">semen_belly01.osd\jy_bellyMuscleLegs</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="jy_bellyMuscleAbs" target="jy_belly" local="true">semen_belly01.osd\jy_bellyMuscleAbs</Data>
+        </Slider>
+        <Slider name="PussyClipFix" invert="false" small="0" big="0">
+            <Data name="jy_bellyPussyClipFix" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPussyClipFix</Data>
+        </Slider>
+        <Slider name="PussyMajora" invert="false" small="0" big="0">
+            <Data name="jy_bellyPussyMajora" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPussyMajora</Data>
+        </Slider>
+        <Slider name="PussyMinora" invert="false" small="0" big="0">
+            <Data name="jy_bellyPussyMinora" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPussyMinora</Data>
+        </Slider>
+        <Slider name="PussyMajoraBig" invert="false" small="0" big="0">
+            <Data name="jy_bellyPussyMajoraBig" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPussyMajoraBig</Data>
+        </Slider>
+        <Slider name="PussyHilly" invert="false" small="0" big="0">
+            <Data name="jy_bellyPussyHilly" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPussyHilly</Data>
+        </Slider>
+        <Slider name="PussyOpen" invert="false" small="0" big="0">
+            <Data name="jy_bellyPussyOpen" target="jy_belly" local="true">semen_belly01.osd\jy_bellyPussyOpen</Data>
+        </Slider>
+        <Slider name="RibsProminance" invert="false" small="0" big="0">
+            <Data name="jy_bellyRibsProminance" target="jy_belly" local="true">semen_belly01.osd\jy_bellyRibsProminance</Data>
+        </Slider>
+        <Slider name="SternumDepth" invert="false" small="0" big="0">
+            <Data name="jy_bellySternumDepth" target="jy_belly" local="true">semen_belly01.osd\jy_bellySternumDepth</Data>
+        </Slider>
+        <Slider name="SternumHeight" invert="false" small="0" big="0">
+            <Data name="jy_bellySternumHeight" target="jy_belly" local="true">semen_belly01.osd\jy_bellySternumHeight</Data>
+        </Slider>
+        <Slider name="Top Slope" invert="false" small="0" big="0">
+            <Data name="jy_bellyTop Slope" target="jy_belly" local="true">semen_belly01.osd\jy_bellyTop Slope</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="jy_bellyWaistHeight" target="jy_belly" local="true">semen_belly01.osd\jy_bellyWaistHeight</Data>
+        </Slider>
+        <Slider name="ArmpitShape" invert="false" small="0" big="0">
+            <Data name="jy_bellyArmpitShape" target="jy_belly" local="true">semen_belly01.osd\jy_bellyArmpitShape</Data>
+        </Slider>
+        <Slider name="BellyDefine" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyDefine" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyDefine</Data>
+        </Slider>
+        <Slider name="RectusOuterDetail" invert="false" small="0" big="0">
+            <Data name="jy_bellyRectusOuterDetail" target="jy_belly" local="true">semen_belly01.osd\jy_bellyRectusOuterDetail</Data>
+        </Slider>
+        <Slider name="RectusAbdominis" invert="false" small="0" big="0">
+            <Data name="jy_bellyRectusAbdominis" target="jy_belly" local="true">semen_belly01.osd\jy_bellyRectusAbdominis</Data>
+        </Slider>
+        <Slider name="BellyUnder" invert="false" small="0" big="0">
+            <Data name="jy_bellyBellyUnder" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBellyUnder</Data>
+        </Slider>
+        <Slider name="NavelEven" invert="false" small="0" big="0">
+            <Data name="jy_bellyNavelEven" target="jy_belly" local="true">semen_belly01.osd\jy_bellyNavelEven</Data>
+        </Slider>
+        <Slider name="RibsMore" invert="false" small="0" big="0">
+            <Data name="jy_bellyRibsMore" target="jy_belly" local="true">semen_belly01.osd\jy_bellyRibsMore</Data>
+        </Slider>
+        <Slider name="BreastUnderDepth" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastUnderDepth" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastUnderDepth</Data>
+        </Slider>
+        <Slider name="BreastSaggy" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastSaggy" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastSaggy</Data>
+        </Slider>
+        <Slider name="BreastsSpread" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastsSpread" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastsSpread</Data>
+        </Slider>
+        <Slider name="BreastDiameter" invert="false" small="0" big="0">
+            <Data name="jy_bellyBreastDiameter" target="jy_belly" local="true">semen_belly01.osd\jy_bellyBreastDiameter</Data>
+        </Slider>
+        <Slider name="ButtSaggy" invert="false" small="0" big="0">
+            <Data name="jy_bellyButtSaggy" target="jy_belly" local="true">semen_belly01.osd\jy_bellyButtSaggy</Data>
+        </Slider>
+        <Slider name="ButtUnderFold" invert="false" small="0" big="0">
+            <Data name="jy_bellyButtUnderFold" target="jy_belly" local="true">semen_belly01.osd\jy_bellyButtUnderFold</Data>
+        </Slider>
+        <Slider name="ButtConverge" invert="false" small="0" big="0">
+            <Data name="jy_bellyButtConverge" target="jy_belly" local="true">semen_belly01.osd\jy_bellyButtConverge</Data>
+        </Slider>
+        <Slider name="HipCarved" invert="false" small="0" big="0">
+            <Data name="jy_bellyHipCarved" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHipCarved</Data>
+        </Slider>
+        <Slider name="HipNarrow" invert="false" small="0" big="0">
+            <Data name="jy_bellyHipNarrow" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHipNarrow</Data>
+        </Slider>
+        <Slider name="ThighApart" invert="false" small="0" big="0">
+            <Data name="jy_bellyThighApart" target="jy_belly" local="true">semen_belly01.osd\jy_bellyThighApart</Data>
+        </Slider>
+        <Slider name="ThighOuter" invert="false" small="0" big="0">
+            <Data name="jy_bellyThighOuter" target="jy_belly" local="true">semen_belly01.osd\jy_bellyThighOuter</Data>
+        </Slider>
+        <Slider name="ThighThicker" invert="false" small="0" big="0">
+            <Data name="jy_bellyThighThicker" target="jy_belly" local="true">semen_belly01.osd\jy_bellyThighThicker</Data>
+        </Slider>
+        <Slider name="Sartorius" invert="false" small="0" big="0">
+            <Data name="jy_bellySartorius" target="jy_belly" local="true">semen_belly01.osd\jy_bellySartorius</Data>
+        </Slider>
+        <Slider name="Hamstrings" invert="false" small="0" big="0">
+            <Data name="jy_bellyHamstrings" target="jy_belly" local="true">semen_belly01.osd\jy_bellyHamstrings</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="jy_bellyCrotchGap" target="jy_belly" local="true">semen_belly01.osd\jy_bellyCrotchGap</Data>
+        </Slider>
+        <Slider name="ThighFBThicker" invert="false" small="0" big="0">
+            <Data name="jy_bellyThighFBThicker" target="jy_belly" local="true">semen_belly01.osd\jy_bellyThighFBThicker</Data>
+        </Slider>
+        <Slider name="LegSpread" invert="false" small="0" big="0">
+            <Data name="jy_bellyLegSpread" target="jy_belly" local="true">semen_belly01.osd\jy_bellyLegSpread</Data>
+        </Slider>
+        <Slider name="AnusSize" invert="false" small="0" big="0">
+            <Data name="jy_bellyAnusSize" target="jy_belly" local="true">semen_belly01.osd\jy_bellyAnusSize</Data>
+        </Slider>
+        <Slider name="AnalPositionlow" invert="false" small="0" big="0">
+            <Data name="jy_bellyAnalPositionlow" target="jy_belly" local="true">semen_belly01.osd\jy_bellyAnalPositionlow</Data>
+        </Slider>
+        <Slider name="ClitorisPrepuce" invert="false" small="0" big="0">
+            <Data name="jy_bellyClitorisPrepuce" target="jy_belly" local="true">semen_belly01.osd\jy_bellyClitorisPrepuce</Data>
+        </Slider>
+        <Slider name="LabiaStretch" invert="false" small="0" big="0">
+            <Data name="jy_bellyLabiaStretch" target="jy_belly" local="true">semen_belly01.osd\jy_bellyLabiaStretch</Data>
+        </Slider>
+    </SliderSet>
+</SliderSetInfo>
