@@ -8,7 +8,7 @@
     Zip="true">
     <Variables>
         <Variable Name="ModName" Value="OCum Ascended"/>
-        <Variable Name="Version" Value="2.1"/>
+        <Variable Name="Version" Value="2.2"/>
         <Variable Name="MyProject" Value="."/>
         <Variable Name="Dist" Value="..\dist"/>
     </Variables>
@@ -35,6 +35,7 @@
             <Include>Meshes</Include>
             <Include>Sound</Include>
             <Include>Interface</Include>
+            <Include>CalienteTools</Include>
         </ZipFile>
     </ZipFiles>
 </PapyrusProject>
