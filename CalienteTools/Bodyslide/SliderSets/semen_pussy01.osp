@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SliderSetInfo version="1">
+    <SliderSet name="semen_pussy01">
+        <DataFolder>semen_pussy01</DataFolder>
+        <SourceFile>semen_pussy01.nif</SourceFile>
+        <OutputPath>Meshes\Kziitd\</OutputPath>
+        <OutputFile GenWeights="true">semen_pussy01</OutputFile>
+        <Shape target="jy_pussyb">jy_pussyb</Shape>
+        <Shape target="jy_pussyb2">jy_pussyb2</Shape>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="jy_pussyb2ChubbyWaist" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ChubbyWaist</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="jy_pussybPregnancyBelly" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybPregnancyBelly</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="jy_pussybTummyTuck" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybTummyTuck</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="jy_pussyb2Back" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Back</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="jy_pussybHips" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybHips</Data>
+            <Data name="jy_pussyb2Hips" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Hips</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="true" small="100" big="100">
+            <Data name="jy_pussybButtCrack" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybButtCrack</Data>
+            <Data name="jy_pussyb2ButtCrack" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ButtCrack</Data>
+        </Slider>
+        <Slider name="Butt" invert="true" small="100" big="100">
+            <Data name="jy_pussybButt" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybButt</Data>
+            <Data name="jy_pussyb2Butt" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Butt</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="true" small="100" big="100">
+            <Data name="jy_pussybButtSmall" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybButtSmall</Data>
+            <Data name="jy_pussyb2ButtSmall" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ButtSmall</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="jy_pussybButtShape2" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybButtShape2</Data>
+            <Data name="jy_pussyb2ButtShape2" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ButtShape2</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="jy_pussybBigButt" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybBigButt</Data>
+            <Data name="jy_pussyb2BigButt" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2BigButt</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="jy_pussybChubbyButt" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybChubbyButt</Data>
+            <Data name="jy_pussyb2ChubbyButt" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ChubbyButt</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="jy_pussybAppleCheeks" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybAppleCheeks</Data>
+            <Data name="jy_pussyb2AppleCheeks" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2AppleCheeks</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="jy_pussybRoundAss" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybRoundAss</Data>
+            <Data name="jy_pussyb2RoundAss" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2RoundAss</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="jy_pussybSlimThighs" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybSlimThighs</Data>
+            <Data name="jy_pussyb2SlimThighs" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2SlimThighs</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="jy_pussybThighs" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybThighs</Data>
+            <Data name="jy_pussyb2Thighs" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Thighs</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="jy_pussybChubbyLegs" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybChubbyLegs</Data>
+            <Data name="jy_pussyb2ChubbyLegs" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ChubbyLegs</Data>
+        </Slider>
+        <Slider name="Legs" invert="true" small="100" big="100">
+            <Data name="jy_pussybLegs" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybLegs</Data>
+            <Data name="jy_pussyb2Legs" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Legs</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="jy_pussybKneeHeight" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybKneeHeight</Data>
+        </Slider>
+        <Slider name="7B Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Low</Data>
+            <Data name="jy_pussyb27B Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Low</Data>
+        </Slider>
+        <Slider name="7B High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B High</Data>
+            <Data name="jy_pussyb27B High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B High</Data>
+        </Slider>
+        <Slider name="7B Bombshell Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Bombshell Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Bombshell Low</Data>
+            <Data name="jy_pussyb27B Bombshell Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Bombshell Low</Data>
+        </Slider>
+        <Slider name="7B Bombshell High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Bombshell High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Bombshell High</Data>
+            <Data name="jy_pussyb27B Bombshell High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Bombshell High</Data>
+        </Slider>
+        <Slider name="7B Natural Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Natural Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Natural Low</Data>
+            <Data name="jy_pussyb27B Natural Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Natural Low</Data>
+        </Slider>
+        <Slider name="7B Natural High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Natural High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Natural High</Data>
+            <Data name="jy_pussyb27B Natural High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Natural High</Data>
+        </Slider>
+        <Slider name="7B Cleavage Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Cleavage Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Cleavage Low</Data>
+            <Data name="jy_pussyb27B Cleavage Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Cleavage Low</Data>
+        </Slider>
+        <Slider name="7B Cleavage High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Cleavage High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Cleavage High</Data>
+            <Data name="jy_pussyb27B Cleavage High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Cleavage High</Data>
+        </Slider>
+        <Slider name="7B BCup Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B BCup Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B BCup Low</Data>
+            <Data name="jy_pussyb27B BCup Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B BCup Low</Data>
+        </Slider>
+        <Slider name="7B BCup High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B BCup High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B BCup High</Data>
+            <Data name="jy_pussyb27B BCup High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B BCup High</Data>
+        </Slider>
+        <Slider name="7BUNP Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7BUNP Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7BUNP Low</Data>
+            <Data name="jy_pussyb27BUNP Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27BUNP Low</Data>
+        </Slider>
+        <Slider name="7BUNP High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7BUNP High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7BUNP High</Data>
+            <Data name="jy_pussyb27BUNP High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27BUNP High</Data>
+        </Slider>
+        <Slider name="7B Oppai Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Oppai Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Oppai Low</Data>
+            <Data name="jy_pussyb27B Oppai Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Oppai Low</Data>
+        </Slider>
+        <Slider name="7B Oppai High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B Oppai High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B Oppai High</Data>
+            <Data name="jy_pussyb27B Oppai High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B Oppai High</Data>
+        </Slider>
+        <Slider name="7B CH Low" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B CH Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B CH Low</Data>
+            <Data name="jy_pussyb27B CH Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B CH Low</Data>
+        </Slider>
+        <Slider name="7B CH High" invert="false" small="0" big="0">
+            <Data name="jy_pussyb7B CH High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussyb7B CH High</Data>
+            <Data name="jy_pussyb27B CH High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb27B CH High</Data>
+        </Slider>
+        <Slider name="UNP Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP Low</Data>
+            <Data name="jy_pussyb2UNP Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP Low</Data>
+        </Slider>
+        <Slider name="UNP High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP High</Data>
+            <Data name="jy_pussyb2UNP High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP High</Data>
+        </Slider>
+        <Slider name="UNP Pushup Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP Pushup Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP Pushup Low</Data>
+            <Data name="jy_pussyb2UNP Pushup Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP Pushup Low</Data>
+        </Slider>
+        <Slider name="UNP Pushup High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP Pushup High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP Pushup High</Data>
+            <Data name="jy_pussyb2UNP Pushup High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP Pushup High</Data>
+        </Slider>
+        <Slider name="UNP Skinny Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP Skinny Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP Skinny Low</Data>
+            <Data name="jy_pussyb2UNP Skinny Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP Skinny Low</Data>
+        </Slider>
+        <Slider name="UNP Skinny High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP Skinny High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP Skinny High</Data>
+            <Data name="jy_pussyb2UNP Skinny High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP Skinny High</Data>
+        </Slider>
+        <Slider name="UNP Perky Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP Perky Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP Perky Low</Data>
+            <Data name="jy_pussyb2UNP Perky Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP Perky Low</Data>
+        </Slider>
+        <Slider name="UNP Perky High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNP Perky High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNP Perky High</Data>
+            <Data name="jy_pussyb2UNP Perky High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNP Perky High</Data>
+        </Slider>
+        <Slider name="UNPB Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPB Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPB Low</Data>
+            <Data name="jy_pussyb2UNPB Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPB Low</Data>
+        </Slider>
+        <Slider name="UNPB High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPB High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPB High</Data>
+            <Data name="jy_pussyb2UNPB High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPB High</Data>
+        </Slider>
+        <Slider name="UNPB Chapi" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPB Chapi" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPB Chapi</Data>
+            <Data name="jy_pussyb2UNPB Chapi" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPB Chapi</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v1" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPB Oppai v1" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPB Oppai v1</Data>
+            <Data name="jy_pussyb2UNPB Oppai v1" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPB Oppai v1</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v3.2 Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPB Oppai v3.2 Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPB Oppai v3.2 Low</Data>
+            <Data name="jy_pussyb2UNPB Oppai v3.2 Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPB Oppai v3.2 Low</Data>
+        </Slider>
+        <Slider name="UNPB Oppai v3.2 High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPB Oppai v3.2 High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPB Oppai v3.2 High</Data>
+            <Data name="jy_pussyb2UNPB Oppai v3.2 High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPB Oppai v3.2 High</Data>
+        </Slider>
+        <Slider name="UNPetite Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPetite Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPetite Low</Data>
+            <Data name="jy_pussyb2UNPetite Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPetite Low</Data>
+        </Slider>
+        <Slider name="UNPetite High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPetite High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPetite High</Data>
+            <Data name="jy_pussyb2UNPetite High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPetite High</Data>
+        </Slider>
+        <Slider name="UNPC Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPC Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPC Low</Data>
+            <Data name="jy_pussyb2UNPC Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPC Low</Data>
+        </Slider>
+        <Slider name="UNPC High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPC High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPC High</Data>
+            <Data name="jy_pussyb2UNPC High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPC High</Data>
+        </Slider>
+        <Slider name="UNPCM Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPCM Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPCM Low</Data>
+            <Data name="jy_pussyb2UNPCM Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPCM Low</Data>
+        </Slider>
+        <Slider name="UNPCM High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPCM High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPCM High</Data>
+            <Data name="jy_pussyb2UNPCM High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPCM High</Data>
+        </Slider>
+        <Slider name="UNPSH Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPSH Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPSH Low</Data>
+            <Data name="jy_pussyb2UNPSH Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPSH Low</Data>
+        </Slider>
+        <Slider name="UNPSH High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPSH High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPSH High</Data>
+            <Data name="jy_pussyb2UNPSH High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPSH High</Data>
+        </Slider>
+        <Slider name="UNPK Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPK Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPK Low</Data>
+            <Data name="jy_pussyb2UNPK Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPK Low</Data>
+        </Slider>
+        <Slider name="UNPK High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPK High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPK High</Data>
+            <Data name="jy_pussyb2UNPK High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPK High</Data>
+        </Slider>
+        <Slider name="UNPK Bonus Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPK Bonus Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPK Bonus Low</Data>
+            <Data name="jy_pussyb2UNPK Bonus Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPK Bonus Low</Data>
+        </Slider>
+        <Slider name="UNPK Bonus High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPK Bonus High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPK Bonus High</Data>
+            <Data name="jy_pussyb2UNPK Bonus High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPK Bonus High</Data>
+        </Slider>
+        <Slider name="UN7B Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUN7B Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUN7B Low</Data>
+            <Data name="jy_pussyb2UN7B Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UN7B Low</Data>
+        </Slider>
+        <Slider name="UN7B High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUN7B High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUN7B High</Data>
+            <Data name="jy_pussyb2UN7B High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UN7B High</Data>
+        </Slider>
+        <Slider name="UNPBB Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPBB Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPBB Low</Data>
+            <Data name="jy_pussyb2UNPBB Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPBB Low</Data>
+        </Slider>
+        <Slider name="UNPBB High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPBB High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPBB High</Data>
+            <Data name="jy_pussyb2UNPBB High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPBB High</Data>
+        </Slider>
+        <Slider name="Seraphim Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybSeraphim Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybSeraphim Low</Data>
+            <Data name="jy_pussyb2Seraphim Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Seraphim Low</Data>
+        </Slider>
+        <Slider name="Seraphim High" invert="false" small="0" big="0">
+            <Data name="jy_pussybSeraphim High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybSeraphim High</Data>
+            <Data name="jy_pussyb2Seraphim High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Seraphim High</Data>
+        </Slider>
+        <Slider name="Demonfet Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybDemonfet Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybDemonfet Low</Data>
+            <Data name="jy_pussyb2Demonfet Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Demonfet Low</Data>
+        </Slider>
+        <Slider name="Demonfet High" invert="false" small="0" big="0">
+            <Data name="jy_pussybDemonfet High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybDemonfet High</Data>
+            <Data name="jy_pussyb2Demonfet High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Demonfet High</Data>
+        </Slider>
+        <Slider name="Dream Girl Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybDream Girl Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybDream Girl Low</Data>
+            <Data name="jy_pussyb2Dream Girl Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Dream Girl Low</Data>
+        </Slider>
+        <Slider name="Dream Girl High" invert="false" small="0" big="0">
+            <Data name="jy_pussybDream Girl High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybDream Girl High</Data>
+            <Data name="jy_pussyb2Dream Girl High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Dream Girl High</Data>
+        </Slider>
+        <Slider name="Top Model Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybTop Model Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybTop Model Low</Data>
+            <Data name="jy_pussyb2Top Model Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Top Model Low</Data>
+        </Slider>
+        <Slider name="Top Model High" invert="false" small="0" big="0">
+            <Data name="jy_pussybTop Model High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybTop Model High</Data>
+            <Data name="jy_pussyb2Top Model High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Top Model High</Data>
+        </Slider>
+        <Slider name="Leito Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybLeito Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybLeito Low</Data>
+            <Data name="jy_pussyb2Leito Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Leito Low</Data>
+        </Slider>
+        <Slider name="Leito High" invert="false" small="0" big="0">
+            <Data name="jy_pussybLeito High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybLeito High</Data>
+            <Data name="jy_pussyb2Leito High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Leito High</Data>
+        </Slider>
+        <Slider name="UNPF Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPF Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPF Low</Data>
+            <Data name="jy_pussyb2UNPF Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPF Low</Data>
+        </Slider>
+        <Slider name="UNPF High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPF High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPF High</Data>
+            <Data name="jy_pussyb2UNPF High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPF High</Data>
+        </Slider>
+        <Slider name="UNPFx Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPFx Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPFx Low</Data>
+            <Data name="jy_pussyb2UNPFx Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPFx Low</Data>
+        </Slider>
+        <Slider name="UNPFx High" invert="false" small="0" big="0">
+            <Data name="jy_pussybUNPFx High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybUNPFx High</Data>
+            <Data name="jy_pussyb2UNPFx High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2UNPFx High</Data>
+        </Slider>
+        <Slider name="CNHF Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybCNHF Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCNHF Low</Data>
+            <Data name="jy_pussyb2CNHF Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CNHF Low</Data>
+        </Slider>
+        <Slider name="CNHF High" invert="false" small="0" big="0">
+            <Data name="jy_pussybCNHF High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCNHF High</Data>
+            <Data name="jy_pussyb2CNHF High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CNHF High</Data>
+        </Slider>
+        <Slider name="CNHF Bonus Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybCNHF Bonus Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCNHF Bonus Low</Data>
+            <Data name="jy_pussyb2CNHF Bonus Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CNHF Bonus Low</Data>
+        </Slider>
+        <Slider name="CNHF Bonus High" invert="false" small="0" big="0">
+            <Data name="jy_pussybCNHF Bonus High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCNHF Bonus High</Data>
+            <Data name="jy_pussyb2CNHF Bonus High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CNHF Bonus High</Data>
+        </Slider>
+        <Slider name="MCBM Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybMCBM Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybMCBM Low</Data>
+            <Data name="jy_pussyb2MCBM Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2MCBM Low</Data>
+        </Slider>
+        <Slider name="MCBM High" invert="false" small="0" big="0">
+            <Data name="jy_pussybMCBM High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybMCBM High</Data>
+            <Data name="jy_pussyb2MCBM High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2MCBM High</Data>
+        </Slider>
+        <Slider name="Venus Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybVenus Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybVenus Low</Data>
+            <Data name="jy_pussyb2Venus Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Venus Low</Data>
+        </Slider>
+        <Slider name="Venus High" invert="false" small="0" big="0">
+            <Data name="jy_pussybVenus High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybVenus High</Data>
+            <Data name="jy_pussyb2Venus High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Venus High</Data>
+        </Slider>
+        <Slider name="ZGGB-R2 Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybZGGB-R2 Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybZGGB-R2 Low</Data>
+            <Data name="jy_pussyb2ZGGB-R2 Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ZGGB-R2 Low</Data>
+        </Slider>
+        <Slider name="ZGGB-R2 High" invert="false" small="0" big="0">
+            <Data name="jy_pussybZGGB-R2 High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybZGGB-R2 High</Data>
+            <Data name="jy_pussyb2ZGGB-R2 High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ZGGB-R2 High</Data>
+        </Slider>
+        <Slider name="Manga Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybManga Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybManga Low</Data>
+            <Data name="jy_pussyb2Manga Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Manga Low</Data>
+        </Slider>
+        <Slider name="Manga High" invert="false" small="0" big="0">
+            <Data name="jy_pussybManga High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybManga High</Data>
+            <Data name="jy_pussyb2Manga High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Manga High</Data>
+        </Slider>
+        <Slider name="CHSBHC Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybCHSBHC Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCHSBHC Low</Data>
+            <Data name="jy_pussyb2CHSBHC Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CHSBHC Low</Data>
+        </Slider>
+        <Slider name="CHSBHC High" invert="false" small="0" big="0">
+            <Data name="jy_pussybCHSBHC High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCHSBHC High</Data>
+            <Data name="jy_pussyb2CHSBHC High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CHSBHC High</Data>
+        </Slider>
+        <Slider name="Aruru6Duck Low" invert="false" small="0" big="0">
+            <Data name="jy_pussybAruru6Duck Low" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybAruru6Duck Low</Data>
+            <Data name="jy_pussyb2Aruru6Duck Low" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Aruru6Duck Low</Data>
+        </Slider>
+        <Slider name="Aruru6Duck High" invert="false" small="0" big="0">
+            <Data name="jy_pussybAruru6Duck High" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybAruru6Duck High</Data>
+            <Data name="jy_pussyb2Aruru6Duck High" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Aruru6Duck High</Data>
+        </Slider>
+        <Slider name="AnusSpread" invert="false" small="0" big="0">
+            <Data name="jy_pussybAnusSpread" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybAnusSpread</Data>
+            <Data name="jy_pussyb2AnusSpread" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2AnusSpread</Data>
+        </Slider>
+        <Slider name="BellyCenterProtrude" invert="false" small="0" big="0">
+            <Data name="jy_pussybBellyCenterProtrude" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybBellyCenterProtrude</Data>
+        </Slider>
+        <Slider name="BreastConverge" invert="false" small="0" big="0">
+            <Data name="jy_pussybBreastConverge" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybBreastConverge</Data>
+            <Data name="jy_pussyb2BreastConverge" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2BreastConverge</Data>
+        </Slider>
+        <Slider name="ClitorisErection" invert="false" small="0" big="0">
+            <Data name="jy_pussybClitorisErection" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybClitorisErection</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="jy_pussybCrotchBack" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCrotchBack</Data>
+            <Data name="jy_pussyb2CrotchBack" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CrotchBack</Data>
+        </Slider>
+        <Slider name="ClitSpread" invert="false" small="0" big="0">
+            <Data name="jy_pussybClitSpread" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybClitSpread</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="jy_pussybGroin" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybGroin</Data>
+            <Data name="jy_pussyb2Groin" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2Groin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="jy_pussybHipBone" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="jy_pussybHipForward" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybHipForward</Data>
+            <Data name="jy_pussyb2HipForward" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2HipForward</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="jy_pussybLegsThin" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybLegsThin</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="jy_pussybMuscleLegs" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybMuscleLegs</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="jy_pussyb2MuscleButt" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2MuscleButt</Data>
+        </Slider>
+        <Slider name="PussyClipFix" invert="false" small="0" big="0">
+            <Data name="jy_pussybPussyClipFix" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybPussyClipFix</Data>
+        </Slider>
+        <Slider name="PussyCute" invert="false" small="0" big="0">
+            <Data name="jy_pussyb2PussyCute" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2PussyCute</Data>
+        </Slider>
+        <Slider name="PussyMajora" invert="false" small="0" big="0">
+            <Data name="jy_pussybPussyMajora" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybPussyMajora</Data>
+        </Slider>
+        <Slider name="PussyMinora" invert="false" small="0" big="0">
+            <Data name="jy_pussybPussyMinora" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybPussyMinora</Data>
+        </Slider>
+        <Slider name="PussyMajoraBig" invert="false" small="0" big="0">
+            <Data name="jy_pussybPussyMajoraBig" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybPussyMajoraBig</Data>
+        </Slider>
+        <Slider name="PussyOpen" invert="false" small="0" big="0">
+            <Data name="jy_pussybPussyOpen" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybPussyOpen</Data>
+        </Slider>
+        <Slider name="ArmpitShape" invert="false" small="0" big="0">
+            <Data name="jy_pussybArmpitShape" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybArmpitShape</Data>
+        </Slider>
+        <Slider name="BellyDefine" invert="false" small="0" big="0">
+            <Data name="jy_pussybBellyDefine" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybBellyDefine</Data>
+        </Slider>
+        <Slider name="ButtSaggy" invert="false" small="0" big="0">
+            <Data name="jy_pussybButtSaggy" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybButtSaggy</Data>
+            <Data name="jy_pussyb2ButtSaggy" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ButtSaggy</Data>
+        </Slider>
+        <Slider name="ButtUnderFold" invert="false" small="0" big="0">
+            <Data name="jy_pussybButtUnderFold" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybButtUnderFold</Data>
+        </Slider>
+        <Slider name="ButtConverge" invert="false" small="0" big="0">
+            <Data name="jy_pussybButtConverge" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybButtConverge</Data>
+            <Data name="jy_pussyb2ButtConverge" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ButtConverge</Data>
+        </Slider>
+        <Slider name="HipCarved" invert="false" small="0" big="0">
+            <Data name="jy_pussybHipCarved" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybHipCarved</Data>
+        </Slider>
+        <Slider name="ThighApart" invert="false" small="0" big="0">
+            <Data name="jy_pussybThighApart" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybThighApart</Data>
+            <Data name="jy_pussyb2ThighApart" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2ThighApart</Data>
+        </Slider>
+        <Slider name="ThighOuter" invert="false" small="0" big="0">
+            <Data name="jy_pussybThighOuter" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybThighOuter</Data>
+        </Slider>
+        <Slider name="ThighThicker" invert="false" small="0" big="0">
+            <Data name="jy_pussybThighThicker" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybThighThicker</Data>
+        </Slider>
+        <Slider name="Sartorius" invert="false" small="0" big="0">
+            <Data name="jy_pussybSartorius" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybSartorius</Data>
+        </Slider>
+        <Slider name="Hamstrings" invert="false" small="0" big="0">
+            <Data name="jy_pussybHamstrings" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybHamstrings</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="jy_pussybCrotchGap" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybCrotchGap</Data>
+            <Data name="jy_pussyb2CrotchGap" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2CrotchGap</Data>
+        </Slider>
+        <Slider name="ThighInnerThicker" invert="false" small="0" big="0">
+            <Data name="jy_pussybThighInnerThicker" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybThighInnerThicker</Data>
+        </Slider>
+        <Slider name="ThighFBThicker" invert="false" small="0" big="0">
+            <Data name="jy_pussybThighFBThicker" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybThighFBThicker</Data>
+        </Slider>
+        <Slider name="LegSpread" invert="false" small="0" big="0">
+            <Data name="jy_pussybLegSpread" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybLegSpread</Data>
+        </Slider>
+        <Slider name="AnusSize" invert="false" small="0" big="0">
+            <Data name="jy_pussybAnusSize" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybAnusSize</Data>
+            <Data name="jy_pussyb2AnusSize" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2AnusSize</Data>
+        </Slider>
+        <Slider name="AnalPositionlow" invert="false" small="0" big="0">
+            <Data name="jy_pussybAnalPositionlow" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybAnalPositionlow</Data>
+            <Data name="jy_pussyb2AnalPositionlow" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2AnalPositionlow</Data>
+        </Slider>
+        <Slider name="ClitorisPrepuce" invert="false" small="0" big="0">
+            <Data name="jy_pussybClitorisPrepuce" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybClitorisPrepuce</Data>
+        </Slider>
+        <Slider name="LabiaStretch" invert="false" small="0" big="0">
+            <Data name="jy_pussybLabiaStretch" target="jy_pussyb" local="true">semen_pussy01.osd\jy_pussybLabiaStretch</Data>
+            <Data name="jy_pussyb2LabiaStretch" target="jy_pussyb2" local="true">semen_pussy01.osd\jy_pussyb2LabiaStretch</Data>
+        </Slider>
+    </SliderSet>
+</SliderSetInfo>
