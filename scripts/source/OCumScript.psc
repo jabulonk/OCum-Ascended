@@ -34,6 +34,8 @@ race teraElinRaceVampire
 
 actor[] property currentSceneCummedOnActs auto
 actor[] property currentSceneBellyInflationActs auto
+actor[] actorsWithCumMeshes
+form[] cumMeshesEquipped
 
 spell property cumSpell1 auto
 spell property cumSpell2 auto
@@ -41,6 +43,9 @@ spell property cumSpell3 auto
 spell property cumSpell4 auto
 spell property OCumSpell auto
 spell property OCumInflationSpell auto
+spell property squirtSpell auto
+spell property squirtSpell2 auto
+spell property squirtSpell3 auto
 
 magicEffect property OCumMagicEffect auto
 
@@ -48,28 +53,47 @@ Activator property CumLauncher auto
 
 armor property UrethraNode auto
 
+armor property CumMeshSemen01 auto
+armor property CumMeshSemen02 auto
+armor property CumMeshBreast01 auto
+armor property CumMeshBreast02 auto
+armor property CumMeshBelly01 auto
+armor property CumMeshBelly02 auto
+armor property CumMeshButt01 auto
+armor property CumMeshButt02 auto
+armor property CumMeshPussy01 auto
+
 sound property cumSound auto
 sound property squirtSound auto
 sound property femaleGasp auto
 
-armor property Squirt1 auto
-armor property Squirt2 auto
-armor property Squirt3 auto
-
 keyword property AppliedCumKeyword auto
 keyword property AppliedInflationKeyword auto
 
+bool barVisible
+
 int property checkCumKey auto
 int property squirtChance auto
+
+float property cumBarMaxAmountNPCs auto
+float property cumBarMaxAmountPlayer auto
+float property uterineVolumeNPCs auto
+float property uterineVolumePlayer auto
 float property cumCleanupTimer auto
 float property inflationCleanupTimer auto
 float property cumRegenSpeed auto
+
 bool property disableInflation auto
 bool property disableCumshot auto
 bool property disableCumDecal auto
+bool property disableCumMeshes auto
 bool property disableFacialsForElins auto
 bool property realisticCumMode auto
 bool property cleanCumEnterWater auto
+bool property enableDeleveledCumBarNPCs auto
+bool property enableDeleveledCumBarPlayer auto
+bool property enableFixedUterineVolumeNPCs auto
+bool property enableFixedUterineVolumePlayer auto
 
 bool property isRemovingCumFromAllActors auto
 bool property isRemovingInflationFromAllActors auto
@@ -98,8 +122,9 @@ float Function GetCumStoredAmount(actor npc)
 			; intervaginal sperm will disolve at a rate of 1ml/2hrs (.166 days = 4 hours)
 			float currenttime = Utility.GetCurrentGameTime()
 			float timePassed = currenttime - lastCheckTime
-			console(timePassed)
 			float cumToRemove = (timePassed / 0.083)
+
+			writelog(timePassed)
 
 			float max = GetMaxCumStoragePossible(npc)
 
@@ -150,7 +175,7 @@ float Function GetCumStoredAmount(actor npc)
 EndFunction
 
 
-Function AdjustStoredCumAmount(actor npc, float amount)
+Function AdjustStoredCumAmount(actor npc, float amount, bool isFemalePartner)
 	float set
 	float current = GetCumStoredAmount(npc)
 	float max = GetMaxCumStoragePossible(npc)
@@ -164,7 +189,7 @@ Function AdjustStoredCumAmount(actor npc, float amount)
 			if inflation > 0.6
 				inflation = 0.6
 			EndIf
-			if !disableInflation
+			if !disableInflation && isFemalePartner
 				SetBellyScale(npc, inflation)
 			endif
 			if (set > (max * 2.1))
@@ -308,40 +333,37 @@ Function CumShoot(actor act, float amountML)
 EndFunction
 
 
-Function SquirtShoot(actor act)
-	writelog("SquirtShoot")
+Function SquirtShootFlow(actor act)
+	writelog("SquirtShootFlow")
 	ostim.PlaySound(act, squirtsound)
-	act.EquipItem(squirt1, abPreventRemoval = True, abSilent = True)  ; don't do AddItem first, it will make NPCs redress
 
-	bool cam = false
-
-	if ostim.IsInFreeCam() && act == playerref
-		act.QueueNiNodeUpdate()
-		cam = true
-	endif
-
-	Utility.wait(OSANative.RandomFloat(0.7, 1.0))
-
-	act.UnequipItem(squirt1, true, true)
-
-	if cam
-		act.QueueNiNodeUpdate()
+	if OUtils.ChanceRoll(50)
+		squirtSpell2.cast(act, act)
+	else
+		squirtSpell3.cast(act, act)
 	endif
 EndFunction
 
 
+Function SquirtShootSpurt(actor act)
+	writelog("SquirtShootSpurt")
+	ostim.PlaySound(act, squirtsound)
+
+	squirtSpell.SetNthEffectDuration(0, OSANative.RandomInt(1, 7))
+
+	squirtSpell.cast(act, act)
+EndFunction
+
+
 Function Squirt(actor act)
-	console("Squirting")
+	writelog("Squirting")
 	SendModEvent("ocum_squirt")
 
-	int i = 0
-	int max = OSANative.RandomInt(2, 6)
-
-	While i < max
-		SquirtShoot(act)
-
-		i += 1
-	EndWhile
+	if OUtils.ChanceRoll(50)
+		SquirtShootSpurt(act)
+	else
+		SquirtShootFlow(act)
+	endif
 EndFunction
 
 
@@ -354,6 +376,10 @@ Function ApplyCumVaginal(actor sub, int intensity)
 		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(11, 15))
 	elseif intensity == 4
 		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(13, 18))
+	endif
+
+	if !disableCumMeshes
+		EquipCumMesh(sub, CumMeshPussy01)
 	endif
 EndFunction
 
@@ -395,6 +421,14 @@ Function ApplyCumAnal(actor sub, int intensity)
 			CumOntoArea(sub, "AnalHeavy3")
 		endif
 	endif
+
+	if !disableCumMeshes
+		if outils.ChanceRoll(50)
+			EquipCumMesh(sub, CumMeshButt01)
+		else
+			EquipCumMesh(sub, CumMeshButt02)
+		endif
+	endif
 EndFunction
 
 
@@ -417,6 +451,14 @@ Function ApplyCumBoob(actor sub, int intensity)
 	else
 		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 7), "Face")
 		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 11))
+	endif
+
+	if !disableCumMeshes
+		if outils.ChanceRoll(50)
+			EquipCumMesh(sub, CumMeshBreast01)
+		else
+			EquipCumMesh(sub, CumMeshBreast02)
+		endif
 	endif
 EndFunction
 
@@ -471,6 +513,26 @@ Function ApplyCumVaginalPullout(actor sub, int intensity)
 			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(15, 18))
 		endif
 	endif
+
+	if !disableCumMeshes
+		if intensity > 3 && !realisticCumMode
+			if outils.ChanceRoll(50)
+				EquipCumMesh(sub, CumMeshSemen01)
+			else
+				EquipCumMesh(sub, CumMeshSemen02)
+			endif
+		else
+			EquipCumMesh(sub, CumMeshPussy01)
+
+			if outils.ChanceRoll(50)
+				EquipCumMesh(sub, CumMeshBreast01)
+				EquipCumMesh(sub, CumMeshBelly01)
+			else
+				EquipCumMesh(sub, CumMeshBreast02)
+				EquipCumMesh(sub, CumMeshBelly02)
+			endif
+		endif
+	endif
 EndFunction
 
 
@@ -497,6 +559,14 @@ Function ApplyCumAnalPullout(actor sub, int intensity)
 		CumOntoArea(sub, "Back3")
 		CumOntoArea(sub, "Back4")
 	endif
+
+	if !disableCumMeshes
+		if outils.ChanceRoll(50)
+			EquipCumMesh(sub, CumMeshButt01)
+		else
+			EquipCumMesh(sub, CumMeshButt02)
+		endif
+	endif
 EndFunction
 
 
@@ -513,7 +583,7 @@ Function ApplyCumAsNecessary(actor cummedAct, float amountML)
 	if intensity == 0
 		return
 	endif
-	console("Applying cum")
+	writelog("Applying cum")
 
 	string oclass = ostim.GetCurrentAnimationClass()
 
@@ -555,7 +625,7 @@ EndFunction
 
 Function CumOntoArea(actor act, string TexFilename, string area = "Body")
 	writelog("CumOntoArea")
-	console("Applying texture: " + TexFilename)
+	writelog("Applying texture: " + TexFilename)
 
 	string cumTexture = GetCumTexture(TexFilename)
 
@@ -578,6 +648,45 @@ Function CumOntoArea(actor act, string TexFilename, string area = "Body")
 	; https://www.loverslab.com/files/file/243-sexlab-sperm-replacer/ - permission from: https://www.loverslab.com/topic/32080-sexlab-sperm-replacer-3dm-forum-version/
 	; https://www.loverslab.com/files/file/14696-slavetats-cum-texturesreplacer
 EndFunction
+
+
+function EquipCumMesh(actor act, armor item)
+	writelog("EquipCumMesh")
+	writelog("Equipping mesh item: " + item)
+
+	act.equipItem(item, false, true)
+	actorsWithCumMeshes = PapyrusUtil.PushActor(actorsWithCumMeshes, act)
+	cumMeshesEquipped = PapyrusUtil.PushForm(cumMeshesEquipped, item)
+
+	if ostim.IsInFreeCam() && act == playerRef
+		act.QueueNiNodeUpdate()
+	endif
+endfunction
+
+
+function UnequipCumMeshes()
+	writelog("UnequipCumMeshes")
+
+	if actorsWithCumMeshes.Length <= 0
+		return
+	endif
+
+	int x = 0
+
+	while x < actorsWithCumMeshes.Length
+		int k = 0
+
+		while k < cumMeshesEquipped.Length
+			actorsWithCumMeshes[x].removeItem(cumMeshesEquipped[k], 99, true)
+			k += 1
+		endwhile
+
+		x += 1
+	endwhile
+
+	actorsWithCumMeshes = papyrusutil.ResizeActorArray(actorsWithCumMeshes, 0)
+	cumMeshesEquipped = PapyrusUtil.ResizeFormArray(cumMeshesEquipped, 0)
+endfunction
 
 
 ; ███████╗██╗   ██╗███████╗███╗   ██╗████████╗███████╗
@@ -627,7 +736,7 @@ EndEvent
 
 Event OnKeyDown(Int KeyPress)
 	; Event which listens for the cum bar key press
-	if KeyPress == CheckCumKey
+	if (KeyPress != 1 && KeyPress == CheckCumKey)
 		TempDisplayBar()
 	endif
 EndEvent
@@ -665,8 +774,8 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 			cumamount = currentCum
 		endif
 
-		console("Blowing load size: " + CumAmount + " ML")
-		AdjustStoredCumAmount(orgasmer, 0 - CumAmount)
+		writelog("Blowing load size: " + CumAmount + " ML")
+		AdjustStoredCumAmount(orgasmer, 0 - CumAmount, false)
 
 		if !ostim.IsSoloScene()
 			actor partner = ostim.GetSexPartner(orgasmer)
@@ -680,7 +789,7 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 
 			if ostim.IsVaginal()
 				if !malePartner ; give it to female
-					AdjustStoredCumAmount(partner, CumAmount)
+					AdjustStoredCumAmount(partner, CumAmount, true)
 				endif
 			ElseIf (cumAmount > 0 && ostim.IsOral())
 				SendModEvent("ocum_cumoral", numArg=cumAmount)
@@ -731,7 +840,7 @@ EndEvent
 
 
 Event OStimEnd(string eventName, string strArg, float numArg, Form sender)
-	console("OCum applying cum magic effect...")
+	writelog("Applying cum magic effect...")
 
 	; check actors which had cum applied to them and give them the OCum spell effect
 	; the effect handles the automatic cleaning when it ends
@@ -763,20 +872,19 @@ EndEvent
 
 
 Event OstimRedressEnd(string eventName, string strArg, float numArg, Form sender)
-	console("OCum Cleaning up armors...")
+	writelog("Cleaning up armors...")
 
 	if domActor
 		domActor.RemoveItem(UrethraNode, 99, true)
-		domActor.RemoveItem(squirt1, 99, true)
 	endif
 	if subActor
 		subActor.RemoveItem(UrethraNode, 99, true)
-		subActor.RemoveItem(squirt1, 99, true)
 	endif
 	if thirdActor
 		thirdActor.RemoveItem(UrethraNode, 99, true)
-		thirdActor.RemoveItem(squirt1, 99, true)
 	endif
+
+	UnequipCumMeshes()
 
 	domActor = None
 	subActor = None
@@ -811,6 +919,14 @@ Event OnAnimationEvent(ObjectReference akSource, string asEventName)
 endEvent
 
 
+Event OnUpdate()
+	if (barVisible)
+		barVisible = false
+		SetBarVisible(cumbar, false)
+	endif
+endEvent
+
+
 ;  ██████╗██╗   ██╗███╗   ███╗    ██████╗  █████╗ ██████╗ 
 ; ██╔════╝██║   ██║████╗ ████║    ██╔══██╗██╔══██╗██╔══██╗
 ; ██║     ██║   ██║██╔████╔██║    ██████╔╝███████║██████╔╝
@@ -820,12 +936,19 @@ endEvent
 
 
 Function TempDisplayBar()
-	float amount = GetCumStoredAmount(playerref)
-	console("Current cum storage for player: " + amount)
-	cumbar.SetPercent(amount / GetMaxCumStoragePossible(playerref))
-	SetBarVisible(cumbar, true)
-	Utility.wait(10)
-	SetBarVisible(cumbar, false)
+	if (!barVisible)
+		float amount = GetCumStoredAmount(playerref)
+
+		writelog("Current cum storage for player: " + amount)
+
+		cumbar.SetPercent(amount / GetMaxCumStoragePossible(playerref))
+		SetBarVisible(cumbar, true)
+
+		barVisible = true
+
+		; make bar disappear in 10 seconds
+		RegisterForSingleUpdate(10.0)
+	endif
 Endfunction
 
 
@@ -866,18 +989,21 @@ EndFunction
 ; ------------------------  Console logging utility functions ------------------------  ;
 
 Function writelog(string a)
-	a = "OCUM: "+a
+	a = "OCum: "+a
 	consoleutil.printmessage(a)
 	debug.trace(a)
 EndFunction
 
 
-Function console(string in)
-	OsexIntegrationMain.Console(in)
+; ------------------------ Cum utility functions ------------------------  ;
+
+Function updateCheckCumKey(int newKey)
+	UnregisterForKey(CheckCumKey)
+
+	CheckCumKey = newKey
+	RegisterForKey(newKey)
 EndFunction
 
-
-; ------------------------ Cum utility functions ------------------------  ;
 
 Function StoreNPCDataFloat(actor npc, string keys, Float num)
 	StorageUtil.SetFloatValue(npc as form, keys, num)
@@ -914,16 +1040,40 @@ EndFunction
 float Function GetMaxCumStoragePossible(actor npc)
 	if ostim.IsFemale(npc)
 		float max = GetNPCDataFloat(npc, MaxCumVolumeKey)
+
 		if (max != -1)
+			if (npc == PlayerRef && enableFixedUterineVolumePlayer)
+				return uterineVolumePlayer
+			elseif (npc != PlayerRef && enableFixedUterineVolumeNPCs)
+				return uterineVolumeNPCs
+			endif
+
 			return max
 		else
-			max = OSANative.RandomFloat(15, 56)
-			console("Uterine volume for " + npc.GetDisplayName() + ":" + max)
+			if (npc == PlayerRef && enableFixedUterineVolumePlayer)
+				max = uterineVolumePlayer
+			elseif (npc != PlayerRef && enableFixedUterineVolumeNPCs)
+				max = uterineVolumeNPCs
+			else
+				max = OSANative.RandomFloat(15, 56)
+			endif
+
+			writelog("Uterine volume for " + npc.GetDisplayName() + ":" + max)
 			StoreNPCDataFloat(npc, MaxCumVolumeKey, max)
 			return max
 		EndIf
 	else
-			return 2 * ( (npc.GetLevel() * 0.5) + 1)
+		if (npc == PlayerRef)
+			if (enableDeleveledCumBarPlayer)
+				return cumBarMaxAmountPlayer
+			endif
+		else
+			if (enableDeleveledCumBarNPCs)
+				return cumBarMaxAmountNPCs
+			endif
+		endif
+
+		return 2 * ( (npc.GetLevel() * 0.5) + 1)
 	endif
 EndFunction
 
@@ -1051,6 +1201,18 @@ Function SetBellyScale(actor akActor, float bellyScale)
 EndFunction
 
 
+Function RemoveBellyScale(actor akActor, bool removeActorFromInflationArrays)
+	NiOverride.SetBodyMorph(akActor, "PregnancyBelly", "OCum", 0.0)
+	NiOverride.ClearBodyMorph(akActor, "PregnancyBelly", "OCum")
+	NiOverride.UpdateModelWeight(akActor)
+
+	if removeActorFromInflationArrays
+		bellyInflationActs = PapyrusUtil.RemoveActor(bellyInflationActs, akActor)
+		currentSceneBellyInflationActs = PapyrusUtil.RemoveActor(currentSceneBellyInflationActs, akActor)
+	endif
+EndFunction
+
+
 Function RemoveBellyScaleFromAllActors()
 	isRemovingInflationFromAllActors = true
 
@@ -1077,17 +1239,6 @@ Function RemoveBellyScaleFromAllActors()
 	currentSceneBellyInflationActs = PapyrusUtil.ResizeActorArray(currentSceneBellyInflationActs, 0)
 
 	isRemovingInflationFromAllActors = false
-EndFunction
-
-
-Function RemoveBellyScale(actor akActor, bool removeActorFromInflationArrays)
-	NiOverride.ClearBodyMorph(akActor, "PregnancyBelly", "OCum")
-	NiOverride.UpdateModelWeight(akActor)
-
-	if removeActorFromInflationArrays
-		bellyInflationActs = PapyrusUtil.RemoveActor(bellyInflationActs, akActor)
-		currentSceneBellyInflationActs = PapyrusUtil.RemoveActor(currentSceneBellyInflationActs, akActor)
-	endif
 EndFunction
 
 
@@ -1124,9 +1275,9 @@ Int Function GetEmptySlot(Actor akTarget, Bool Gender, String Area)
 
 	While i < NumSlots
 		TexPath = NiOverride.GetNodeOverrideString(akTarget, Gender, Area + " [ovl" + i + "]", 9, 0)
-		console(TexPath)
+		writelog(TexPath)
 		If TexPath == "" || TexPath == "actors\\character\\overlays\\default.dds"
-			console("Slot " + i + " chosen for area: " + area)
+			writelog("Slot " + i + " chosen for area: " + area)
 			Return i
 		EndIf
 		i += 1
@@ -1199,7 +1350,7 @@ Function ReadyOverlay(Actor akTarget, Bool Gender, String Area, String TextureTo
 	If SlotToUse != -1
 		ApplyOverlay(akTarget, Gender, Area, SlotToUse, TextureToApply)
 	Else
-		console("No slots available")
+		writelog("No slots available")
 	EndIf
 EndFunction
 
@@ -1238,49 +1389,4 @@ int Function CalculateCumPatternFromSkeleton(actor male, actor female)
 	endif
 
 	return pattern
-EndFunction
-
-; DO NOT USE THIS FUNCTION!
-; only kept here for compatibility with OVirginity
-; use CumOntoArea instead!
-Function CumOnto(actor act, string TexFilename, bool body = true)
-	writelog("CumOnto")
-	console("Applying texture: " + TexFilename)
-	string area
-
-	if body
-		area = "Body"
-	else
-		area = "Face"
-	endif
-
-	string cumTexture = GetCumTexture(TexFilename)
-
-	if !disableCumDecal
-		ReadyOverlay(act, ostim.AppearsFemale(act), area, cumTexture)
-
-		RegisterForCleaningOnEnteringWater(act)
-
-		if PapyrusUtil.CountActor(currentSceneCummedOnActs, act) == 0
-			currentSceneCummedOnActs = PapyrusUtil.PushActor(currentSceneCummedOnActs, act)
-		endif
-
-		if PapyrusUtil.CountActor(cummedOnActs, act) == 0
-			cummedOnActs = PapyrusUtil.PushActor(cummedonacts, act)
-		endif
-
-		if thirdActor != none
-			ReadyOverlay(thirdActor, ostim.AppearsFemale(thirdActor), area, cumTexture)
-
-			RegisterForCleaningOnEnteringWater(thirdActor)
-
-			if PapyrusUtil.CountActor(currentSceneCummedOnActs, thirdActor) == 0
-				currentSceneCummedOnActs = PapyrusUtil.PushActor(currentSceneCummedOnActs, thirdActor)
-			endif
-
-			if PapyrusUtil.CountActor(cummedOnActs, thirdActor) == 0
-				cummedOnActs = PapyrusUtil.PushActor(cummedonacts, thirdActor)
-			endif
-		endif
-	endif
 EndFunction
