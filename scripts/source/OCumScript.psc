@@ -242,10 +242,10 @@ Function CumShoot(actor act, float amountML)
 	endif
 
 	; ---  By Migal: stop spurting through head and body by stopping cum shoots in certain animation classes
-	string AClass = ostim.GetCurrentAnimationClass()
-	if (AClass == "BJ") || (AClass == "ApPJ") || (AClass == "HhBJ") || (AClass == "VBJ") || (AClass == "Sx") || (AClass == "An")
-		return
-	endif		
+	; string AClass = ostim.GetCurrentAnimationClass()
+	; if (AClass == "BJ") || (AClass == "ApPJ") || (AClass == "HhBJ") || (AClass == "VBJ") || (AClass == "Sx") || (AClass == "An")
+	; 	return
+	; endif		
 
 	int size = GetLoadSizeFromML(amountml)
 	if size == 0
@@ -253,28 +253,28 @@ Function CumShoot(actor act, float amountML)
 	endif
 
 	int numSpurts
-	float Frequency
+	; blasts should start with smaller intervals and then get bigger intervals as the orgasm ends 
+	float StartFrequency = OSANative.RandomFloat(0.15, 0.2)
+	float EndFrequencyIncrement = OSANative.RandomFloat(0.15, 0.25)
 	int doubleFireChance = 15
 	int tripleFireChance = 10
-	int inaccuracy = 60
+	int inaccuracy = 5
 
 	if size == 1
-		Frequency = OSANative.RandomFloat(0.6, 1.0)
-		inaccuracy = 40
+		inaccuracy = 5
 	elseif size == 2
-		Frequency = OSANative.RandomFloat(0.2, 0.5 )
-		inaccuracy = 45
+		inaccuracy = 8
 	elseif size == 3
-		Frequency = OSANative.RandomFloat(0.1, 0.3)
-		inaccuracy = 55
+		inaccuracy = 9
 	elseif size == 4
-		Frequency = OSANative.RandomFloat(0.1, 0.3)
-		doubleFireChance = 85
+		doubleFireChance = 25
 		tripleFireChance = 30
-		inaccuracy = 60
+		inaccuracy = 10
 	endif
 
-	numSpurts = Math.ceiling(amountML) + 2
+	numSpurts = Math.ceiling(amountML + 3) 
+
+	float mlPerSpurt = amountML / numSpurts
 
 	SetUrethra(act)
 	int i = 1
@@ -285,47 +285,161 @@ Function CumShoot(actor act, float amountML)
 	Float targetX
 	float targetY
 	float targetZ
-	NetImmerse.GetNodeWorldPosition(act, "Urethra", uPos, False) ;setting arrays like this is possible apparently...........
-	caster.SetPosition(uPos[0], uPos[1], uPos[2])
-	NetImmerse.GetNodeWorldRotationMatrix(act, "Urethra", uRM, False)  ; (uRM[1] uRM[4] uRM[7]) is the direction vector for the spurts to be launched (local y axis of the node)
+	float frequency = StartFrequency
+
+	float maxContractionAngle = 15.0
+	float contractionAngleStep = 1.5
+
+	float[] contractionAddRot = new float[3]
+	float[] contractionSubRot = new float[3]
+
+	contractionAddRot[2] = contractionAngleStep
+	contractionSubRot[2] = -contractionAngleStep
+
+	; store used cum decal overlay slots,
+	; so that we can add new slots as spurts accumulate in the same animation,
+	; but without adding the same ones over and over
+	int[] decalSlotsToUse = new int[15]
+	int i_decalslot = decalSlotsToUse.Length
+	while i_decalslot > 0
+		i_decalslot -= 1
+		decalSlotsToUse[i_decalslot] = -1
+	endwhile
+
+	bool isSoloScene = ostim.IsSoloScene()
+	actor partner = ostim.GetSexPartner(act)
+	bool malePartner = !ostim.IsFemale(partner)
+
+	int currentPoseType = GetCumPattern()
+	float mlShotOnCurrentPose = 0.0
 
 	while (i < numSpurts) && ostim.AnimationRunning()
 
-		;aiming
-		targetX = uPos[0] + uRM[1] * 200.0 + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
-		targetY = uPos[1] + uRM[4] * 200.0 + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
-		targetZ = uPos[2] + uRM[7] * 200.0 + OSANative.RandomFloat(-10.0, 10.0) - ((i as Float) / (numSpurts as Float) - 0.5) * 180.0  ; later spurts fly lower, and (usually) less distance
-		target.SetPosition(targetX, targetY, targetZ)
+		bool shouldShoot = true
 
-		bool doublefire = outils.ChanceRoll(doubleFireChance)
-		bool tripleFire = false
-		if doublefire
-			tripleFire = outils.ChanceRoll(tripleFireChance)
+		; orgasm contraction!
+		float desiredContraction = OSANative.RandomFloat(maxContractionAngle * 0.5, maxContractionAngle)
+		float accumulatedAngle = 0.0
+		while accumulatedAngle < desiredContraction
+			; bend one in one direction, the other in the opposite
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals01 [Gen01]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals01 [Gen01]")
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
+			Utility.Wait(0.01)
+
+			accumulatedAngle += contractionAngleStep * 2.0 ; contraction is faster than relaxing
+			contractionAddRot[2] = accumulatedAngle
+			contractionSubRot[2] = -accumulatedAngle
+		endwhile
+		
+
+		; ---  By Migal: stop spurting through head and body by stopping cum shoots in certain animation classes
+		; since there may be a lot of spurts and the animation can change before it's finished, we should keep checking for each blast
+		string AClass = ostim.GetCurrentAnimationClass()
+		if (AClass == "BJ") || (AClass == "ApPJ") || (AClass == "HhBJ") || (AClass == "VBJ") || (AClass == "Sx") || (AClass == "An")
+			shouldShoot = false
 		endif
 
-		FireCumBlast(caster, target, OSANative.RandomInt(1, 4), act)
+		; apply cum layers
+		if !isSoloScene
 
-		if doublefire
-			targetX = targetX + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
-			targetY = targetY + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
+			int poseNow = GetCumPattern()
+			if poseNow != currentPoseType
+				; pose has changed! reset pose-dependent vars
+				currentPoseType = poseNow
+				mlShotOnCurrentPose = 0.0
+
+				i_decalslot = decalSlotsToUse.Length
+				while i_decalslot > 0
+					i_decalslot -= 1
+					decalSlotsToUse[i_decalslot] = -1
+				endwhile
+			endif
+			
+			float spurtCumAmount = mlPerSpurt + OSANative.RandomFloat(spurtCumAmount * -0.25, spurtCumAmount * 0.25)
+
+			mlShotOnCurrentPose += spurtCumAmount
+
+			ApplyCumAsNecessary(partner, mlShotOnCurrentPose, decalSlotsToUse)
+
+			if (thirdActor)
+				ApplyCumAsNecessary(thirdActor, mlShotOnCurrentPose, decalSlotsToUse)
+			endif
+
+			if ostim.IsVaginal()
+				if !malePartner ; give it to female
+					AdjustStoredCumAmount(partner, spurtCumAmount, true)
+				endif
+			ElseIf (spurtCumAmount > 0 && ostim.IsOral())
+				SendModEvent("ocum_cumoral", numArg=spurtCumAmount)
+			endif
+		EndIf
+
+		if shouldShoot
+			NetImmerse.GetNodeWorldPosition(act, "Urethra", uPos, False) ;setting arrays like this is possible apparently...........
+			caster.SetPosition(uPos[0], uPos[1], uPos[2])
+			NetImmerse.GetNodeWorldRotationMatrix(act, "Urethra", uRM, False)  ; (uRM[1] uRM[4] uRM[7]) is the direction vector for the spurts to be launched (local y axis of the node)
+	
+			;aiming
+			targetX = uPos[0] + uRM[1] * 200.0 + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
+			targetY = uPos[1] + uRM[4] * 200.0 + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
+			targetZ = uPos[2] + uRM[7] * 200.0 + OSANative.RandomFloat(-10.0, 10.0) + (1.0 - (i as Float) / (numSpurts as Float)) * 90.0  ; later spurts fly lower, and (usually) less distance
 			target.SetPosition(targetX, targetY, targetZ)
 
-			Utility.Wait(OSANative.RandomFloat(0.025, 0.075))
+			bool doublefire = outils.ChanceRoll(doubleFireChance)
+			bool tripleFire = false
+			if doublefire
+				tripleFire = outils.ChanceRoll(tripleFireChance)
+			endif
+	
 			FireCumBlast(caster, target, OSANative.RandomInt(1, 4), act)
-			if tripleFire
+	
+			if doublefire
 				targetX = targetX + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
 				targetY = targetY + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
 				target.SetPosition(targetX, targetY, targetZ)
-
+	
 				Utility.Wait(OSANative.RandomFloat(0.025, 0.075))
 				FireCumBlast(caster, target, OSANative.RandomInt(1, 4), act)
+				if tripleFire
+					targetX = targetX + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
+					targetY = targetY + OSANative.RandomFloat(0-inaccuracy, inaccuracy)
+					target.SetPosition(targetX, targetY, targetZ)
+	
+					Utility.Wait(OSANative.RandomFloat(0.025, 0.075))
+					FireCumBlast(caster, target, OSANative.RandomInt(1, 4), act)
+				endif
 			endif
 		endif
 
+		i += 1
+		frequency = StartFrequency + EndFrequencyIncrement * ((i as float) / (numSpurts as float))
 
-		Utility.Wait(Frequency)
+		; undo contraction after the spurt
+		while accumulatedAngle > 0.0
+			; bend in opposite directions from the starting contraction, to undo it
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals01 [Gen01]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals01 [Gen01]")
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
+			Utility.Wait(0.01)
 
-	i += 1
+			accumulatedAngle -= contractionAngleStep
+			contractionAddRot[2] = accumulatedAngle
+			contractionSubRot[2] = -accumulatedAngle
+		endwhile
+		
+		Utility.Wait(frequency)
+
 	EndWhile
 
 	caster.delete()
@@ -367,15 +481,15 @@ Function Squirt(actor act)
 EndFunction
 
 
-Function ApplyCumVaginal(actor sub, int intensity)
+Function ApplyCumVaginal(actor sub, int intensity, int[] decalSlotsToUse)
 	if realisticCumMode
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 8))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 8), "Body", decalSlotsToUse, 0)
 	elseif intensity < 3
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 10))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 10), "Body", decalSlotsToUse, 1)
 	elseif intensity == 3
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(11, 15))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(11, 15), "Body", decalSlotsToUse, 2)
 	elseif intensity == 4
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(13, 18))
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(13, 18), "Body", decalSlotsToUse, 3)
 	endif
 
 	if !disableCumMeshes
@@ -384,41 +498,41 @@ Function ApplyCumVaginal(actor sub, int intensity)
 EndFunction
 
 
-Function ApplyCumOral(actor sub, int intensity)
+Function ApplyCumOral(actor sub, int intensity, int[] decalSlotsToUse)
 	if realisticCumMode
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 8), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 8), "Face", decalSlotsToUse, 0)
 	elseif intensity == 1
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 4), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 4), "Face", decalSlotsToUse, 1)
 	elseif intensity == 2
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(5, 7), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(5, 7), "Face", decalSlotsToUse, 2)
 	elseif intensity == 3
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(8, 11), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(8, 11), "Face", decalSlotsToUse, 3)
 	elseif intensity == 4
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(11, 16), "Face")
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(11, 16), "Face", decalSlotsToUse, 4)
 	endif
 EndFunction
 
 
-Function ApplyCumAnal(actor sub, int intensity)
+Function ApplyCumAnal(actor sub, int intensity, int[] decalSlotsToUse)
 	if realisticCumMode
-		CumOntoArea(sub, "AnalSprinkle2")
+		CumOntoArea(sub, "AnalSprinkle2", "Body", decalSlotsToUse, 0)
 	elseif intensity == 1
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "AnalSprinkle1")
+			CumOntoArea(sub, "AnalSprinkle1", "Body", decalSlotsToUse, 1)
 		else
-			CumOntoArea(sub, "AnalSprinkle2")
+			CumOntoArea(sub, "AnalSprinkle2", "Body", decalSlotsToUse, 2)
 		endif
 	elseif intensity == 2
-		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3), "Body", decalSlotsToUse, 3)
 	elseif intensity == 3
-		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
-		CumOntoArea(sub, "AnalHeavy1")
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3), "Body", decalSlotsToUse, 4)
+		CumOntoArea(sub, "AnalHeavy1", "Body", decalSlotsToUse, 5)
 	else
-		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3), "Body", decalSlotsToUse, 6)
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "AnalHeavy2")
+			CumOntoArea(sub, "AnalHeavy2", "Body", decalSlotsToUse, 7)
 		else
-			CumOntoArea(sub, "AnalHeavy3")
+			CumOntoArea(sub, "AnalHeavy3", "Body", decalSlotsToUse, 8)
 		endif
 	endif
 
@@ -432,25 +546,25 @@ Function ApplyCumAnal(actor sub, int intensity)
 EndFunction
 
 
-Function ApplyCumBoob(actor sub, int intensity)
+Function ApplyCumBoob(actor sub, int intensity, int[] decalSlotsToUse)
 	if intensity == 1
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "Breast1")
+			CumOntoArea(sub, "Breast1", "Body", decalSlotsToUse, 0)
 		else
-			CumOntoArea(sub, "Breast2")
+			CumOntoArea(sub, "Breast2", "Body", decalSlotsToUse, 0)
 		endif
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 2), "Face")
+			CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 2), "Face", decalSlotsToUse, 1)
 		endif
 	elseif intensity == 2
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 3), "Face")
-		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 8))
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 3), "Face", decalSlotsToUse, 2)
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 8), "Body", decalSlotsToUse, 3)
 	elseif intensity == 3
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 5), "Face")
-		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 9))
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 5), "Face", decalSlotsToUse, 4)
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 9), "Body", decalSlotsToUse, 5)
 	else
-		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 7), "Face")
-		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 11))
+		CumOntoArea(sub, "Facial" + OSANative.RandomInt(1, 7), "Face", decalSlotsToUse, 6)
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(3, 11), "Body", decalSlotsToUse, 7)
 	endif
 
 	if !disableCumMeshes
@@ -463,54 +577,54 @@ Function ApplyCumBoob(actor sub, int intensity)
 EndFunction
 
 
-Function ApplyCumFeet(actor sub, int intensity)
+Function ApplyCumFeet(actor sub, int intensity, int[] decalSlotsToUse)
 	if intensity == 1
-		CumOntoArea(sub, "Feet1", "Feet")
+		CumOntoArea(sub, "Feet1", "Feet", decalSlotsToUse, 0)
 	elseif intensity == 2
-		CumOntoArea(sub, "Feet2", "Feet")
+		CumOntoArea(sub, "Feet2", "Feet", decalSlotsToUse, 1)
 	elseif intensity == 3
-		CumOntoArea(sub, "Legs1")
-		CumOntoArea(sub, "Feet3", "Feet")
+		CumOntoArea(sub, "Legs1", "Body", decalSlotsToUse, 2)
+		CumOntoArea(sub, "Feet3", "Feet", decalSlotsToUse, 3)
 	else
-		CumOntoArea(sub, "Feet3", "Feet")
+		CumOntoArea(sub, "Feet3", "Feet", decalSlotsToUse, 4)
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "Legs2")
+			CumOntoArea(sub, "Legs2", "Body", decalSlotsToUse, 5)
 		else
-			CumOntoArea(sub, "Legs3")
+			CumOntoArea(sub, "Legs3", "Body", decalSlotsToUse, 6)
 		endif
 	endif
 EndFunction
 
 
-Function ApplyCumVaginalPullout(actor sub, int intensity)
+Function ApplyCumVaginalPullout(actor sub, int intensity, int[] decalSlotsToUse)
 	if realisticCumMode
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "VaginalBoob" + OSANative.RandomInt(1, 2))
+			CumOntoArea(sub, "VaginalBoob" + OSANative.RandomInt(1, 2), "Body", decalSlotsToUse, 0)
 		else
-			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 18))
-			CumOntoArea(sub, "Belly" + OSANative.RandomInt(1, 4))
+			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 18), "Body", decalSlotsToUse, 0)
+			CumOntoArea(sub, "Belly" + OSANative.RandomInt(1, 4), "Body", decalSlotsToUse, 1)
 			if outils.ChanceRoll(50)
-				CumOntoArea(sub, "Breast" + OSANative.RandomInt(1, 8))
+				CumOntoArea(sub, "Breast" + OSANative.RandomInt(1, 8), "Body", decalSlotsToUse, 2)
 			endif
 		endif
 	elseif intensity == 1
-		CumOntoArea(sub, "Belly" + OSANative.RandomInt(1, 2))
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 9))
+		CumOntoArea(sub, "Belly" + OSANative.RandomInt(1, 2), "Body", decalSlotsToUse, 3)
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(1, 9), "Body", decalSlotsToUse, 4)
 	elseif intensity == 2
-		CumOntoArea(sub, "Breast" + OSANative.RandomInt(1, 5))
-		CumOntoArea(sub, "Belly3")
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(9, 11))
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(1, 5), "Body", decalSlotsToUse, 5)
+		CumOntoArea(sub, "Belly3", "Body", decalSlotsToUse, 6)
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(9, 11), "Body", decalSlotsToUse, 6)
 	elseif intensity == 3
-		CumOntoArea(sub, "Breast" + OSANative.RandomInt(5, 7))
-		CumOntoArea(sub, "Belly" + OSANative.RandomInt(3, 5))
-		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(11, 15))
+		CumOntoArea(sub, "Breast" + OSANative.RandomInt(5, 7), "Body", decalSlotsToUse, 7)
+		CumOntoArea(sub, "Belly" + OSANative.RandomInt(3, 5), "Body", decalSlotsToUse, 8)
+		CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(11, 15), "Body", decalSlotsToUse, 9)
 	else
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "VaginalBoob" + OSANative.RandomInt(1, 2))
+			CumOntoArea(sub, "VaginalBoob" + OSANative.RandomInt(1, 2), "Body", decalSlotsToUse, 10)
 		else
-			CumOntoArea(sub, "Breast" + OSANative.RandomInt(7, 11))
-			CumOntoArea(sub, "Belly" + OSANative.RandomInt(4, 6))
-			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(15, 18))
+			CumOntoArea(sub, "Breast" + OSANative.RandomInt(7, 11), "Body", decalSlotsToUse, 11)
+			CumOntoArea(sub, "Belly" + OSANative.RandomInt(4, 6), "Body", decalSlotsToUse, 12)
+			CumOntoArea(sub, "Vaginal" + OSANative.RandomInt(15, 18), "Body", decalSlotsToUse, 13)
 		endif
 	endif
 
@@ -536,28 +650,28 @@ Function ApplyCumVaginalPullout(actor sub, int intensity)
 EndFunction
 
 
-Function ApplyCumAnalPullout(actor sub, int intensity)
+Function ApplyCumAnalPullout(actor sub, int intensity, int[] decalSlotsToUse)
 	if realisticCumMode
-		CumOntoArea(sub, "AnalHeavy" + OSANative.RandomInt(1, 3))
+		CumOntoArea(sub, "AnalHeavy" + OSANative.RandomInt(1, 3), "Body", decalSlotsToUse, 0)
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "Back" + OSANative.RandomInt(1, 3))
+			CumOntoArea(sub, "Back" + OSANative.RandomInt(1, 3), "Body", decalSlotsToUse, 1)
 		endif
 	elseif intensity == 1
 		if outils.ChanceRoll(50)
-			CumOntoArea(sub, "AnalSprinkle1")
+			CumOntoArea(sub, "AnalSprinkle1", "Body", decalSlotsToUse, 2)
 		else
-			CumOntoArea(sub, "AnalSprinkle2")
+			CumOntoArea(sub, "AnalSprinkle2", "Body", decalSlotsToUse, 3)
 		endif
-		CumOntoArea(sub, "Back1")
+		CumOntoArea(sub, "Back1", "Body", decalSlotsToUse, 4)
 	elseif intensity == 2
-		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3))
-		CumOntoArea(sub, "Back2")
+		CumOntoArea(sub, "Anal" + OSANative.RandomInt(1, 3), "Body", decalSlotsToUse, 5)
+		CumOntoArea(sub, "Back2", "Body", decalSlotsToUse, 6)
 	elseif intensity == 3
-		CumOntoArea(sub, "AnalHeavy1")
-		CumOntoArea(sub, "Back3")
+		CumOntoArea(sub, "AnalHeavy1", "Body", decalSlotsToUse, 7)
+		CumOntoArea(sub, "Back3", "Body", decalSlotsToUse, 8)
 	elseif intensity == 4
-		CumOntoArea(sub, "Back3")
-		CumOntoArea(sub, "Back4")
+		CumOntoArea(sub, "Back3", "Body", decalSlotsToUse, 8)
+		CumOntoArea(sub, "Back4", "Body", decalSlotsToUse, 9)
 	endif
 
 	if !disableCumMeshes
@@ -570,14 +684,14 @@ Function ApplyCumAnalPullout(actor sub, int intensity)
 EndFunction
 
 
-Function ApplyCumHands(actor sub)
+Function ApplyCumHands(actor sub, int[] decalSlotsToUse)
 	; the Feet3 texture looks decent on Hands
 	; unfortunately, there are no cum textures for Hands in specific
-	CumOntoArea(sub, "Feet3", "Hands")
+	CumOntoArea(sub, "Feet3", "Hands", decalSlotsToUse, 14)
 EndFunction
 
 
-Function ApplyCumAsNecessary(actor cummedAct, float amountML)
+Function ApplyCumAsNecessary(actor cummedAct, float amountML, int[] decalSlotsToUse)
 	int intensity = GetLoadSizeFromML(amountML)
 
 	if intensity == 0
@@ -589,13 +703,13 @@ Function ApplyCumAsNecessary(actor cummedAct, float amountML)
 
 	; if animation class is handjob of any sort, also apply cum to hands
 	if (oclass == "HJ") || (oclass == "VHJ") || (oclass == "DHJ") || (oclass == "ApHJ")
-		ApplyCumHands(cummedAct)
+		ApplyCumHands(cummedAct, decalSlotsToUse)
 	endif
 
 	int pattern = GetCumPattern()
 
 	if pattern == cumPatternVaginal
-		ApplyCumVaginal(cummedAct, intensity)
+		ApplyCumVaginal(cummedAct, intensity, decalSlotsToUse)
 	elseif pattern == cumPatternOral
 		if (disableFacialsForElins)
 			Race cummedActRace = cummedAct.GetRace()
@@ -608,29 +722,29 @@ Function ApplyCumAsNecessary(actor cummedAct, float amountML)
 			endif
 		endif
 
-		ApplyCumOral(cummedAct, intensity)
+		ApplyCumOral(cummedAct, intensity, decalSlotsToUse)
 	elseif pattern == cumPatternBoobOral
-		ApplyCumBoob(cummedAct, intensity)
+		ApplyCumBoob(cummedAct, intensity, decalSlotsToUse)
 	elseif pattern == cumPatternAnal
-		ApplyCumAnal(cummedAct, intensity)
+		ApplyCumAnal(cummedAct, intensity, decalSlotsToUse)
 	elseif pattern == cumPatternFeet
-		ApplyCumFeet(cummedAct, intensity)
+		ApplyCumFeet(cummedAct, intensity, decalSlotsToUse)
 	elseif pattern == cumPatternVaginalPullout
-		ApplyCumVaginalPullout(cummedAct, intensity)
+		ApplyCumVaginalPullout(cummedAct, intensity, decalSlotsToUse)
 	elseif pattern == cumPatternAnalPullout
-		ApplyCumAnalPullout(cummedAct, intensity)
+		ApplyCumAnalPullout(cummedAct, intensity, decalSlotsToUse)
 	endif
 EndFunction
 
 
-Function CumOntoArea(actor act, string TexFilename, string area = "Body")
+Function CumOntoArea(actor act, string TexFilename, string area = "Body", int[] decalSlotsToUse, int slotIndex)
 	writelog("CumOntoArea")
 	writelog("Applying texture: " + TexFilename)
 
 	string cumTexture = GetCumTexture(TexFilename)
 
 	if !disableCumDecal
-		ReadyOverlay(act, ostim.AppearsFemale(act), area, cumTexture)
+		decalSlotsToUse[slotIndex] = ReadyOverlay(act, ostim.AppearsFemale(act), area, cumTexture, decalSlotsToUse[slotIndex])
 
 		RegisterForCleaningOnEnteringWater(act)
 
@@ -738,6 +852,25 @@ Event OnKeyDown(Int KeyPress)
 	; Event which listens for the cum bar key press
 	if (KeyPress != 1 && KeyPress == CheckCumKey)
 		TempDisplayBar()
+
+		float[] addRot = new float[3]
+		float[] subRot = new float[3]
+
+		addRot[2] = 10.0
+		subRot[2] = -10.0
+
+		Actor plyr = Game.GetPlayer()
+
+		NiOverride.AddNodeTransformRotation(plyr, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", addRot)
+		NiOverride.AddNodeTransformRotation(plyr, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", addRot)
+		NiOverride.UpdateNodeTransform(plyr, false, false, "CME Genitals01 [Gen01]")
+		NiOverride.UpdateNodeTransform(plyr, true, false, "CME Genitals01 [Gen01]")
+		Utility.Wait(2.0)
+		NiOverride.AddNodeTransformRotation(plyr, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", subRot)
+		NiOverride.AddNodeTransformRotation(plyr, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", subRot)
+		NiOverride.UpdateNodeTransform(plyr, false, false, "CME Genitals01 [Gen01]")
+		NiOverride.UpdateNodeTransform(plyr, true, false, "CME Genitals01 [Gen01]")
+
 	endif
 EndEvent
 
@@ -776,26 +909,6 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 
 		writelog("Blowing load size: " + CumAmount + " ML")
 		AdjustStoredCumAmount(orgasmer, 0 - CumAmount, false)
-
-		if !ostim.IsSoloScene()
-			actor partner = ostim.GetSexPartner(orgasmer)
-			bool malePartner = !ostim.IsFemale(partner)
-
-			ApplyCumAsNecessary(partner, CumAmount)
-
-			if (thirdActor)
-				ApplyCumAsNecessary(thirdActor, CumAmount)
-			endif
-
-			if ostim.IsVaginal()
-				if !malePartner ; give it to female
-					AdjustStoredCumAmount(partner, CumAmount, true)
-				endif
-			ElseIf (cumAmount > 0 && ostim.IsOral())
-				SendModEvent("ocum_cumoral", numArg=cumAmount)
-
-			endif
-		EndIf
 
 		CumShoot(orgasmer, cumamount)
 
@@ -1345,13 +1458,21 @@ Function ApplyOverlay(Actor akTarget, Bool Gender, String Area, String OverlaySl
 EndFunction
 
 
-Function ReadyOverlay(Actor akTarget, Bool Gender, String Area, String TextureToApply)
-	Int SlotToUse = GetEmptySlot(akTarget, Gender, Area)
+int Function ReadyOverlay(Actor akTarget, Bool Gender, String Area, String TextureToApply, int SlotToUse)
+	if SlotToUse == -1
+		SlotToUse = GetEmptySlot(akTarget, Gender, Area)
+	else
+		; cum already applied in this slot and intensity, abort
+		return SlotToUse
+	endif
+	
 	If SlotToUse != -1
 		ApplyOverlay(akTarget, Gender, Area, SlotToUse, TextureToApply)
 	Else
 		writelog("No slots available")
 	EndIf
+
+	return SlotToUse
 EndFunction
 
 
