@@ -27,6 +27,8 @@ actor domActor
 actor subActor
 actor thirdActor
 
+bool hasAppliedCumMeshOnCurrentPose
+
 Osexbar CumBar
 
 race teraElinRace
@@ -288,13 +290,18 @@ Function CumShoot(actor act, float amountML)
 	float frequency = StartFrequency
 
 	float maxContractionAngle = 15.0
-	float contractionAngleStep = 1.5
-
+	float contractionAngleStep = 3.0
 	float[] contractionAddRot = new float[3]
 	float[] contractionSubRot = new float[3]
-
 	contractionAddRot[2] = contractionAngleStep
 	contractionSubRot[2] = -contractionAngleStep
+
+	hasAppliedCumMeshOnCurrentPose = false
+
+	; scale is a multiplier, so we want to start and end at 1.0
+	float preShotsMaxScrotumScaleReduction = 0.07
+	float maxContractionScrotumScale = 0.07
+	float contractionScrotumScaleStep = 0.02
 
 	; store used cum decal overlay slots,
 	; so that we can add new slots as spurts accumulate in the same animation,
@@ -313,14 +320,51 @@ Function CumShoot(actor act, float amountML)
 	int currentPoseType = GetCumPattern()
 	float mlShotOnCurrentPose = 0.0
 
+	; before shooting, shrink scrotum to announce what's coming!
+	float preShotsScrotumScale = 1.0 - OSANative.RandomFloat(preShotsMaxScrotumScaleReduction * 0.5, preShotsMaxScrotumScaleReduction)
+	float desiredScrotumScale = preShotsScrotumScale
+	float accumulatedScrotumScale = 1.0
+
+	while accumulatedScrotumScale > desiredScrotumScale
+		accumulatedScrotumScale -= contractionScrotumScaleStep
+
+		If accumulatedScrotumScale < desiredScrotumScale
+			accumulatedScrotumScale = desiredScrotumScale
+		EndIf
+
+		NiOverride.AddNodeTransformScale(act, false, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+		NiOverride.AddNodeTransformScale(act, true, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+		NiOverride.UpdateNodeTransform(act, false, false, "NPC GenitalsScrotum [GenScrot]")
+		NiOverride.UpdateNodeTransform(act, true, false, "NPC GenitalsScrotum [GenScrot]")
+		Utility.Wait(0.01)
+
+	endwhile
+
 	while (i < numSpurts) && ostim.AnimationRunning()
 
 		bool shouldShoot = true
 
 		; orgasm contraction!
 		float desiredContraction = OSANative.RandomFloat(maxContractionAngle * 0.5, maxContractionAngle)
+		desiredScrotumScale = preShotsScrotumScale - OSANative.RandomFloat(maxContractionScrotumScale * 0.5, maxContractionScrotumScale)
 		float accumulatedAngle = 0.0
-		while accumulatedAngle < desiredContraction
+		accumulatedScrotumScale = preShotsScrotumScale
+
+		while accumulatedAngle < desiredContraction || accumulatedScrotumScale > desiredScrotumScale
+			accumulatedAngle += contractionAngleStep * 2.0 ; contraction is faster than relaxing
+			accumulatedScrotumScale -= contractionScrotumScaleStep * 2.0
+
+			if accumulatedAngle > desiredContraction
+				accumulatedAngle = desiredContraction
+			endif
+
+			If accumulatedScrotumScale < desiredScrotumScale
+				accumulatedScrotumScale = desiredScrotumScale
+			EndIf
+
+			contractionAddRot[2] = accumulatedAngle
+			contractionSubRot[2] = -accumulatedAngle
+
 			; bend one in one direction, the other in the opposite
 			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
 			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
@@ -330,11 +374,14 @@ Function CumShoot(actor act, float amountML)
 			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
 			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
 			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
+
+			NiOverride.AddNodeTransformScale(act, false, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+			NiOverride.AddNodeTransformScale(act, true, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+			NiOverride.UpdateNodeTransform(act, false, false, "NPC GenitalsScrotum [GenScrot]")
+			NiOverride.UpdateNodeTransform(act, true, false, "NPC GenitalsScrotum [GenScrot]")
 			Utility.Wait(0.01)
 
-			accumulatedAngle += contractionAngleStep * 2.0 ; contraction is faster than relaxing
-			contractionAddRot[2] = accumulatedAngle
-			contractionSubRot[2] = -accumulatedAngle
+			
 		endwhile
 		
 
@@ -354,6 +401,8 @@ Function CumShoot(actor act, float amountML)
 				currentPoseType = poseNow
 				mlShotOnCurrentPose = 0.0
 
+				hasAppliedCumMeshOnCurrentPose = false
+
 				i_decalslot = decalSlotsToUse.Length
 				while i_decalslot > 0
 					i_decalslot -= 1
@@ -370,6 +419,9 @@ Function CumShoot(actor act, float amountML)
 			if (thirdActor)
 				ApplyCumAsNecessary(thirdActor, mlShotOnCurrentPose, decalSlotsToUse)
 			endif
+
+			; we always attempt to add the cum mesh in ApplyCumAsNecessary
+			hasAppliedCumMeshOnCurrentPose = true
 
 			if ostim.IsVaginal()
 				if !malePartner ; give it to female
@@ -420,8 +472,25 @@ Function CumShoot(actor act, float amountML)
 		i += 1
 		frequency = StartFrequency + EndFrequencyIncrement * ((i as float) / (numSpurts as float))
 
+		
 		; undo contraction after the spurt
-		while accumulatedAngle > 0.0
+		desiredScrotumScale = preShotsScrotumScale
+
+		while accumulatedAngle > 0.0 || accumulatedScrotumScale < preShotsScrotumScale
+			accumulatedAngle -= contractionAngleStep
+			accumulatedScrotumScale += contractionScrotumScaleStep
+
+			If accumulatedAngle < 0.0
+				accumulatedAngle = 0.0
+			EndIf
+
+			If accumulatedScrotumScale > preShotsScrotumScale
+				accumulatedScrotumScale = preShotsScrotumScale
+			EndIf
+
+			contractionAddRot[2] = accumulatedAngle
+			contractionSubRot[2] = -accumulatedAngle
+
 			; bend in opposite directions from the starting contraction, to undo it
 			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
 			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
@@ -431,16 +500,37 @@ Function CumShoot(actor act, float amountML)
 			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals01 [Gen01]")
 			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
 			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
+
+			NiOverride.AddNodeTransformScale(act, false, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+			NiOverride.AddNodeTransformScale(act, true, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+			NiOverride.UpdateNodeTransform(act, false, false, "NPC GenitalsScrotum [GenScrot]")
+			NiOverride.UpdateNodeTransform(act, true, false, "NPC GenitalsScrotum [GenScrot]")
 			Utility.Wait(0.01)
 
-			accumulatedAngle -= contractionAngleStep
-			contractionAddRot[2] = accumulatedAngle
-			contractionSubRot[2] = -accumulatedAngle
+			
 		endwhile
 		
 		Utility.Wait(frequency)
 
 	EndWhile
+
+	; done shooting! restore scrotum scale!
+	desiredScrotumScale = 1.0
+
+	while accumulatedScrotumScale < desiredScrotumScale
+		accumulatedScrotumScale += contractionScrotumScaleStep
+
+		If accumulatedScrotumScale > desiredScrotumScale
+			accumulatedScrotumScale = desiredScrotumScale
+		EndIf
+
+		NiOverride.AddNodeTransformScale(act, false, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+		NiOverride.AddNodeTransformScale(act, true, false, "NPC GenitalsScrotum [GenScrot]", "Ocum-custom", accumulatedScrotumScale)
+		NiOverride.UpdateNodeTransform(act, false, false, "NPC GenitalsScrotum [GenScrot]")
+		NiOverride.UpdateNodeTransform(act, true, false, "NPC GenitalsScrotum [GenScrot]")
+		Utility.Wait(0.01)
+
+	endwhile
 
 	caster.delete()
 	target.delete()
@@ -765,6 +855,10 @@ EndFunction
 
 
 function EquipCumMesh(actor act, armor item)
+	If hasAppliedCumMeshOnCurrentPose
+		return
+	EndIf
+
 	writelog("EquipCumMesh")
 	writelog("Equipping mesh item: " + item)
 
@@ -852,24 +946,6 @@ Event OnKeyDown(Int KeyPress)
 	; Event which listens for the cum bar key press
 	if (KeyPress != 1 && KeyPress == CheckCumKey)
 		TempDisplayBar()
-
-		float[] addRot = new float[3]
-		float[] subRot = new float[3]
-
-		addRot[2] = 10.0
-		subRot[2] = -10.0
-
-		Actor plyr = Game.GetPlayer()
-
-		NiOverride.AddNodeTransformRotation(plyr, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", addRot)
-		NiOverride.AddNodeTransformRotation(plyr, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", addRot)
-		NiOverride.UpdateNodeTransform(plyr, false, false, "CME Genitals01 [Gen01]")
-		NiOverride.UpdateNodeTransform(plyr, true, false, "CME Genitals01 [Gen01]")
-		Utility.Wait(2.0)
-		NiOverride.AddNodeTransformRotation(plyr, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", subRot)
-		NiOverride.AddNodeTransformRotation(plyr, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", subRot)
-		NiOverride.UpdateNodeTransform(plyr, false, false, "CME Genitals01 [Gen01]")
-		NiOverride.UpdateNodeTransform(plyr, true, false, "CME Genitals01 [Gen01]")
 
 	endif
 EndEvent
