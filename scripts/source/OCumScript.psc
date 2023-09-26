@@ -1,5 +1,8 @@
 ScriptName OCumScript Extends OStimAddon Conditional
 
+import OCumUtils
+import OCumSceneDataUtils
+
 ; ------------------------ Properties and script wide Vars ------------------------ ;
 
 string cumStoredKey
@@ -231,7 +234,7 @@ event OnFireCumBlast(string eventName, string strArg, float numArg, Form sender)
 	endif
 
 	cum.Cast(cumProjectileCaster, aktarget = cumProjectileTarget)
-	ostim.PlaySound(cumProjectileShootingActor, cumsound)
+	PlaySound(cumProjectileShootingActor, cumsound)
 
 	; Sounds from:
 	; https://freesound.org/people/j1987/sounds/106395/
@@ -248,13 +251,7 @@ Function CumShoot(actor act, float amountML)
 
 	if disableCumShot
 		return
-	endif
-
-	; ---  By Migal: stop spurting through head and body by stopping cum shoots in certain animation classes
-	; string AClass = ostim.GetCurrentAnimationClass()
-	; if (AClass == "BJ") || (AClass == "ApPJ") || (AClass == "HhBJ") || (AClass == "VBJ") || (AClass == "Sx") || (AClass == "An")
-	; 	return
-	; endif		
+	endif	
 
 	int size = GetLoadSizeFromML(amountml)
 	if size == 0
@@ -331,7 +328,7 @@ Function CumShoot(actor act, float amountML)
 	actor partner = ostim.GetSexPartner(act)
 	bool malePartner = !ostim.IsFemale(partner)
 
-	int currentPoseType = GetCumPattern()
+	int currentPoseType = cumPatternNone
 	float mlShotOnCurrentPose = 0.0
 
 	; before shooting, shrink scrotum to announce what's coming!
@@ -401,15 +398,15 @@ Function CumShoot(actor act, float amountML)
 
 		; ---  By Migal: stop spurting through head and body by stopping cum shoots in certain animation classes
 		; since there may be a lot of spurts and the animation can change before it's finished, we should keep checking for each blast
-		string AClass = ostim.GetCurrentAnimationClass()
-		if (AClass == "BJ") || (AClass == "ApPJ") || (AClass == "HhBJ") || (AClass == "VBJ") || (AClass == "Sx") || (AClass == "An")
+		string sceneId = ostim.GetCurrentAnimationSceneID()
+		if IsBlowjob(sceneId) || IsVaginalSex(sceneId) || IsAnalSex(sceneId)
 			shouldShoot = false
 		endif
 
 		; apply cum layers
 		if !isSoloScene
 
-			int poseNow = GetCumPattern()
+			int poseNow = GetCumPattern(sceneId)
 			if poseNow != currentPoseType
 				; pose has changed! reset pose-dependent vars
 				currentPoseType = poseNow
@@ -558,7 +555,7 @@ EndFunction
 
 Function SquirtShootFlow(actor act)
 	writelog("SquirtShootFlow")
-	ostim.PlaySound(act, squirtsound)
+	PlaySound(act, squirtsound)
 
 	if OUtils.ChanceRoll(50)
 		squirtSpell2.cast(act, act)
@@ -570,7 +567,7 @@ EndFunction
 
 Function SquirtShootSpurt(actor act)
 	writelog("SquirtShootSpurt")
-	ostim.PlaySound(act, squirtsound)
+	PlaySound(act, squirtsound)
 
 	squirtSpell.SetNthEffectDuration(0, Utility.RandomInt(1, 7))
 
@@ -808,14 +805,14 @@ Function ApplyCumAsNecessary(actor cummedAct, float amountML, int[] decalSlotsTo
 	endif
 	writelog("Applying cum")
 
-	string oclass = ostim.GetCurrentAnimationClass()
+	string sceneId = ostim.GetCurrentAnimationSceneID()
 
 	; if animation class is handjob of any sort, also apply cum to hands
-	if (oclass == "HJ") || (oclass == "VHJ") || (oclass == "DHJ") || (oclass == "ApHJ")
+	if IsHandjob(sceneId)
 		ApplyCumHands(cummedAct, decalSlotsToUse)
 	endif
 
-	int pattern = GetCumPattern()
+	int pattern = GetCumPattern(sceneId)
 
 	if pattern == cumPatternVaginal
 		ApplyCumVaginal(cummedAct, intensity, decalSlotsToUse)
@@ -992,7 +989,8 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 	bool male = !ostim.IsFemale(orgasmer)
 
 	if male
-		ostim.PlaySound(orgasmer, cumsound)
+
+		PlaySound(orgasmer, cumsound)
 		float CumAmount
 		float MaxStorage = GetMaxCumStoragePossible(orgasmer)
 		float idealMax = (MaxStorage / 2) + (MaxStorage * Utility.RandomFloat(-0.15, 0.15))
@@ -1016,7 +1014,7 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 	else
 		if outils.ChanceRoll(50)
 			if !ostim.MuteOSA
-				ostim.PlaySound(orgasmer, femaleGasp)
+				PlaySound(orgasmer, femaleGasp)
 			endif
 		endif
 		if outils.ChanceRoll(squirtChance)
@@ -1327,22 +1325,20 @@ Function RemoveCumTex(actor act)
 EndFunction
 
 
-int Function GetCumPattern()
-	string oclass = ostim.GetCurrentAnimationClass()
-	string currentAnimation = ostim.GetCurrentAnimationSceneID()
+int Function GetCumPattern(string sceneId)
 
 	if ostim.IsVaginal()
 		return cumPatternVaginal
-	elseif oclass == "An"
+	elseif IsAnalSex(sceneId)
 		return cumPatternAnal
-	elseif (oclass == "ApPJ") || (oclass == "BJ") || (oclass == "HhPJ") || (oclass == "HhBJ") || (oclass == "VBJ") || (oclass == "HhPo")
+	elseif IsOralSex(sceneId)
 		return cumPatternOral
-	elseif (oclass == "BoJ") || (oclass == "VHJ")
+	elseif IsBreastJob(sceneId)
 		return cumPatternBoobOral
-	elseif (oclass == "FJ")
+	elseif IsFootJob(sceneId)
 		return cumPatternFeet
-	elseif (oclass == "Po") || (oclass == "HJ")  || (oclass == "ApHJ") || (oclass == "DHJ")
-		return CalculateCumPatternFromSkeleton(ostim.GetDomActor(), ostim.GetSubActor())
+	elseif IsHandjob(sceneId) || IsVaginalPullout(sceneId) || IsAnalPullout(sceneId)
+		return CalculateCumPatternFromSkeleton(ostim.GetDomActor(), ostim.GetSubActor(), sceneId)
 	endif
 EndFunction
 
@@ -1573,7 +1569,7 @@ int Function ReadyOverlay(Actor akTarget, Bool Gender, String Area, String Textu
 EndFunction
 
 
-int Function CalculateCumPatternFromSkeleton(actor male, actor female)
+int Function CalculateCumPatternFromSkeleton(actor male, actor female, string sceneId)
 	float[] maleGenitals = GetNodeLocation(male, genitalsNode)
 
 	float[] femaleGenitals = GetNodeLocation(female, genitalsFemaleNode)
@@ -1598,7 +1594,7 @@ int Function CalculateCumPatternFromSkeleton(actor male, actor female)
 	; if animation class is masturbation and it is nearer to ass, it makes sense to apply cum on back
 	; likewise, if it is nearer to vagina, it makes sense to also apply cum on belly+chest area
 	; this will work especially great for Pull-Out animations from OpenSex
-	if ostim.GetCurrentAnimationClass() == "Po"
+	if IsVaginalPullout(sceneId) || IsAnalPullout(sceneId)
 		if smallestDistance == cumPatternVaginal
 			pattern = cumPatternVaginalPullout
 		elseif smallestDistance == cumPatternAnal
