@@ -287,10 +287,14 @@ Function CumShoot(actor act, float amountML)
 
 	if cumProjectileCaster == None
 		cumProjectileCaster = act.PlaceAtMe(CumLauncher)
+	else
+		cumProjectileCaster.MoveTo(act)
 	endif
 
 	if cumProjectileTarget == None
 		cumProjectileTarget = act.PlaceAtMe(CumLauncher) ; to aim the spell in the correct direction
+	else
+		cumProjectileTarget.MoveTo(act)
 	endif
 	
 	Float[] uPos = new Float[3]
@@ -1326,7 +1330,6 @@ EndFunction
 
 
 int Function GetCumPattern(string sceneId)
-
 	if ostim.IsVaginal()
 		return cumPatternVaginal
 	elseif IsAnalSex(sceneId)
@@ -1339,6 +1342,8 @@ int Function GetCumPattern(string sceneId)
 		return cumPatternFeet
 	elseif IsHandjob(sceneId) || IsVaginalPullout(sceneId) || IsAnalPullout(sceneId)
 		return CalculateCumPatternFromSkeleton(ostim.GetDomActor(), ostim.GetSubActor(), sceneId)
+	else
+		return cumPatternNone
 	endif
 EndFunction
 
