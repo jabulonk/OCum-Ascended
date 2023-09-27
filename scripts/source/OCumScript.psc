@@ -35,6 +35,18 @@ ObjectReference cumProjectileTarget
 actor cumProjectileShootingActor
 
 bool hasAppliedCumMeshOnCurrentPose
+int cumPatternOfCurrentPose
+
+; cached pose type checks
+bool curPoseIsBlowjob
+bool curPoseIsVaginal
+bool curPoseIsAnal
+bool curPoseIsVaginalPullout
+bool curPoseIsAnalPullout
+bool curPoseIsHandjob
+bool curPoseIsBreastjob
+bool curPoseIsFootjob
+
 
 Osexbar CumBar
 
@@ -133,7 +145,7 @@ float Function GetCumStoredAmount(actor npc)
 			float timePassed = currenttime - lastCheckTime
 			float cumToRemove = (timePassed / 0.083)
 
-			writelog(timePassed)
+			WriteLog(timePassed)
 
 			float max = GetMaxCumStoragePossible(npc)
 
@@ -335,6 +347,19 @@ Function CumShoot(actor act, float amountML)
 	int currentPoseType = cumPatternNone
 	float mlShotOnCurrentPose = 0.0
 
+	; mark partner as cummed on
+	if !isSoloScene && !disableCumDecal
+		RegisterForCleaningOnEnteringWater(partner)
+
+		if PapyrusUtil.CountActor(currentSceneCummedOnActs, partner) == 0
+			currentSceneCummedOnActs = PapyrusUtil.PushActor(currentSceneCummedOnActs, partner)
+		endif
+
+		if PapyrusUtil.CountActor(cummedOnActs, partner) == 0
+			cummedOnActs = PapyrusUtil.PushActor(cummedonacts, partner)
+		endif
+	endif
+
 	; before shooting, shrink scrotum to announce what's coming!
 	float preShotsScrotumScale = 1.0 - Utility.RandomFloat(preShotsMaxScrotumScaleReduction * 0.5, preShotsMaxScrotumScaleReduction)
 	float desiredScrotumScale = preShotsScrotumScale
@@ -403,17 +428,45 @@ Function CumShoot(actor act, float amountML)
 		; ---  By Migal: stop spurting through head and body by stopping cum shoots in certain animation classes
 		; since there may be a lot of spurts and the animation can change before it's finished, we should keep checking for each blast
 		string sceneId = ostim.GetCurrentAnimationSceneID()
-		if IsBlowjob(sceneId) || IsVaginalSex(sceneId) || IsAnalSex(sceneId)
+
+		curPoseIsBlowjob = false
+		curPoseIsVaginal = false
+		curPoseIsAnal = false
+		curPoseIsVaginalPullout = false
+		curPoseIsAnalPullout = false
+		curPoseIsHandjob = false
+		curPoseIsBreastjob = false
+		curPoseIsFootjob = false
+
+		if IsBlowjob(sceneId)
+			curPoseIsBlowjob = true
+		ElseIf IsVaginalSex(sceneId)
+			curPoseIsVaginal = true
+		ElseIf IsAnalSex(sceneId)
+			curPoseIsAnal = true
+		ElseIf IsVaginalPullout(sceneId)
+			curPoseIsVaginalPullout = true
+		ElseIf IsAnalPullout(sceneId)
+			curPoseIsAnalPullout = true
+		ElseIf IsHandjob(sceneId)
+			curPoseIsHandjob = true
+		ElseIf IsBreastjob(sceneId)
+			curPoseIsBreastjob = true
+		ElseIf IsFootjob(sceneId)
+			curPoseIsFootjob = true
+		endif
+
+		if curPoseIsBlowjob || curPoseIsVaginal || curPoseIsAnal
 			shouldShoot = false
 		endif
 
 		; apply cum layers
 		if !isSoloScene
 
-			int poseNow = GetCumPattern(sceneId)
-			if poseNow != currentPoseType
+			cumPatternOfCurrentPose = GetCumPattern(sceneId)
+			if cumPatternOfCurrentPose != currentPoseType
 				; pose has changed! reset pose-dependent vars
-				currentPoseType = poseNow
+				currentPoseType = cumPatternOfCurrentPose
 				mlShotOnCurrentPose = 0.0
 
 				hasAppliedCumMeshOnCurrentPose = false
@@ -429,20 +482,20 @@ Function CumShoot(actor act, float amountML)
 
 			mlShotOnCurrentPose += spurtCumAmount
 
-			ApplyCumAsNecessary(partner, mlShotOnCurrentPose, decalSlotsToUse)
+			ApplyCumAsNecessary(sceneId, partner, mlShotOnCurrentPose, decalSlotsToUse)
 
 			if (thirdActor)
-				ApplyCumAsNecessary(thirdActor, mlShotOnCurrentPose, decalSlotsToUse)
+				ApplyCumAsNecessary(sceneId, thirdActor, mlShotOnCurrentPose, decalSlotsToUse)
 			endif
 
 			; we always attempt to add the cum mesh in ApplyCumAsNecessary
 			hasAppliedCumMeshOnCurrentPose = true
 
-			if ostim.IsVaginal()
+			if curPoseIsVaginal
 				if !malePartner ; give it to female
 					AdjustStoredCumAmount(partner, spurtCumAmount, true)
 				endif
-			ElseIf (spurtCumAmount > 0 && ostim.IsOral())
+			ElseIf (spurtCumAmount > 0 && curPoseIsBlowjob)
 				SendModEvent("ocum_cumoral", numArg=spurtCumAmount)
 			endif
 		EndIf
@@ -465,7 +518,7 @@ Function CumShoot(actor act, float amountML)
 			endif
 	
 			cumProjectileShootingActor = act
-			SendModEvent("ocum_firecumblast", "", Utility.RandomInt(1, 4))
+			cumProjectileShootingActor.SendModEvent("ocum_firecumblast", "", Utility.RandomInt(1, 4))
 	
 			if doublefire
 				Utility.Wait(Utility.RandomFloat(0.025, 0.075))
@@ -475,7 +528,7 @@ Function CumShoot(actor act, float amountML)
 				cumProjectileTarget.SetPosition(targetX, targetY, targetZ)
 				
 				cumProjectileShootingActor = act
-				SendModEvent("ocum_firecumblast", "", Utility.RandomInt(1, 4))
+				cumProjectileShootingActor.SendModEvent("ocum_firecumblast", "", Utility.RandomInt(1, 4))
 				if tripleFire
 					Utility.Wait(Utility.RandomFloat(0.025, 0.075))
 
@@ -484,14 +537,14 @@ Function CumShoot(actor act, float amountML)
 					cumProjectileTarget.SetPosition(targetX, targetY, targetZ)
 	
 					cumProjectileShootingActor = act
-					SendModEvent("ocum_firecumblast", "", Utility.RandomInt(1, 4))
+					cumProjectileShootingActor.SendModEvent("ocum_firecumblast", "", Utility.RandomInt(1, 4))
 				endif
 			endif
 		endif
 
 		i += 1
 		frequency = StartFrequency + EndFrequencyIncrement * ((i as float) / (numSpurts as float))
-
+		WriteLog("done shooting this spurt, will now undo contraction. frequency: " + frequency)
 		
 		; undo contraction after the spurt
 		desiredScrotumScale = preShotsScrotumScale
@@ -801,7 +854,7 @@ Function ApplyCumHands(actor sub, int[] decalSlotsToUse)
 EndFunction
 
 
-Function ApplyCumAsNecessary(actor cummedAct, float amountML, int[] decalSlotsToUse)
+Function ApplyCumAsNecessary(string sceneId, actor cummedAct, float amountML, int[] decalSlotsToUse)
 	int intensity = GetLoadSizeFromML(amountML)
 
 	if intensity == 0
@@ -809,14 +862,12 @@ Function ApplyCumAsNecessary(actor cummedAct, float amountML, int[] decalSlotsTo
 	endif
 	writelog("Applying cum")
 
-	string sceneId = ostim.GetCurrentAnimationSceneID()
-
 	; if animation class is handjob of any sort, also apply cum to hands
-	if IsHandjob(sceneId)
+	if curPoseIsHandjob
 		ApplyCumHands(cummedAct, decalSlotsToUse)
 	endif
 
-	int pattern = GetCumPattern(sceneId)
+	int pattern = cumPatternOfCurrentPose
 
 	if pattern == cumPatternVaginal
 		ApplyCumVaginal(cummedAct, intensity, decalSlotsToUse)
@@ -849,22 +900,21 @@ EndFunction
 
 Function CumOntoArea(actor act, string TexFilename, string area = "Body", int[] decalSlotsToUse, int slotIndex)
 	writelog("CumOntoArea")
-	writelog("Applying texture: " + TexFilename)
 
 	string cumTexture = GetCumTexture(TexFilename)
 
 	if !disableCumDecal
 		decalSlotsToUse[slotIndex] = ReadyOverlay(act, ostim.AppearsFemale(act), area, cumTexture, decalSlotsToUse[slotIndex])
 
-		RegisterForCleaningOnEnteringWater(act)
+		; RegisterForCleaningOnEnteringWater(act)
 
-		if PapyrusUtil.CountActor(currentSceneCummedOnActs, act) == 0
-			currentSceneCummedOnActs = PapyrusUtil.PushActor(currentSceneCummedOnActs, act)
-		endif
+		; if PapyrusUtil.CountActor(currentSceneCummedOnActs, act) == 0
+		; 	currentSceneCummedOnActs = PapyrusUtil.PushActor(currentSceneCummedOnActs, act)
+		; endif
 
-		if PapyrusUtil.CountActor(cummedOnActs, act) == 0
-			cummedOnActs = PapyrusUtil.PushActor(cummedonacts, act)
-		endif
+		; if PapyrusUtil.CountActor(cummedOnActs, act) == 0
+		; 	cummedOnActs = PapyrusUtil.PushActor(cummedonacts, act)
+		; endif
 	endif
 
 	; Cum textures from:
@@ -1198,15 +1248,6 @@ EndFunction
 ;  ╚═════╝    ╚═╝   ╚═╝╚══════╝╚══════╝
 
 
-; ------------------------  Console logging utility functions ------------------------  ;
-
-Function writelog(string a)
-	a = "OCum: "+a
-	consoleutil.printmessage(a)
-	debug.trace(a)
-EndFunction
-
-
 ; ------------------------ Cum utility functions ------------------------  ;
 
 Function updateCheckCumKey(int newKey)
@@ -1330,17 +1371,17 @@ EndFunction
 
 
 int Function GetCumPattern(string sceneId)
-	if ostim.IsVaginal()
+	if curPoseIsVaginal
 		return cumPatternVaginal
-	elseif IsAnalSex(sceneId)
+	elseif curPoseIsAnal
 		return cumPatternAnal
-	elseif IsOralSex(sceneId)
+	elseif curPoseIsBlowjob
 		return cumPatternOral
-	elseif IsBreastJob(sceneId)
+	elseif curPoseIsBreastjob
 		return cumPatternBoobOral
-	elseif IsFootJob(sceneId)
+	elseif curPoseIsFootjob
 		return cumPatternFeet
-	elseif IsHandjob(sceneId) || IsVaginalPullout(sceneId) || IsAnalPullout(sceneId)
+	elseif curPoseIsHandjob || curPoseIsVaginalPullout || curPoseIsAnalPullout
 		return CalculateCumPatternFromSkeleton(ostim.GetDomActor(), ostim.GetSubActor(), sceneId)
 	else
 		return cumPatternNone
@@ -1565,6 +1606,7 @@ int Function ReadyOverlay(Actor akTarget, Bool Gender, String Area, String Textu
 	endif
 	
 	If SlotToUse != -1
+		writelog("Applying texture: " + TextureToApply)
 		ApplyOverlay(akTarget, Gender, Area, SlotToUse, TextureToApply)
 	Else
 		writelog("No slots available")
