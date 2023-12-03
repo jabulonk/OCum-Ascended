@@ -3,14 +3,16 @@ Scriptname OCumMCMScript extends SKI_ConfigBase
 import OCumUtils
 
 ; Settings
+int setEnableNPCSceneSupport
 int setCleanCumEnterWater
 int setDisableCumShot
 int setDisableCumDecals
 int setDisableCumMeshes
+int setEnableVagAnOverlays
 int setCumRegenSpeed
 int setCumCleanupTimer
 int setCumBarKey
-int setCleanCumDecals
+; int setCleanCumDecals
 int setResetActor
 int setSquirtChance
 int setCreampieChance
@@ -43,9 +45,11 @@ event OnPageReset(string page)
 	SetCursorFillMode(TOP_TO_BOTTOM)
 
 	AddColoredHeader("$ocum_header_main_settings")
+	setEnableNPCSceneSupport = AddToggleOption("$ocum_option_enable_npc_scene_support", OCum.enableNPCSceneSupport)
 	setDisableCumShot = AddToggleOption("$ocum_option_disable_cum_shots", OCum.disableCumshot)
 	setDisableCumDecals = AddToggleOption("$ocum_option_disable_cum_decals", OCum.disableCumDecal)
 	setDisableCumMeshes = AddToggleOption("$ocum_option_disable_cum_meshes", OCum.disableCumMeshes)
+	setEnableVagAnOverlays = AddToggleOption("$ocum_option_enable_vag_an_overlays", OCum.enableVagAnOverlays)
 	setDisableFacialsForElins = AddToggleOption("$ocum_option_disable_facials_elins", OCum.disableFacialsForElins)
 	setCleanCumEnterWater = AddToggleOption("$ocum_option_clean_water_enter", OCum.cleanCumEnterWater)
 	setCumBarKey = AddKeyMapOption("$ocum_option_cum_bar_key", OCum.checkCumKey)
@@ -58,7 +62,7 @@ event OnPageReset(string page)
 	endif
 
 	AddColoredHeader("$ocum_header_reset")
-	setCleanCumDecals = AddToggleOption("$ocum_option_clean_cum_decals", false)
+	; setCleanCumDecals = AddToggleOption("$ocum_option_clean_cum_decals", false)
 	setResetActor = AddTextOption("$ocum_option_reset_actor", actorInCrosshair.GetActorBase().GetName())
 	setResetDefaults = AddToggleOption("$ocum_option_reset_defaults", false)
 
@@ -83,7 +87,10 @@ endEvent
 
 
 event OnOptionSelect(int option)
-	if (option == setCleanCumEnterWater)
+	if (option == setEnableNPCSceneSupport)
+		OCum.enableNPCSceneSupport = !OCum.enableNPCSceneSupport
+		SetToggleOptionValue(setEnableNPCSceneSupport, OCum.enableNPCSceneSupport)
+	elseif (option == setCleanCumEnterWater)
 		OCum.cleanCumEnterWater = !OCum.cleanCumEnterWater
 		SetToggleOptionValue(setCleanCumEnterWater, OCum.cleanCumEnterWater)
 	elseif (option == setDisableCumShot)
@@ -98,15 +105,18 @@ event OnOptionSelect(int option)
 		if (!OCum.disableCumMeshes)
 			ShowMessage("$ocum_message_cum_meshes_warning", false)
 		endif
+	elseif (option == setEnableVagAnOverlays)
+		OCum.enableVagAnOverlays = !OCum.enableVagAnOverlays
+		SetToggleOptionValue(setEnableVagAnOverlays, OCum.enableVagAnOverlays)
 	elseif (option == setDisableFacialsForElins)
 		OCum.DisableFacialsForElins = !OCum.DisableFacialsForElins
 		SetToggleOptionValue(setDisableFacialsForElins, OCum.DisableFacialsForElins)
 	elseif (option == setEnableHigherCumRegenSpeed)
 		enableHigherCumRegenSpeed = !enableHigherCumRegenSpeed
 		SetToggleOptionValue(setEnableHigherCumRegenSpeed, enableHigherCumRegenSpeed)
-	elseif (option == setCleanCumDecals)
-		OCum.CleanCumTexturesFromAllActors()
-		ShowMessage("$ocum_message_cum_cleaned", false)
+	; elseif (option == setCleanCumDecals)
+	; 	OCum.CleanCumTexturesFromAllActors()
+	; 	ShowMessage("$ocum_message_cum_cleaned", false)
 	elseif (option == setResetActor)
 		Actor actorInCrosshair = Game.GetCurrentCrosshairRef() as Actor
 
@@ -115,7 +125,7 @@ event OnOptionSelect(int option)
 		endif
 
 		if (actorInCrosshair)
-			OCum.CleanCumTexturesFromActor(actorInCrosshair, true)
+			OCum.CleanCumTexturesFromActor(actorInCrosshair)
 			OCum.UnsetActorDataFloats(actorInCrosshair)
 
 			RemoveItem(actorInCrosshair, OCumMale.CumMeshPussy)
@@ -230,7 +240,9 @@ endEvent
 
 
 event OnOptionHighlight(int option)
-	if (option == setCleanCumEnterWater)
+	if (option == setEnableNPCSceneSupport)
+		SetInfoText("$ocum_highlight_enable_npc_scene_support")
+	elseif (option == setCleanCumEnterWater)
 		SetInfoText("$ocum_highlight_clean_water_enter")
 	elseif (option == setDisableCumShot)
 		SetInfoText("$ocum_highlight_disable_cum_shots")
@@ -238,6 +250,8 @@ event OnOptionHighlight(int option)
 		SetInfoText("$ocum_highlight_disable_cum_decals")
 	elseif (option == setDisableCumMeshes)
 		SetInfoText("$ocum_highlight_disable_cum_meshes")
+	elseif (option == setEnableVagAnOverlays)
+		SetInfoText("$ocum_highlight_enable_vag_an_overlays")
 	elseif (option == setDisableFacialsForElins)
 		SetInfoText("$ocum_highlight_disable_facials_elins")
 	elseif (option == setCumRegenSpeed)
@@ -252,8 +266,8 @@ event OnOptionHighlight(int option)
 		SetInfoText("$ocum_highlight_cum_cleanup_timer")
 	elseif (option == setCumBarKey)
 		SetInfoText("$ocum_highlight_cum_bar_key")
-	elseif (option == setCleanCumDecals)
-		SetInfoText("$ocum_highlight_clean_cum_decals")
+	; elseif (option == setCleanCumDecals)
+	; 	SetInfoText("$ocum_highlight_clean_cum_decals")
 	elseif (option == setResetActor)
 		SetInfoText("$ocum_highlight_reset_actor")
 	elseif (option == setEnableHigherCumRegenSpeed)
@@ -266,7 +280,6 @@ event OnOptionHighlight(int option)
 endEvent
 
 
-; Shamelessly copied from OStim's OSexIntegrationMCM.psc
 bool Color1
 function AddColoredHeader(String In)
 	string Blue = "#6699ff"
@@ -286,6 +299,9 @@ endFunction
 
 
 function ResetDefaults()
+	OCum.enableNPCSceneSupport = false
+	SetToggleOptionValue(setEnableNPCSceneSupport, OCum.enableNPCSceneSupport)
+
 	OCum.cleanCumEnterWater = true
 	SetToggleOptionValue(setCleanCumEnterWater, OCum.cleanCumEnterWater)
 
@@ -295,8 +311,11 @@ function ResetDefaults()
 	OCum.DisableCumDecal = false
 	SetToggleOptionValue(setDisableCumDecals, OCum.disableCumDecal)
 
-	OCum.disableCumMeshes = false
+	OCum.disableCumMeshes = true
 	SetToggleOptionValue(setDisableCumMeshes, OCum.disableCumMeshes)
+
+	OCum.enableVagAnOverlays = false
+	SetToggleOptionValue(setEnableVagAnOverlays, OCum.enableVagAnOverlays)
 
 	OCum.DisableFacialsForElins = false
 	SetToggleOptionValue(setDisableFacialsForElins, OCum.disableFacialsForElins)

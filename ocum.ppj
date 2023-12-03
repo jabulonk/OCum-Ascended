@@ -8,7 +8,7 @@
     Zip="true">
     <Variables>
         <Variable Name="ModName" Value="OCum Ascended"/>
-        <Variable Name="Version" Value="3.0.0"/>
+        <Variable Name="Version" Value="4.0.0"/>
         <Variable Name="MyProject" Value="."/>
         <Variable Name="Dist" Value="..\dist"/>
     </Variables>
@@ -23,6 +23,7 @@
         <Import>https://github.com/MrOctopus/nl_online/tree/main/skyui/source</Import>
         <Import>https://github.com/MrOctopus/nl_online/tree/main/skse64/source</Import>
         <Import>https://github.com/MrOctopus/nl_online/tree/main/sse/source</Import>
+        <Import>https://github.com/powerof3/PapyrusExtenderSSE/tree/master/Papyrus/Source/scripts</Import>
     </Imports>
     <Folders>
         <Folder>@MyProject\Source\Scripts</Folder>
@@ -37,6 +38,7 @@
             <Include>Meshes</Include>
             <Include>Sound</Include>
             <Include>Interface</Include>
+            <Include>SKSE</Include>
         </ZipFile>
     </ZipFiles>
 </PapyrusProject>

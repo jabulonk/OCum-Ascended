@@ -8,12 +8,10 @@ import OCumSceneDataUtils
 string cumStoredKey
 string lastCumCheckTimeKey
 
-actor[] property cummedOnActs auto
-
 OSexBar property CumBar auto
 OBarsScript OBars
 
-actor[] property currentSceneCummedOnActs auto
+Faction property HasCumFaction auto
 
 spell property OCumSpell auto
 
@@ -29,9 +27,11 @@ float property cumBarMaxAmountPlayer auto
 float property cumCleanupTimer auto
 float property cumRegenSpeed auto
 
+bool property enableNPCSceneSupport auto
 bool property disableCumshot auto
 bool property disableCumDecal auto
 bool property disableCumMeshes auto
+bool property enableVagAnOverlays auto
 bool property disableFacialsForElins auto
 bool property cleanCumEnterWater auto
 
@@ -119,6 +119,10 @@ Function OnLoad()
 	CumStoredKey = "CumStoredAmountV2"
 	LastCumCheckTimeKey = "CumLastCalcTimeV2"
 
+	if HasCumFaction == None
+		HasCumFaction = Game.GetFormFromFile(0xF46, "OCum.esp") As Faction
+	endif
+
 	OStim = OUtils.GetOStim()
 	PlayerRef = Game.GetPlayer()
 
@@ -147,15 +151,10 @@ Event OnAnimationEvent(ObjectReference akSource, string asEventName)
 	if asEventName == "SoundPlay.FSTSwimSwim"
 		Actor act = akSource as Actor
 
-		if PapyrusUtil.CountActor(cummedOnActs, act) > 0
-			if act.HasMagicEffectWithKeyWord(AppliedCumKeyword)
-				act.DispelSpell(OCumSpell)
-			else
-				CleanCumTexturesFromActor(act, true)
-			endif
+		if act.HasMagicEffectWithKeyWord(AppliedCumKeyword)
+			act.DispelSpell(OCumSpell)
 		else
-			; here mostly for safety, in theory it should never enter this else body
-			UnregisterForAnimationEvent(act, "SoundPlay.FSTSwimSwim")
+			CleanCumTexturesFromActor(act)
 		endif
 	endIf
 endEvent
@@ -199,8 +198,8 @@ Function TempDisplayBar()
 
 		OBars.SetBarVisible(CumBar, True)
 
-		; make bar disappear in 10 seconds
-		RegisterForSingleUpdate(10.0)
+		; make bar disappear in 5 seconds
+		RegisterForSingleUpdate(5.0)
 	EndIf
 Endfunction
 
@@ -245,46 +244,14 @@ float Function GetMaxCumStoragePossible(actor npc)
 EndFunction
 
 
-Function CleanCumTexturesFromActor(Actor Act, Bool RemoveActorFromCummedOnArrays)
+Function CleanCumTexturesFromActor(Actor Act)
 	bool gender = OStim.AppearsFemale(Act)
 
 	RemoveCumDecals(Act, gender)
 	UnregisterForAnimationEvent(act, "SoundPlay.FSTSwimSwim")
 
-	if RemoveActorFromCummedOnArrays
-		cummedOnActs = PapyrusUtil.RemoveActor(cummedOnActs, act)
-		currentSceneCummedOnActs = PapyrusUtil.RemoveActor(currentSceneCummedOnActs, act)
-	endif
+	Act.RemoveFromFaction(HasCumFaction)
 endFunction
-
-
-Function CleanCumTexturesFromAllActors()
-	isRemovingCumFromAllActors = true
-
-	int i
-	int max = cummedOnActs.Length
-
-	actor act
-
-	while i < max
-		act = cummedOnActs[i]
-
-		if act != none
-			if act.HasMagicEffectWithKeyWord(AppliedCumKeyword)
-				act.DispelSpell(OCumSpell)
-			else
-				CleanCumTexturesFromActor(act, false)
-			endif
-		endif
-
-		i += 1
-	endwhile
-
-	cummedOnActs = PapyrusUtil.ResizeActorArray(cummedOnActs, 0)
-	currentSceneCummedOnActs = PapyrusUtil.ResizeActorArray(currentSceneCummedOnActs, 0)
-
-	isRemovingCumFromAllActors = false
-EndFunction
 
 
 Function RegisterForCleaningOnEnteringWater(actor act)

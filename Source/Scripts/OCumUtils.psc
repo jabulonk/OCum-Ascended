@@ -16,21 +16,26 @@ Bool Function StringContains(string str, string contains) global
 EndFunction
 
 
-int Function GetLoadSizeFromML(float ml) global
-	; Load size
-	; none: 0 ml
-	; Small: 0 - 2 ml
-	; Medium: 2 - 5 ml
-	; Large: 5 - 10 ml
-	; Massive 10 ml+
+Bool Function IsPlayerInFreeCam() global
+	return Game.GetCameraState() == 3
+EndFunction
 
-	if ml < 0.1
+
+int Function GetLoadSizeFromML(float percentage) global
+	; Load size
+	; none: 0%-1% of max storage
+	; Small: 1-10% of max storage
+	; Medium: 10-20% of max storage
+	; Large: 20-35% of max storage
+	; Massive 35%+ of max storage
+
+	if percentage < 0.01
 		return 0
-	elseif ml < 2.0
+	elseif percentage < 0.1
 		return 1
-	elseif ml < 5.0
+	elseif percentage < 0.2
 		return 2
-	elseif ml < 10
+	elseif percentage < 0.35
 		return 3
 	else
 		return 4
@@ -76,7 +81,7 @@ Int Function GetEmptySlot(Actor akTarget, Bool Gender, String Area) global
 
 	While i < NumSlots
 		TexPath = NiOverride.GetNodeOverrideString(akTarget, Gender, Area + " [ovl" + i + "]", 9, 0)
-		WriteLog(TexPath)
+
 		If TexPath == "" || TexPath == "actors\\character\\overlays\\default.dds"
 			WriteLog("Slot " + i + " chosen for area: " + area)
 			Return i
@@ -92,12 +97,12 @@ EndFunction
 
 
 Function ApplyOverlay(Actor akTarget, Bool Gender, String Area, String OverlaySlot, String TextureToApply) global
-	WriteLog("ApplyOverlay")
+	WriteLog("ApplyOverlay " + TextureToApply)
 
 	float alpha = Utility.RandomFloat(0.75, 1.0)
 
-	NiOverride.AddOverlays(akTarget)
 	String Node = Area + " [ovl" + OverlaySlot + "]"
+
 	NiOverride.AddNodeOverrideString(akTarget, Gender, Node, 9, 0, TextureToApply, true)
 	NiOverride.AddNodeOverrideInt(akTarget, Gender, Node, 7, -1, 0, true)
 	NiOverride.AddNodeOverrideInt(akTarget, Gender, Node, 0, -1, 0, true)
@@ -136,7 +141,7 @@ Function RemoveCumOverlay(Actor Act, Bool Gender, String NodeArea, Int NumOverla
 
 		string tex = NiOverride.GetNodeOverrideString(Act, Gender, Node, 9, 0)
 
-		If StringContains(tex, "Cum")
+		If StringContains(tex, "CumOverlays")
 			NiOverride.AddNodeOverrideString(Act, Gender, Node, 9, 0, "actors\\character\\overlays\\default.dds", false)
 			NiOverride.RemoveNodeOverride(Act, Gender, node , 9, 0)
 			NiOverride.RemoveNodeOverride(Act, Gender, Node, 7, -1)
@@ -158,17 +163,6 @@ Function RemoveCumDecals(Actor Act, Bool Gender) global
 	RemoveCumOverlay(Act, Gender, "Face", NiOverride.GetNumFaceOverlays())
 	RemoveCumOverlay(Act, Gender, "Feet", NiOverride.GetNumFeetOverlays())
 	RemoveCumOverlay(Act, Gender, "Hands", NiOverride.GetNumFeetOverlays())
-EndFunction
-
-
-Function EquipCumMesh(Actor Act, Armor Item, Bool IsInFreeCam, Bool IsPlayer) global
-	WriteLog("EquipCumMesh")
-
-	Act.EquipItem(Item as Form, false, true)
-
-	if IsInFreeCam && Act == IsPlayer
-		Act.QueueNiNodeUpdate()
-	endif
 EndFunction
 
 

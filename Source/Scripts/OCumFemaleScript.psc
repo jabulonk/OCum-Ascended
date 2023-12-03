@@ -37,15 +37,26 @@ Event OnLoad()
 
 	OStim = OUtils.GetOStim()
 
-	RegisterForModEvent("ostim_orgasm", "OStimOrgasm")
+	RegisterForModEvent("ostim_actor_orgasm", "OStimOrgasm")
 EndEvent
 
 
 Event OStimOrgasm(string eventName, string strArg, float numArg, Form sender)
+	int threadID = numArg as int
+
+	if threadID > 0 && !OCum.enableNPCSceneSupport
+		return
+	endif
+
 	Actor orgasmer = sender as Actor
 
 	if OStim.IsFemale(orgasmer) && ChanceRoll(OCum.SquirtChance)
 		String sceneID = strArg
+
+		if threadID == 0
+			WriteLog("Squirting")
+		endif
+
 		Squirt(orgasmer, sceneID)
 	endif
 EndEvent
@@ -60,29 +71,26 @@ EndEvent
 
 
 Function SquirtShootFlow(Actor act)
-	WriteLog("Squirt Shoot is of type Flow")
 	PlaySound(act, SquirtSound)
 
 	if ChanceRoll(50)
-		SquirtSpell2.cast(act, act)
+		SquirtSpell2.Cast(act, act)
 	else
-		SquirtSpell3.cast(act, act)
+		SquirtSpell3.Cast(act, act)
 	endif
 EndFunction
 
 
 Function SquirtShootSpurt(Actor act)
-	WriteLog("Squirt Shoot is of type Spurt")
 	PlaySound(act, SquirtSound)
 
 	SquirtSpell.SetNthEffectDuration(0, Utility.RandomInt(1, 7))
 
-	SquirtSpell.cast(act, act)
+	SquirtSpell.Cast(act, act)
 EndFunction
 
 
 Function Squirt(Actor Act, String SceneID)
-	WriteLog("Squirting")
 	Act.SendModEvent("ocum_squirt", StrArg = SceneID)
 
 	if ChanceRoll(50)
