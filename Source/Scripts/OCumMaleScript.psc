@@ -5,6 +5,24 @@ import OCumSceneDataUtils
 
 ; ------------------------ Properties and script wide Vars ------------------------ ;
 
+int cumPatternNone = 0
+int cumPatternVaginal = 1
+int cumPatternOral = 2
+int cumPatternAnal = 3
+int cumPatternBoobOral = 4
+int cumPatternFeet = 5
+int cumPatternVaginalPullout = 6
+int cumPatternAnalPullout = 7
+
+bool curPoseIsBlowjob = false
+bool curPoseIsVaginal = false
+bool curPoseIsAnal = false
+bool curPoseIsVaginalPullout = false
+bool curPoseIsAnalPullout = false
+bool curPoseIsHandjob = false
+bool curPoseIsBreastjob = false
+bool curPoseIsFootjob = false
+
 Actor property PlayerRef auto
 
 Armor property UrethraNode auto
@@ -164,13 +182,7 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 
 		OCum.AdjustStoredCumAmount(orgasmer, 0 - amountML, currentCum)
 
-		if OThread.GetActors(threadID).Length > 1
-			int intensity = GetLoadSizeFromML(amountML / maxStorage)
-
-			if intensity > 0
-				ApplyCumAsNecessary(orgasmer, threadID, intensity, amountML, sceneID)
-			endif
-		EndIf
+		
 
 		; stuff to only do if the orgasm was in the player thread
 		if threadID == 0
@@ -180,7 +192,17 @@ Event OstimOrgasm(string eventName, string strArg, float numArg, Form sender)
 
 			; don't play cum shoot animation in NPC scenes - it might cause CTDs or other weird visual artifacts
 			; don't listen for this event, it's only for self consumption so cum shoot runs asynchronously
-			orgasmer.SendModEvent("ocum_play_cum_shoot_effect", StrArg = sceneID, NumArg = amountML / maxStorage)
+			orgasmer.SendModEvent("ocum_play_cum_shoot_effect", StrArg = sceneID, NumArg = amountML)
+		else
+			; only do the "simple" cum applying if it's an npc scene.
+			; if it's a player scene, we want to keep applying it
+			if OThread.GetActors(threadID).Length > 1
+				int intensity = GetLoadSizeFromStoragePercent(amountML / maxStorage)
+	
+				if intensity > 0
+					ApplyCumAsNecessary(orgasmer, threadID, intensity, amountML, sceneID)
+				endif
+			EndIf
 		endif
 
 		OThread.PermitClimax(threadID)
@@ -539,9 +561,10 @@ Function CumShoot(Actor Act, Float AmountML, String SceneID)
 		return
 	endif
 
-	if IsVaginalSex(sceneID) || IsBlowjob(sceneID) || isAnalSex(SceneID)
-		return
-	endif
+	; we can assume thread id 0 because only player scenes can have shots
+	bool isSolo = OThread.GetActors(0).Length <= 1
+
+	bool shouldApplyOverlays = !isSolo
 
 	int size = GetLoadSizeFromML(AmountML)
 
@@ -549,15 +572,22 @@ Function CumShoot(Actor Act, Float AmountML, String SceneID)
 		return
 	endif
 
-	int numSpurts
-	float Frequency
-	int inaccuracy = 40
+	float mlsLeft = AmountML
+	float baseMlPerProj = Utility.RandomFloat(0.45, 0.78)
 
-	Frequency = Utility.RandomFloat(0.1, 1.0)
+	float maxMlPerSpurt = AmountML / 12.0
 
-	numSpurts = Utility.RandomInt(4, 7)
+	if maxMlPerSpurt < baseMlPerProj
+		maxMlPerSpurt = baseMlPerProj + 1.0
+	endif
 
-	int i = 1
+	; blasts should start with smaller intervals and then get bigger intervals as the orgasm ends 
+	float StartFrequency = Utility.RandomFloat(0.45, 0.75) / AmountML
+	float EndFrequencyIncrement = Utility.RandomFloat(0.15, 0.25)
+
+	float Frequency = StartFrequency
+	int inaccuracy = 10
+
 	ObjectReference caster = act.PlaceAtMe(CumLauncher)
 	ObjectReference target = act.PlaceAtMe(CumLauncher)  ; to aim the spell in the correct direction
 	Float[] uPos = new Float[3]
@@ -569,19 +599,183 @@ Function CumShoot(Actor Act, Float AmountML, String SceneID)
 	caster.SetPosition(uPos[0], uPos[1], uPos[2])
 	NetImmerse.GetNodeWorldRotationMatrix(act, "Urethra", uRM, False)  ; (uRM[1] uRM[4] uRM[7]) is the direction vector for the spurts to be launched (local y axis of the node)
 
-	while (i < numSpurts) && OThread.IsRunning(0)
+	float maxContractionAngle = 15.0
+	float contractionAngleStep = 3.0
+	float[] contractionAddRot = new float[3]
+	float[] contractionSubRot = new float[3]
+	contractionAddRot[2] = contractionAngleStep
+	contractionSubRot[2] = -contractionAngleStep
 
-		;aiming
-		targetX = uPos[0] + uRM[1] * 200.0 + Utility.RandomFloat(0-inaccuracy, inaccuracy)
-		targetY = uPos[1] + uRM[4] * 200.0 + Utility.RandomFloat(0-inaccuracy, inaccuracy)
-		targetZ = uPos[2] + uRM[7] * 200.0 + Utility.RandomFloat(-10.0, 10.0) - ((i as Float) / (numSpurts as Float) - 0.5) * 180.0  ; later spurts fly lower, and (usually) less distance
-		target.SetPosition(targetX, targetY, targetZ)
+	int cumPatternOfLastPose = GetCumPattern(SceneID)
+	int cumPatternOfNewPose = cumPatternOfLastPose
+	bool hasAppliedCumMeshOnCurrentPose = false
 
-		FireCumBlast(caster, target, Utility.RandomInt(1, 4), act)
+	; so that we can add new slots as spurts accumulate in the same animation,
+	; but without adding the same ones over and over
+	int[] decalSlotsToUse = new int[15]
+	int i_decalslot = decalSlotsToUse.Length
+	while i_decalslot > 0
+		i_decalslot -= 1
+		decalSlotsToUse[i_decalslot] = -1
+	endwhile
 
-		Utility.Wait(Frequency)
+	float mlShotOnCurrentPose = 0.0
 
-	i += 1
+	while (mlsLeft > 0.0) && OThread.IsRunning(0)
+
+		bool shouldShoot = true
+		shouldApplyOverlays = !isSolo
+
+		float spurtML = Utility.RandomFloat(baseMlPerProj / 2.0, maxMlPerSpurt)
+		if spurtML > mlsLeft
+			spurtML = mlsLeft
+		endif
+
+		mlsLeft -= spurtML
+
+		; orgasm contraction!
+		float desiredContraction = Utility.RandomFloat(maxContractionAngle * 0.5, maxContractionAngle)
+		float accumulatedAngle = 0.0
+
+		while accumulatedAngle < desiredContraction
+			accumulatedAngle += contractionAngleStep * 2.0 ; contraction is faster than relaxing
+
+			if accumulatedAngle > desiredContraction
+				accumulatedAngle = desiredContraction
+			endif
+
+			contractionAddRot[2] = accumulatedAngle
+			contractionSubRot[2] = -accumulatedAngle
+
+			; bend one in one direction, the other in the opposite
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals01 [Gen01]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals01 [Gen01]")
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
+
+			Utility.Wait(0.01)
+		endwhile
+
+		; check for pose, for overlay applying and projectile spawning
+		; since there may be a lot of spurts and the animation can change before it's finished, we should keep checking for each blast
+		curPoseIsBlowjob = false
+		curPoseIsVaginal = false
+		curPoseIsAnal = false
+		curPoseIsVaginalPullout = false
+		curPoseIsAnalPullout = false
+		curPoseIsHandjob = false
+		curPoseIsBreastjob = false
+		curPoseIsFootjob = false
+
+		SceneId = OThread.GetScene(0)
+		if IsBlowjob(SceneId)
+			curPoseIsBlowjob = true
+		ElseIf IsVaginalSex(SceneId)
+			curPoseIsVaginal = true
+		ElseIf IsAnalSex(SceneId)
+			curPoseIsAnal = true
+		ElseIf IsVaginalPullout(SceneId)
+			curPoseIsVaginalPullout = true
+		ElseIf IsAnalPullout(SceneId)
+			curPoseIsAnalPullout = true
+		ElseIf IsHandjob(SceneId)
+			curPoseIsHandjob = true
+		ElseIf IsBreastjob(SceneId)
+			curPoseIsBreastjob = true
+		ElseIf IsFootjob(SceneId)
+			curPoseIsFootjob = true
+		endif
+
+		if curPoseIsBlowjob || curPoseIsVaginal || curPoseIsAnal
+			shouldShoot = false
+		endif
+
+		if spurtML < baseMlPerProj && spurtML + mlsLeft < AmountML
+			; too little cum in this spurt!
+			; it's a dry contraction.
+			; we force the first spurt to have some content though
+			shouldShoot = false
+			shouldApplyOverlays = false
+		endif
+
+		; apply cum layers
+		If shouldApplyOverlays
+			cumPatternOfNewPose = GetCumPattern(SceneId)
+			if cumPatternOfNewPose != cumPatternOfLastPose
+				; pose has changed! reset pose-dependent vars
+				cumPatternOfLastPose = cumPatternOfNewPose
+				mlShotOnCurrentPose = 0.0
+
+				i_decalslot = decalSlotsToUse.Length
+				while i_decalslot > 0
+					i_decalslot -= 1
+					decalSlotsToUse[i_decalslot] = -1
+				endwhile
+			endif
+
+			mlShotOnCurrentPose += spurtML
+
+			ApplyCumAsNecessary(Act, 0, GetLoadSizeFromML(mlShotOnCurrentPose), spurtML, SceneID)
+			
+		EndIf
+
+		If shouldShoot
+			NetImmerse.GetNodeWorldPosition(act, "Urethra", uPos, False) ;setting arrays like this is possible apparently...........
+			caster.SetPosition(uPos[0], uPos[1], uPos[2])
+			NetImmerse.GetNodeWorldRotationMatrix(act, "Urethra", uRM, False)  ; (uRM[1] uRM[4] uRM[7]) is the direction vector for the spurts to be launched (local y axis of the node)
+
+			;aiming
+			targetZ = uPos[2] + uRM[7] * 200.0 + Utility.RandomFloat(-10.0, 10.0) + (1.0 - (AmountML - mlsLeft) / (AmountML)) * 90.0  ; later spurts fly lower, and (usually) less distance
+
+			while spurtML > 0.0
+				targetX = uPos[0] + uRM[1] * 200.0 + Utility.RandomFloat(0-inaccuracy, inaccuracy)
+				targetY = uPos[1] + uRM[4] * 200.0 + Utility.RandomFloat(0-inaccuracy, inaccuracy)
+
+				target.SetPosition(targetX, targetY, targetZ)
+
+				FireCumBlast(caster, target, Utility.RandomInt(1, 4), act)
+
+				spurtML -= baseMlPerProj
+				Utility.Wait(0.01)
+			endwhile
+		else
+			; add extra waiting according to the spurt size, to not make cumming inside/outside too different in terms of duration
+			Utility.Wait(0.08 / (spurtML / baseMlPerProj))
+		endif
+		
+
+		frequency = StartFrequency + EndFrequencyIncrement * ((AmountML - mlsLeft) / (AmountML))
+
+		; undo contraction after the spurt
+		while accumulatedAngle > 0.0
+			accumulatedAngle -= contractionAngleStep
+
+			If accumulatedAngle < 0.0
+				accumulatedAngle = 0.0
+			EndIf
+
+			contractionAddRot[2] = accumulatedAngle
+			contractionSubRot[2] = -accumulatedAngle
+
+			; bend in opposite directions from the starting contraction, to undo it
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals01 [Gen01]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals01 [Gen01]")
+			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
+
+			Utility.Wait(0.01)
+		endwhile
+
+		Utility.Wait(frequency)
+		
 	EndWhile
 
 	caster.Delete()
@@ -719,4 +913,59 @@ string Function CalculateCumAreaFromSkeleton(actor male, actor female)
 	endif
 
 	return area
+EndFunction
+
+
+int Function GetCumPattern(string sceneId)
+	if curPoseIsVaginal
+		return cumPatternVaginal
+	elseif curPoseIsAnal
+		return cumPatternAnal
+	elseif curPoseIsBlowjob
+		return cumPatternOral
+	elseif curPoseIsBreastjob
+		return cumPatternBoobOral
+	elseif curPoseIsFootjob
+		return cumPatternFeet
+	elseif curPoseIsHandjob || curPoseIsVaginalPullout || curPoseIsAnalPullout
+		return CalculateCumPatternFromSkeleton(ostim.GetDomActor(), ostim.GetSubActor(), sceneId)
+	else
+		return cumPatternNone
+	endif
+EndFunction
+
+int Function CalculateCumPatternFromSkeleton(actor male, actor female, string sceneId)
+	float[] maleGenitals = GetNodeLocation(male, genitalsNode)
+
+	float[] femaleGenitals = GetNodeLocation(female, genitalsFemaleNode)
+	float[] femaleFace = GetNodeLocation(female, faceNode)
+	float[] femaleAss = GetNodeLocation(female, assNode)
+
+	float distanceFemaleGenitals = ThreeDeeDistance(maleGenitals, femaleGenitals)
+	float distanceFemaleFace = ThreeDeeDistance(maleGenitals, femaleFace)
+	float distanceFemaleAss = ThreeDeeDistance(maleGenitals, femaleAss)
+
+	int pattern = cumPatternVaginal
+	float smallestDistance = distanceFemaleGenitals
+
+	if (distanceFemaleFace < smallestDistance)
+		pattern = cumPatternOral
+	endif
+	
+	if (distanceFemaleAss < smallestDistance)
+		pattern = cumPatternAnal
+	endif
+
+	; if animation class is masturbation and it is nearer to ass, it makes sense to apply cum on back
+	; likewise, if it is nearer to vagina, it makes sense to also apply cum on belly+chest area
+	; this will work especially great for Pull-Out animations from OpenSex
+	if IsVaginalPullout(sceneId) || IsAnalPullout(sceneId)
+		if smallestDistance == cumPatternVaginal
+			pattern = cumPatternVaginalPullout
+		elseif smallestDistance == cumPatternAnal
+			pattern = cumPatternAnalPullout
+		endif
+	endif
+
+	return pattern
 EndFunction

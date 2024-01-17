@@ -21,7 +21,28 @@ Bool Function IsPlayerInFreeCam() global
 EndFunction
 
 
-int Function GetLoadSizeFromML(float percentage) global
+int Function GetLoadSizeFromML(float ml) global
+	; Load size
+	; none: 0 ml
+	; Small: 0 - 2 ml
+	; Medium: 2 - 5 ml
+	; Large: 5 - 10 ml
+	; Massive 10 ml+
+
+	if ml < 0.1
+		return 0
+	elseif ml < 2.0
+		return 1
+	elseif ml < 5.0
+		return 2
+	elseif ml < 10
+		return 3
+	else
+		return 4
+	endif
+EndFunction
+
+int Function GetLoadSizeFromStoragePercent(float percentage) global
 	; Load size
 	; none: 0%-1% of max storage
 	; Small: 1-10% of max storage
@@ -41,6 +62,7 @@ int Function GetLoadSizeFromML(float percentage) global
 		return 4
 	endif
 EndFunction
+
 
 
 float Function ThreeDeeDistance(float[] pointSet1, float[] pointSet2) global
