@@ -648,14 +648,14 @@ Function CumShoot(Actor Act, Float AmountML, String SceneID)
 			contractionSubRot[2] = -accumulatedAngle
 
 			; bend one in one direction, the other in the opposite
-			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
-			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME GenitalsBase [GenBase]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME GenitalsBase [GenBase]", "Ocum-custom", contractionSubRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME GenitalsBase [GenBase]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME GenitalsBase [GenBase]")
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionAddRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionAddRot)
 			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals01 [Gen01]")
 			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals01 [Gen01]")
-			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
-			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
-			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
-			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
 
 			Utility.Wait(0.01)
 		endwhile
@@ -729,7 +729,7 @@ Function CumShoot(Actor Act, Float AmountML, String SceneID)
 			NetImmerse.GetNodeWorldRotationMatrix(act, "Urethra", uRM, False)  ; (uRM[1] uRM[4] uRM[7]) is the direction vector for the spurts to be launched (local y axis of the node)
 
 			;aiming
-			targetZ = uPos[2] + uRM[7] * 200.0 + Utility.RandomFloat(-10.0, 10.0) + (1.0 - (AmountML - mlsLeft) / (AmountML)) * 90.0  ; later spurts fly lower, and (usually) less distance
+			targetZ = uPos[2] + uRM[7] * 200.0 + 45.0 + Utility.RandomFloat(-10.0, 10.0) + (1.0 - (AmountML - mlsLeft) / (AmountML)) * 45.0  ; later spurts fly lower, and (usually) less distance
 
 			while spurtML > 0.0
 				targetX = uPos[0] + uRM[1] * 200.0 + Utility.RandomFloat(0-inaccuracy, inaccuracy)
@@ -762,14 +762,14 @@ Function CumShoot(Actor Act, Float AmountML, String SceneID)
 			contractionSubRot[2] = -accumulatedAngle
 
 			; bend in opposite directions from the starting contraction, to undo it
-			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
-			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionSubRot)
-			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
-			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals02 [Gen02]", "Ocum-custom", contractionAddRot)
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME GenitalsBase [GenBase]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME GenitalsBase [GenBase]", "Ocum-custom", contractionSubRot)
+			NiOverride.AddNodeTransformRotation(act, false, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionAddRot)
+			NiOverride.AddNodeTransformRotation(act, true, false, "CME Genitals01 [Gen01]", "Ocum-custom", contractionAddRot)
+			NiOverride.UpdateNodeTransform(act, false, false, "CME GenitalsBase [GenBase]")
+			NiOverride.UpdateNodeTransform(act, true, false, "CME GenitalsBase [GenBase]")
 			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals01 [Gen01]")
 			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals01 [Gen01]")
-			NiOverride.UpdateNodeTransform(act, false, false, "CME Genitals02 [Gen02]")
-			NiOverride.UpdateNodeTransform(act, true, false, "CME Genitals02 [Gen02]")
 
 			Utility.Wait(0.01)
 		endwhile
